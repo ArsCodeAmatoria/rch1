@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+██████╗  ██████╗██╗  ██╗ ██╗
+██╔══██╗██╔════╝██║  ██║███║
+██████╔╝██║     ███████║╚██║
+██╔══██╗██║     ██╔══██║ ██║
+██║  ██║╚██████╗██║  ██║ ██║
+╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═╝
 
-## Getting Started
+RCH1 is a professional crane and construction safety knowledge base.
 
-First, run the development server:
+This repository represents a field-oriented reference environment focused on tower crane operations, rigging and hoisting control, standards awareness, and operational safety documentation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Mission
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Provide a serious, practical, and standards-aware digital reference for supervisors, lift directors, operators, riggers, coordinators, and safety leaders working in crane-supported construction environments.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Knowledge Base Scope
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Safety Program procedures for planning, execution, and verification
+- Tower Crane operational guidance and technical controls
+- Rigging and Hoisting practices for load control and lift safety
+- Standards and Compliance references (including WorkSafeBC, CSA, ASME B30, EN, FEM, Technical Safety BC)
+- REDTC Red Seal test-preparation section with practice, review, and load chart workflows
+- Technical articles and structured knowledge publications
 
-## Learn More
+## Primary Sections
 
-To learn more about Next.js, take a look at the following resources:
+- Safety Program
+- Tower Cranes
+- Rigging & Hoisting
+- Standards & Compliance
+- Knowledge Library
+- REDTC (Red Seal practice and chart-based study)
+- Technical Articles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How To Use This Site Internally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Start with the relevant domain page (for example, `Safety Program` or `Tower Cranes`)
+- Navigate by topic cards, internal links, and related-procedure blocks
+- Use table-of-contents and breadcrumb paths for fast movement through detailed procedures
+- Cross-reference operational content with standards pages before applying in field execution
+- Use REDTC for exam-focused practice and chart interpretation drills
 
-## Deploy on Vercel
+## Important Use Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- This is a knowledge and reference platform, not legal advice
+- Regulatory requirements, manufacturer instructions, engineered lift plans, and site-specific controls must always be verified before work execution
+- Local authority, employer policy, and project engineering direction take precedence where required
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Audience
+
+- Tower Crane Operators
+- Riggers and Signalpersons
+- Lift Directors and Coordinators
+- Site Supervision
+- Safety and Compliance Teams
+- Apprentices and Red Seal candidates
+
+## Content Philosophy
+
+- Technical clarity over marketing language
+- Operational wording over classroom style
+- Practical field relevance over generic summary text
+- Structured, scannable, and procedure-oriented knowledge delivery
+
+## Program Identity
+
+RCH1 is positioned as a digital safety manual and professional capability showcase for crane-intensive construction operations.
