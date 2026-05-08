@@ -706,8 +706,8 @@ export default function HomePage() {
             <div className="lg:col-span-2">
               <div className="sticky top-20 border border-border bg-muted/30 relative overflow-hidden">
                 <Image
-                  src="/images/resources3.png"
-                  alt="Tower crane operator"
+                  src="/spidermonkey.png"
+                  alt="Official resources illustration"
                   width={500}
                   height={600}
                   className="w-full h-auto"
@@ -776,15 +776,6 @@ export default function HomePage() {
                   <p className="text-sm text-muted-foreground mt-1">Safety regulations</p>
                 </a>
 
-                <a
-                  href="https://fulford.ca/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-4 border-l-4 border-foreground/20 hover:border-accent bg-muted/30 hover:bg-muted/50 transition-colors"
-                >
-                  <h3 className="font-bold group-hover:text-accent transition-colors">Fulford Certification</h3>
-                  <p className="text-sm text-muted-foreground mt-1">Training in Western Canada</p>
-                </a>
               </div>
 
               {/* Standards */}

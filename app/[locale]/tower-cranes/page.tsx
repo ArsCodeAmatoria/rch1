@@ -7,6 +7,7 @@ import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildBreadcrumbSchema, buildCollectionPageSchema} from "@/lib/schema";
 import {KnowledgeSidebar} from "@/components/layout/knowledge-sidebar";
+import {Link} from "@/i18n/navigation";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
@@ -45,6 +46,20 @@ export default async function TowerCranesPage() {
         </p>
       </header>
 
+      <div className="rounded-xl bg-muted/40 p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Structured program</p>
+        <h2 className="mt-2 text-xl font-bold tracking-tight">Tower Crane Operator Training Program</h2>
+        <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+          BC regulatory framework, CSA and ASME alignment, mathematics, load charts, mechanical systems, climbing, inspection and maintenance, urban operations, multi-crane overlap, airspace and infrastructure (including transit), advanced urban compliance, remote operation, self-erect tower cranes, hoist and wire rope, load testing, tower foundations, load handling, public safety and traffic control, and cab controls—organized into nineteen reference sections.
+        </p>
+        <Link
+          href="/tower-cranes/operator-training-program"
+          className="mt-4 inline-flex text-sm font-semibold text-primary underline-offset-4 hover:underline"
+        >
+          Open the training program overview
+        </Link>
+      </div>
+
       <Separator />
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
@@ -65,6 +80,7 @@ export default async function TowerCranesPage() {
           title="Tower Crane Context"
           intro="Structured references for operator execution, inspection readiness, wind controls, and communication systems."
           quickLinks={[
+            {href: `/${locale}/tower-cranes/operator-training-program`, label: "Operator training program"},
             {href: `/${locale}/tower-cranes/wind-restrictions`, label: "Tower crane wind restrictions"},
             {href: `/${locale}/tower-cranes/pre-operational-inspection`, label: "Pre-operational inspection"},
             {href: `/${locale}/tower-cranes/load-handling`, label: "Load handling controls"},
