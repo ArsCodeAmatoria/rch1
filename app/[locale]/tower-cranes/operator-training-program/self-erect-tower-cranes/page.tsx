@@ -1,4 +1,7 @@
 import type {Metadata} from "next";
+
+import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
+import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -11,7 +14,7 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return buildPageMetadata({
+  return mergePlaceholderForTrainingSection("self-erect-tower-cranes", buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/self-erect-tower-cranes",
     title: "Self-Erect Tower Cranes (BC)",
@@ -24,7 +27,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       "hydraulic crane erection",
       "Potain Liebherr self erect"
     ]
-  });
+  }));
 }
 
 export default async function SelfErectTowerCranesPage() {
@@ -78,6 +81,8 @@ export default async function SelfErectTowerCranesPage() {
           <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
         )}
       </header>
+
+      <OperatorTrainingLeadPlaceholder section="self-erect-tower-cranes" />
 
       <TrainingArticleLayout>
       <TrainingProse>

@@ -1,4 +1,7 @@
 import type {Metadata} from "next";
+
+import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
+import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -11,14 +14,14 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return buildPageMetadata({
+  return mergePlaceholderForTrainingSection("advanced-urban-compliance", buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/advanced-urban-compliance",
     title: "Advanced Urban Compliance – Tower Cranes",
     description:
       "Multi-crane coordination, anti-collision training and override discipline, night lighting, public protection, wind logging, blind picks, evacuation.",
     keywords: ["anti-collision tower crane", "urban crane compliance BC", "blind pick procedure", "wind log crane"]
-  });
+  }));
 }
 
 export default async function AdvancedUrbanCompliancePage() {
@@ -54,6 +57,8 @@ export default async function AdvancedUrbanCompliancePage() {
         <p className="text-muted-foreground">{description}</p>
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
+
+      <OperatorTrainingLeadPlaceholder section="advanced-urban-compliance" />
 
       <TrainingArticleLayout>
       <TrainingProse>

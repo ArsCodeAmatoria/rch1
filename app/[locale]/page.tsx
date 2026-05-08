@@ -1,4 +1,6 @@
 import type {Metadata} from "next";
+import Image from "next/image";
+import {CONTENT_IMAGE_BRIEFS} from "@/lib/content-image-briefs";
 import {ShieldCheck, FileText, HardHat, Cable, ClipboardCheck, Construction} from "lucide-react";
 import {getTranslations} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
@@ -62,6 +64,8 @@ const knowledgeHubs = [
   }
 ] as const;
 
+const HOME_HERO_ALT = CONTENT_IMAGE_BRIEFS["home-hero"].alt;
+
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   return buildPageMetadata({
@@ -70,7 +74,9 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
     title: "Professional Crane and Construction Safety Programs",
     description:
       "Bilingual crane safety reference covering tower crane operations, rigging and hoisting, construction safety documentation, and standards-aware field procedures.",
-    keywords: ["tower crane operations", "construction safety documentation", "rigging and hoisting"]
+    keywords: ["tower crane operations", "construction safety documentation", "rigging and hoisting"],
+    image: "/images/home.png",
+    imageAlt: HOME_HERO_ALT
   });
 }
 
@@ -105,6 +111,18 @@ export default async function HomePage() {
             <Link href="/tower-cranes">{tButtons("viewTowerKnowledge")}</Link>
           </Button>
         </div>
+
+        <figure className="not-prose mt-10 overflow-hidden rounded-lg border border-border bg-muted/30 shadow-sm">
+          <Image
+            src="/images/home.png"
+            alt={HOME_HERO_ALT}
+            width={1600}
+            height={900}
+            priority
+            className="h-auto w-full object-cover"
+            sizes="(max-width: 1280px) 100vw, 1200px"
+          />
+        </figure>
       </section>
 
       <section>

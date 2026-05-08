@@ -1,4 +1,7 @@
 import type {Metadata} from "next";
+
+import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
+import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -11,14 +14,14 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return buildPageMetadata({
+  return mergePlaceholderForTrainingSection("climbing-procedures", buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/climbing-procedures",
     title: "Climbing (Jumping) Procedures – Tower Crane Training",
     description:
       "Internal and external climbing, engineering approval, hydraulics, tie-ins, wind limits, CSA Z248 and ASME B30.3 climbing requirements.",
     keywords: ["tower crane climbing", "jumping crane", "CSA Z248 climbing", "tie-in validation BC", "hydraulic climbing ram"]
-  });
+  }));
 }
 
 export default async function ClimbingProceduresPage() {
@@ -53,6 +56,8 @@ export default async function ClimbingProceduresPage() {
         <p className="text-muted-foreground">{description}</p>
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
+
+      <OperatorTrainingLeadPlaceholder section="climbing-procedures" />
 
       <TrainingArticleLayout>
       <TrainingProse>

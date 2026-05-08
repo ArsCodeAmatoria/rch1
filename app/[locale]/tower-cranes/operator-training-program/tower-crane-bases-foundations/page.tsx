@@ -1,4 +1,7 @@
 import type {Metadata} from "next";
+
+import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
+import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -11,7 +14,7 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return buildPageMetadata({
+  return mergePlaceholderForTrainingSection("tower-crane-bases-foundations", buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/tower-crane-bases-foundations",
     title: "Tower Crane Bases & Foundations (BC)",
@@ -24,7 +27,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       "anchor cage tower crane",
       "BC tower crane base"
     ]
-  });
+  }));
 }
 
 export default async function TowerCraneBasesFoundationsPage() {
@@ -78,6 +81,8 @@ export default async function TowerCraneBasesFoundationsPage() {
           <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
         )}
       </header>
+
+      <OperatorTrainingLeadPlaceholder section="tower-crane-bases-foundations" />
 
       <TrainingArticleLayout>
       <TrainingProse>

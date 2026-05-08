@@ -1,4 +1,7 @@
 import type {Metadata} from "next";
+
+import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
+import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {Separator} from "@/components/ui/separator";
@@ -10,14 +13,17 @@ import {KnowledgeSidebar} from "@/components/layout/knowledge-sidebar";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return buildPageMetadata({
-    locale,
-    path: "/rigging",
-    title: "Rigging and Hoisting Knowledge Hub",
-    description:
-      "Professional rigging and hoisting reference for sling selection, load control, tag lines, critical lifts, and multi-crane lift planning in construction operations.",
-    keywords: ["rigging and hoisting", "crane safety", "construction safety program"]
-  });
+  return mergePlaceholderImageMeta(
+    "hub-rigging",
+    buildPageMetadata({
+      locale,
+      path: "/rigging",
+      title: "Rigging and Hoisting Knowledge Hub",
+      description:
+        "Professional rigging and hoisting reference for sling selection, load control, tag lines, critical lifts, and multi-crane lift planning in construction operations.",
+      keywords: ["rigging and hoisting", "crane safety", "construction safety program"]
+    })
+  );
 }
 
 export default async function RiggingPage() {
@@ -43,6 +49,10 @@ export default async function RiggingPage() {
         <p className="max-w-4xl text-muted-foreground">
           Professional field reference for rigging setup, sling strategy, exclusion controls, communication protocols, and high-risk lift execution.
         </p>
+
+        <div className="mt-6 max-w-4xl">
+          <ContentImagePlaceholder id="hub-rigging" />
+        </div>
       </header>
 
       <Separator />

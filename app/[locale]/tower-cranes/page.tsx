@@ -1,4 +1,6 @@
 import type {Metadata} from "next";
+import Image from "next/image";
+import {CONTENT_IMAGE_BRIEFS} from "@/lib/content-image-briefs";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {Separator} from "@/components/ui/separator";
@@ -9,6 +11,8 @@ import {buildBreadcrumbSchema, buildCollectionPageSchema} from "@/lib/schema";
 import {KnowledgeSidebar} from "@/components/layout/knowledge-sidebar";
 import {Link} from "@/i18n/navigation";
 
+const TOWER_HUB_ALT = CONTENT_IMAGE_BRIEFS["hub-tower-cranes"].alt;
+
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   return buildPageMetadata({
@@ -17,7 +21,9 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
     title: "Tower Crane Operations Knowledge Hub",
     description:
       "Technical tower crane operations reference covering operator responsibilities, pre-operational inspection, wind restrictions, load handling, and communication systems.",
-    keywords: ["tower crane operations", "crane safety", "construction safety documentation"]
+    keywords: ["tower crane operations", "crane safety", "construction safety documentation"],
+    image: "/images/tower-crane.png",
+    imageAlt: TOWER_HUB_ALT
   });
 }
 
@@ -44,6 +50,18 @@ export default async function TowerCranesPage() {
         <p className="max-w-4xl text-muted-foreground">
           Professional reference library for operator execution, crane configuration management, urban lifting controls, communication systems, and risk-governed load handling.
         </p>
+
+        <figure className="not-prose mt-8 max-w-4xl overflow-hidden rounded-lg border border-border bg-muted/30 shadow-sm">
+          <Image
+            src="/images/tower-crane.png"
+            alt={TOWER_HUB_ALT}
+            width={1400}
+            height={788}
+            priority
+            className="h-auto w-full object-cover"
+            sizes="(max-width: 896px) 100vw, 896px"
+          />
+        </figure>
       </header>
 
       <div className="rounded-xl bg-muted/40 p-6">

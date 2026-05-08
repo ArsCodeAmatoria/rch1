@@ -1,4 +1,7 @@
 import type {Metadata} from "next";
+
+import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
+import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {Separator} from "@/components/ui/separator";
@@ -12,7 +15,7 @@ import {Link} from "@/i18n/navigation";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return buildPageMetadata({
+  return mergePlaceholderImageMeta("operator-training-overview", buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program",
     title: "Tower Crane Operator Training Program",
@@ -27,7 +30,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       "tower crane mathematics",
       "load chart interpretation"
     ]
-  });
+  }));
 }
 
 export default async function OperatorTrainingProgramPage() {
@@ -76,6 +79,10 @@ export default async function OperatorTrainingProgramPage() {
           </p>
         )}
       </header>
+
+      <div className="mb-10">
+        <ContentImagePlaceholder id="operator-training-overview" />
+      </div>
 
       <TrainingArticleLayout>
         <ProgramOverviewSections />

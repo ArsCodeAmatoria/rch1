@@ -1,0 +1,1 @@
+Drop final WebP/AVIF masters here following paths in ContentImagePlaceholder briefs (e.g. content/education/training-section-01-regulatory.webp). The dashed UI blocks on the site list exact relative paths under public/.

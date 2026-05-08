@@ -1,4 +1,7 @@
 import type {Metadata} from "next";
+
+import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
+import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -11,7 +14,7 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return buildPageMetadata({
+  return mergePlaceholderForTrainingSection("load-handling-swing-control", buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/load-handling-swing-control",
     title: "Load Handling, Swing Control & Deflection (BC)",
@@ -25,7 +28,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       "tower crane wind load",
       "crane signalperson BC"
     ]
-  });
+  }));
 }
 
 export default async function LoadHandlingSwingControlPage() {
@@ -79,6 +82,8 @@ export default async function LoadHandlingSwingControlPage() {
           <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
         )}
       </header>
+
+      <OperatorTrainingLeadPlaceholder section="load-handling-swing-control" />
 
       <TrainingArticleLayout>
       <TrainingProse>
