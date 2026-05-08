@@ -48,7 +48,7 @@ export function QuestionCard({
         </div>
         {chartPdf && (
           <a
-            href={`/load-charts/${chartPdf}`}
+            href={`/redtc/chart-pdf/${chartPdf}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 py-2 px-3 border border-accent/40 bg-accent/5 text-sm font-medium text-accent hover:bg-accent/10 hover:border-accent transition-colors w-fit"

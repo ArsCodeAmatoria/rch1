@@ -1,3 +1,5 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section12RemoteOperation() {
   return (
     <>
@@ -5,14 +7,29 @@ export function Section12RemoteOperation() {
 
       <h3 id="section-12-purpose">Purpose</h3>
       <p>
-        This section addresses regulatory, mechanical, and safety considerations when operating a tower crane by remote control rather than
-        from a fixed cab. Remote operation changes the operator&apos;s physical relationship to the crane. It can improve visibility and
-        efficiency in some environments but adds regulatory responsibility, human-factor risk, and system reliability requirements.
+        This section covers regulatory, mechanical, and safety considerations when operating by <strong>remote control</strong> rather than from a
+        fixed cab. Remote operation changes the operator&apos;s relationship to the machine—it can improve ground visibility but adds{" "}
+        <em>human-factors risk</em>, transmitter integrity requirements, and supervisory scrutiny under OHSR Part 14.
+      </p>
+      <p>
+        Relate remote use to{" "}
+        <Link href="/tower-cranes/operator-training-program/self-erect-tower-cranes" className="font-medium text-primary no-underline hover:underline">
+          Section 13 – Self-erect tower cranes
+        </Link>
+        , confined sites in{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        , and the program&apos;s{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="text-primary no-underline hover:underline">
+          BC regulatory baseline (Section 1)
+        </Link>
+        .
       </p>
       <p>
         Historically cranes were cab-operated; postwar European reconstruction produced slewing tower cranes with fixed cabs. Remote technology
-        appeared in Europe in the 1980s–1990s (Germany, Italy) for ground visibility in confined streets. Canada adopted remote operation more
-        slowly; in BC it is permitted but tightly governed under OHSR Part 14.
+        spread in Europe in the 1980s–1990s for ground visibility in confined streets. Canada adopted remote use more slowly; in BC it is
+        permitted but tightly governed under OHSR Part 14.
       </p>
 
       <h3 id="module-12-1">Module 12.1 – Regulatory Considerations (British Columbia)</h3>

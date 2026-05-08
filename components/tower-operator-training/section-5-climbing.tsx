@@ -1,19 +1,33 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section5ClimbingProcedures() {
   return (
     <>
       <h2 id="section-5">Section 5 – Climbing (Jumping) Procedures</h2>
       <p>
-        Tower crane climbing procedures—whether internal or external—represent among the most critical and technically demanding
-        operations in crane practice. Climbing allows a tower crane to increase or decrease its height as a structure rises or during
-        dismantling. Because the crane is temporarily placed into a partially disassembled or structurally transitional state, the margin
-        for error narrows considerably.
+        Tower crane climbing—<em>internal or external</em>—is among the <strong>most critical and technically demanding</strong> operations in
+        crane practice. Climbing changes height as the structure rises or during dismantling. While the crane is partially disassembled or
+        transitional, the margin for error narrows considerably.
       </p>
       <p>
-        Modern climbing protocols evolved through decades of engineering refinement, regulatory development, and lessons learned from
-        serious incidents. As tower cranes became taller in the post–World War II construction boom—particularly in dense urban
-        centers—the need for standardized climbing procedures became evident. In Canada, this ultimately led to the development of CSA
-        Z248 – Code for Tower Cranes, while in the United States, the ASME B30.3 – Tower Cranes standard formalized climbing requirements
-        within a broader crane safety framework.
+        Modern climbing protocols reflect engineering refinement, regulation, and lessons from serious incidents. CSA Z248 and ASME B30.3
+        formalized expectations alongside provincial rules—see{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="font-medium text-primary no-underline hover:underline">
+          Section 1 – Regulatory framework (BC, CSA, ASME)
+        </Link>
+        . Tie-ins and reactions connect to{" "}
+        <Link href="/tower-cranes/operator-training-program/tower-crane-bases-foundations" className="text-primary no-underline hover:underline">
+          Section 16 – Bases &amp; foundations
+        </Link>
+        ; inspection discipline in{" "}
+        <Link href="/tower-cranes/operator-training-program/inspection-maintenance" className="text-primary no-underline hover:underline">
+          Section 6 – Inspection &amp; maintenance
+        </Link>
+        ; urban siting in{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        .
       </p>
 
       <h3>Internal and External Climbing</h3>

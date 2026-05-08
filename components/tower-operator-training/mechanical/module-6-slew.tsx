@@ -1,12 +1,27 @@
+import {Link} from "@/i18n/navigation";
+
 export function Module6SlewSystem() {
   return (
     <>
       <h2 id="module-6">Module 6 – Slew System</h2>
       <p>
-        The slew system enables the tower crane to rotate horizontally about its vertical axis. Without slewing capability, a crane would
-        be confined to linear lifting; with it, the crane becomes a radial machine capable of serving an entire job site footprint. The
-        slewing assembly transfers rotational torque from the drive motors through reduction gearing into a large-diameter bearing
-        assembly that supports the entire superstructure—jib, counterjib, machinery deck, and load.
+        The <strong>slew system</strong> rotates the upper works about the vertical axis—without it, lifting is linear; with it, the crane serves the
+        full radius. Torque passes through gearing into the <em>slewing bearing</em> that carries jib, counter-jib, and load.
+      </p>
+      <p>
+        Tie slew limits to overlap and anti-collision in{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="font-medium text-primary no-underline hover:underline">
+          Section 8 – Overlap &amp; right of way
+        </Link>
+        , ground movement in{" "}
+        <Link href="/tower-cranes/operator-training-program/load-handling-swing-control" className="text-primary no-underline hover:underline">
+          Section 17 – Load handling &amp; swing
+        </Link>
+        , and hoist/slew coordination in{" "}
+        <Link href="/tower-cranes/operator-training-program/tower-crane-controls-monitoring" className="text-primary no-underline hover:underline">
+          Section 19 – Controls &amp; monitoring
+        </Link>
+        .
       </p>
       <p>
         Historically, rotational crane systems evolved gradually. Ancient Roman cranes, described by Vitruvius, relied on fixed bases or

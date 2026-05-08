@@ -78,7 +78,7 @@ function ChartCard({ chart, index }: { chart: Chart; index: number }) {
         
         <div className="flex flex-col gap-2">
           <a
-            href={`/load-charts/${chart.pdfFile}`}
+            href={`/redtc/chart-pdf/${chart.pdfFile}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-3 py-1.5 text-xs font-medium border border-border rounded-md hover:bg-muted transition-colors"

@@ -167,7 +167,8 @@ export function buildTechArticleSchema({
   dependencies = ["WorkSafeBC", "CSA", "ASME B30", "Technical Safety BC"],
   keywords = [],
   about = [],
-  mentions = []
+  mentions = [],
+  image
 }: {
   headline: string;
   description: string;
@@ -178,6 +179,8 @@ export function buildTechArticleSchema({
   keywords?: string[];
   about?: string[];
   mentions?: string[];
+  /** Public path e.g. `/cranes/photo.png` — becomes absolute in JSON-LD for crawlers. */
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -185,6 +188,15 @@ export function buildTechArticleSchema({
     headline,
     description,
     url,
+    ...(image
+      ? {
+          image: {
+            "@type": "ImageObject",
+            url: `${SITE_URL}${image}`,
+            contentUrl: `${SITE_URL}${image}`
+          }
+        }
+      : {}),
     inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
     proficiencyLevel,
     dependencies,

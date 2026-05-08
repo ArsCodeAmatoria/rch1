@@ -4,6 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {Section9Module91Overswing} from "@/components/tower-operator-training/section-9-m91-overswing";
 import {Section9Module92Railway} from "@/components/tower-operator-training/section-9-m92-railway";
@@ -47,7 +48,7 @@ export default async function AirspacePropertyInfrastructurePage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-7xl">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -74,6 +75,7 @@ export default async function AirspacePropertyInfrastructurePage() {
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
 
+      <TrainingArticleLayout>
       <TrainingProse>
         <Section9Module91Overswing />
         <Section9Module92Railway />
@@ -82,6 +84,7 @@ export default async function AirspacePropertyInfrastructurePage() {
         <Section9Module95Electrical />
         <Section9Module96SkytrainTransit />
       </TrainingProse>
+      </TrainingArticleLayout>
 
       <TrainingSectionNav current="/tower-cranes/operator-training-program/airspace-property-infrastructure" />
     </article>

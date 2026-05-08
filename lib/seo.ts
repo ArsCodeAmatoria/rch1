@@ -31,6 +31,7 @@ export function buildOpenGraph({
   description,
   url,
   image,
+  imageAlt,
   locale,
   type = "website",
   article
@@ -39,6 +40,8 @@ export function buildOpenGraph({
   description: string;
   url: string;
   image?: string;
+  /** Improves accessibility and some crawler/LLM image context for OG previews. */
+  imageAlt?: string;
   locale: "en_CA" | "fr_CA";
   type?: "website" | "article";
   article?: {
@@ -49,13 +52,18 @@ export function buildOpenGraph({
     tags?: string[];
   };
 }): NonNullable<Metadata["openGraph"]> {
+  const ogImageUrl = image ? `${SITE_URL}${image}` : `${SITE_URL}${defaultOgBySection.default}`;
   return {
     type,
     siteName: SITE_NAME,
     title,
     description,
     url,
-    images: [{url: image ? `${SITE_URL}${image}` : `${SITE_URL}${defaultOgBySection.default}`}],
+    images: [
+      imageAlt
+        ? {url: ogImageUrl, alt: imageAlt}
+        : {url: ogImageUrl}
+    ],
     locale,
     alternateLocale: locale === "en_CA" ? "fr_CA" : "en_CA",
     ...(type === "article"
@@ -74,20 +82,23 @@ export function buildTwitterCard({
   title,
   description,
   image,
+  imageAlt,
   site = DEFAULT_TWITTER,
   creator = DEFAULT_TWITTER
 }: {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   site?: string;
   creator?: string;
 }): NonNullable<Metadata["twitter"]> {
+  const twUrl = image ? `${SITE_URL}${image}` : `${SITE_URL}${defaultOgBySection.default}`;
   return {
     card: "summary_large_image",
     title,
     description,
-    images: [image ? `${SITE_URL}${image}` : `${SITE_URL}${defaultOgBySection.default}`],
+    images: imageAlt ? [{url: twUrl, alt: imageAlt}] : [twUrl],
     site,
     creator
   };
@@ -105,6 +116,7 @@ export function buildMetadata({
   enPath,
   frPath,
   image,
+  imageAlt,
   keywords,
   noindex,
   section = "default",
@@ -118,6 +130,7 @@ export function buildMetadata({
   enPath: string;
   frPath: string;
   image?: string;
+  imageAlt?: string;
   keywords?: string[];
   noindex?: boolean;
   section?: keyof typeof defaultOgBySection;
@@ -162,6 +175,7 @@ export function buildMetadata({
       description,
       url: canonical,
       image: imageToUse,
+      imageAlt,
       locale: localeTag,
       type,
       article
@@ -169,7 +183,8 @@ export function buildMetadata({
     twitter: buildTwitterCard({
       title: `${title} | ${SITE_NAME}`,
       description,
-      image: imageToUse
+      image: imageToUse,
+      imageAlt
     })
   };
 }
@@ -180,6 +195,11 @@ export function buildPageMetadata(args: {
   title: string;
   description: string;
   keywords?: string[];
+  /** Absolute path under `public/`, e.g. `/cranes/photo.png` */
+  image?: string;
+  imageAlt?: string;
+  type?: "website" | "article";
+  article?: Parameters<typeof buildMetadata>[0]["article"];
 }) {
   const locale = (args.locale === "fr" ? "fr" : "en") as "en" | "fr";
   const canonicalPath = `/${locale}${args.path === "/" ? "" : args.path}`;
@@ -203,6 +223,10 @@ export function buildPageMetadata(args: {
     enPath,
     frPath,
     keywords: args.keywords,
+    image: args.image,
+    imageAlt: args.imageAlt,
+    type: args.type ?? "website",
+    article: args.article,
     section
   });
 }

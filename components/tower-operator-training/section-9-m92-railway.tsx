@@ -1,12 +1,32 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section9Module92Railway() {
   return (
     <>
       <h3 id="module-9-2">Module 9.2 – Railway Proximity</h3>
       <p>
-        Construction adjacent to railway corridors has historically been treated as national infrastructure protection. Railways were central
-        to industrial expansion in Britain, Europe, and North America in the nineteenth century. In Canada, the transcontinental railway
-        (1885) remains foundational. Today, rail corridors are critical infrastructure; crane operation near active track introduces operational,
-        structural, and public safety exposure beyond ordinary construction risk.
+        <strong>Rail-adjacent construction</strong> is treated as critical infrastructure protection. In Canada, rail history and federal rail law add
+        layers beyond ordinary site risk. Coordinate with{" "}
+        <Link
+          href={"/tower-cranes/operator-training-program/airspace-property-infrastructure#section-9" as never}
+          className="font-medium text-primary no-underline hover:underline"
+        >
+          Section 9 overview
+        </Link>
+        , urban traffic control in{" "}
+        <Link href="/tower-cranes/operator-training-program/public-safety-traffic-emergency" className="text-primary no-underline hover:underline">
+          Section 18 – Public safety &amp; traffic
+        </Link>
+        , and overlap clearances in{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="text-primary no-underline hover:underline">
+          Section 8 – Overlap
+        </Link>
+        .
+      </p>
+      <p>
+        Railways were central to industrial expansion; today active track beside a crane introduces operational, structural, and public safety
+        exposure beyond ordinary construction risk.
       </p>
       <p>
         In British Columbia and Canada, railway proximity is governed by federal rail legislation, engineering standards, and individual rail
@@ -15,10 +35,22 @@ export function Section9Module92Railway() {
 
       <h4>Canadian &amp; BC Regulatory Context</h4>
       <ul>
-        <li>Federally regulated railways: Transport Canada under the Railway Safety Act.</li>
-        <li>BC Crane Safety: planning documentation must identify proximity hazards including adjacent rail.</li>
-        <li>WorkSafeBC: documented hazard assessment and controls under OHSR where occupational risk is present.</li>
-        <li>Lower Mainland: coordination with TransLink for SkyTrain or West Coast Express corridors.</li>
+        <li>
+          Federally regulated railways: <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink> under the Railway Safety
+          Act.
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink>: planning documentation must identify proximity hazards
+          including adjacent rail.
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>: documented hazard assessment and controls under OHSR where
+          occupational risk is present.
+        </li>
+        <li>
+          Lower Mainland: coordination with <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink> for SkyTrain or West Coast Express
+          corridors.
+        </li>
         <li>Rail authorities maintain engineering clearance standards superseding site convenience.</li>
       </ul>
 

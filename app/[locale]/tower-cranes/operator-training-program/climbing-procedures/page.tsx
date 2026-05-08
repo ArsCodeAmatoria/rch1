@@ -4,6 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {Section5ClimbingProcedures} from "@/components/tower-operator-training/section-5-climbing";
 import {TrainingSectionNav} from "@/components/tower-operator-training/training-section-nav";
@@ -34,7 +35,7 @@ export default async function ClimbingProceduresPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-7xl">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd data={buildTechArticleSchema({headline: `${title} | RCH1`, description, url: pageUrl, locale, keywords: ["climbing", "CSA Z248", "jacking"]})} />
       <JsonLd data={buildWebPageSchema({name: title, description, url: pageUrl, locale, breadcrumb})} />
@@ -53,9 +54,11 @@ export default async function ClimbingProceduresPage() {
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
 
+      <TrainingArticleLayout>
       <TrainingProse>
         <Section5ClimbingProcedures />
       </TrainingProse>
+      </TrainingArticleLayout>
 
       <TrainingSectionNav current="/tower-cranes/operator-training-program/climbing-procedures" />
     </article>

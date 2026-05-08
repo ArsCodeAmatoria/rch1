@@ -1,19 +1,40 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section9Module94AviationAndAddendum() {
   return (
     <>
       <h3 id="module-9-4">Module 9.4 – Airports &amp; Aviation Regulations</h3>
       <p>
-        Crane operations near airports reflect a century of aviation law. As aircraft performance and instrument navigation advanced,
-        governments established obstacle limitation surfaces (OLS) to protect approach and departure corridors. ICAO harmonizes international
-        standards; Canada implements them through Transport Canada under the Aeronautics Act and Canadian Aviation Regulations (CARs). Airspace
-        and obstruction review are conducted by NAV CANADA.
+        <strong>Airport-adjacent cranes</strong> sit under aviation law—OLS, CARs,{" "}
+        <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.navCanada}>NAV CANADA</ExternalLink>. Tie height assessments to property
+        overswing in{" "}
+        <Link
+          href={"/tower-cranes/operator-training-program/airspace-property-infrastructure#module-9-1" as never}
+          className="font-medium text-primary no-underline hover:underline"
+        >
+          Module 9.1 – Overswing
+        </Link>{" "}
+        and engineering culture in{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        .
+      </p>
+      <p>
+        As aircraft performance and navigation advanced, governments established obstacle limitation surfaces to protect approach and departure
+        corridors—ICAO harmonizes; Canada implements via{" "}
+        <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink> and CARs; obstruction review involves{" "}
+        <ExternalLink href={AUTHORITY_URLS.navCanada}>NAV CANADA</ExternalLink>.
       </p>
       <p>A tower crane near an airport is a potential aeronautical obstruction—not merely construction equipment.</p>
 
       <h4>Regulatory Authority</h4>
       <p>
-        <strong>Transport Canada</strong> — Obstruction requirements via Airport Zoning Regulations and CARs.{" "}
-        <strong>NAV CANADA</strong> — Aeronautical assessments for hazards to air navigation. In BC, Vancouver International and Abbotsford
+        <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink> — Obstruction requirements via Airport Zoning Regulations
+        and CARs. <ExternalLink href={AUTHORITY_URLS.navCanada}>NAV CANADA</ExternalLink> — Aeronautical assessments for hazards to air navigation. In
+        BC, Vancouver International and Abbotsford
         International operate within protected surfaces extending well beyond runway thresholds—sometimes kilometres along approach paths.
       </p>
 
@@ -26,7 +47,8 @@ export function Section9Module94AviationAndAddendum() {
         <li>Swing radius and maximum extension</li>
       </ul>
       <p>
-        NAV CANADA evaluates against OLS: approach surfaces, transitional surfaces, outer surfaces. Penetration may require mitigation or
+        <ExternalLink href={AUTHORITY_URLS.navCanada}>NAV CANADA</ExternalLink> evaluates against OLS: approach surfaces, transitional surfaces, outer
+        surfaces. Penetration may require mitigation or
         denial. Uncontrolled obstructions contributed to mid-century accidents; IFR expansion after World War II tightened protection zones.
       </p>
 
@@ -66,14 +88,18 @@ export function Section9Module94AviationAndAddendum() {
 
       <h4>Canadian &amp; International Context</h4>
       <p>
-        Densification has placed cranes near Pearson, YVR, London City, Hong Kong International. Canada&apos;s system pairs Transport Canada
-        with NAV CANADA for independent technical review. Near aviation corridors, height is a navigational constraint under national law—the
+        Densification has placed cranes near Pearson, YVR, London City, Hong Kong International. Canada&apos;s system pairs{" "}
+        <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink> with{" "}
+        <ExternalLink href={AUTHORITY_URLS.navCanada}>NAV CANADA</ExternalLink> for independent technical review. Near aviation corridors, height is a
+        navigational constraint under national law—the
         crane becomes part of the national airspace system.
       </p>
 
       <h3 id="addendum-9-4">Addendum to Module 9.4 – Regulated Heights &amp; Distance Thresholds</h3>
       <p>
-        Under CARs (Transport Canada) and NAV CANADA assessment, notification and review may be triggered by absolute height, distance from an
+        Under CARs (<ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink>) and{" "}
+        <ExternalLink href={AUTHORITY_URLS.navCanada}>NAV CANADA</ExternalLink> assessment, notification and review may be triggered by absolute height,
+        distance from an
         airport, and penetration of protected surfaces.
       </p>
 

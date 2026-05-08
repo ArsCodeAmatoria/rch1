@@ -1,10 +1,25 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section9Module93Bridges() {
   return (
     <>
       <h3 id="module-9-3">Module 9.3 – Work Near Bridges &amp; Public Infrastructure</h3>
       <p>
-        Bridges and public infrastructure occupy a distinct legal and engineering category. Unlike private property, public structures are
-        held in trust for collective use. Interference engages municipal, provincial, and sometimes federal authority.
+        <strong>Bridges and public infrastructure</strong> sit in a distinct legal/engineering box—interference can engage municipal, provincial, or
+        federal authority. See also{" "}
+        <Link href="/tower-cranes/operator-training-program/public-safety-traffic-emergency" className="font-medium text-primary no-underline hover:underline">
+          Section 18 – Traffic &amp; emergency planning
+        </Link>{" "}
+        and{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-knowledge-requirements" className="text-primary no-underline hover:underline">
+          Section 10 – Regulatory knowledge
+        </Link>
+        .
+      </p>
+      <p>
+        Unlike private property, public structures are held in trust for collective use—lifting plans must respect engineered buffers and
+        permits.
       </p>
       <p>
         The collapse of the Quebec Bridge during construction in 1907 remains a landmark Canadian engineering disaster—shaping structural
@@ -15,11 +30,23 @@ export function Section9Module93Bridges() {
 
       <h4>Regulatory &amp; Jurisdictional Context (BC)</h4>
       <ul>
-        <li>WorkSafeBC – worker and public risk under OHSR.</li>
-        <li>BC Crane Safety – documented planning and site drawings identifying adjacent infrastructure.</li>
-        <li>Technical Safety BC – regulated utilities or gas corridors.</li>
-        <li>Transport Canada – navigable waterways or federal transportation corridors where applicable.</li>
-        <li>TransLink – regional bridges and rapid transit guideways in Metro Vancouver.</li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> – worker and public risk under OHSR.
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink> – documented planning and site drawings identifying adjacent
+          infrastructure.
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.technicalSafetyBc}>Technical Safety BC</ExternalLink> – regulated utilities or gas corridors.
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink> – navigable waterways or federal transportation corridors
+          where applicable.
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink> – regional bridges and rapid transit guideways in Metro Vancouver.
+        </li>
       </ul>
       <p>
         Major bridges (e.g. Alex Fraser, Port Mann) operate under strict clearance regimes; construction nearby typically requires formal

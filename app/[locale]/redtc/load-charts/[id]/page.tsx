@@ -182,7 +182,7 @@ export default function LoadChartQuizPage() {
           </Link>
           
           <a
-            href={`/load-charts/${chart.pdfFile}`}
+            href={`/redtc/chart-pdf/${chart.pdfFile}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium bg-accent text-accent-foreground rounded-md hover:bg-accent/90 transition-colors"

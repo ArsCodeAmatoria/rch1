@@ -1,11 +1,25 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section6AppendixA() {
   return (
     <>
       <h2 id="appendix-a">Appendix A</h2>
       <h3>Comprehensive Step-by-Step Operator &amp; Rigger Inspection, Maintenance, and Logging Schedule</h3>
       <p>
-        This appendix reflects practical field implementation consistent with CSA Group standard CSA Z248, aligned with ASME B30.3, and
-        enforced in British Columbia under WorkSafeBC.
+        This appendix reflects <strong>practical field implementation</strong> consistent with CSA Z248, aligned with ASME B30.3, and enforced in BC
+        under WorkSafeBC. Use it with the narrative in{" "}
+        <Link href="/tower-cranes/operator-training-program/inspection-maintenance" className="font-medium text-primary no-underline hover:underline">
+          Section 6 – Inspection &amp; maintenance (main text)
+        </Link>
+        ,{" "}
+        <Link href="/standards" className="text-primary no-underline hover:underline">
+          standards overview
+        </Link>
+        , and daily operator themes in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-knowledge-requirements" className="text-primary no-underline hover:underline">
+          Section 10 – Regulatory knowledge
+        </Link>
+        .
       </p>
       <p>
         <strong>Professional role separation is foundational:</strong> Operator – structure, hoist drum, upper rope sections, controls,

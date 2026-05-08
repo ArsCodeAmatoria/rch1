@@ -1,19 +1,40 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Module2CsaStandards() {
   return (
     <>
       <h2 id="module-2">Module 2 – CSA Standards Relevant to Tower Cranes</h2>
       <p className="text-sm text-muted-foreground">Published by: CSA Group</p>
       <p>
-        Canadian Standards Association (CSA) standards form the technical foundation of crane safety in Canada. In British Columbia,
-        specific CSA standards are incorporated by reference into the Occupational Health and Safety Regulation (OHSR), thereby giving
-        them enforceable legal authority. Tower crane operators must understand that compliance with CSA standards is not optional
-        guidance but, where adopted by regulation, a statutory obligation.
+        <strong>CSA standards</strong> form the technical foundation of crane safety in Canada. In BC, adopted CSA standards gain{" "}
+        <em>enforceable legal authority</em> through the OHSR—compliance is statutory where referenced. Situate Z248 alongside{" "}
+        <Link
+          href={"/tower-cranes/operator-training-program/regulatory-standards#section-1" as never}
+          className="font-medium text-primary no-underline hover:underline"
+        >
+          Module 1 – BC legislative framework
+        </Link>
+        , international reference in{" "}
+        <Link
+          href={"/tower-cranes/operator-training-program/regulatory-standards#module-3" as never}
+          className="text-primary no-underline hover:underline"
+        >
+          Module 3 – ASME
+        </Link>
+        , and the broader{" "}
+        <Link href="/standards" className="text-primary no-underline hover:underline">
+          site standards library
+        </Link>
+        .
       </p>
 
       <h3>Primary Standard: CSA Z248 – Code for Tower Cranes</h3>
       <p>
-        CSA Z248 establishes the national technical code governing tower crane design, erection, inspection, testing, operation, and
-        maintenance in Canada. It provides the engineering and operational framework supporting enforcement under OHSR Part 14.
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink> establishes the national technical code governing tower crane
+        design, erection, inspection, testing, operation, and maintenance in Canada. It provides the engineering and operational framework
+        supporting enforcement under OHSR Part 14. Publisher:{" "}
+        <ExternalLink href={AUTHORITY_URLS.csaGroup}>CSA Group</ExternalLink>.
       </p>
 
       <h4>Design Requirements</h4>
@@ -86,7 +107,10 @@ export function Module2CsaStandards() {
         <li>Wire rope inspection and replacement criteria</li>
         <li>Documentation of corrective actions</li>
       </ul>
-      <p>Maintenance records form part of the compliance documentation subject to inspection by WorkSafeBC.</p>
+      <p>
+        Maintenance records form part of the compliance documentation subject to inspection by{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>.
+      </p>
 
       <h3>CSA Z150 – Safety Code on Mobile Cranes</h3>
       <p>
@@ -143,7 +167,8 @@ export function Module2CsaStandards() {
         <li>Documentation compliance and retention expectations</li>
       </ul>
       <p>
-        Enforcement authority rests with WorkSafeBC, while certification oversight is supported by BC Crane Safety. Operators must
+        Enforcement authority rests with <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>, while certification oversight is
+        supported by <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink>. Operators must
         recognize that CSA compliance forms part of the evidentiary record in inspections and incident investigations.
       </p>
       <p>Upon completion of Module 2, candidates will be able to interpret CSA provisions as enforceable operational obligations within British Columbia.</p>

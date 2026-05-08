@@ -4,6 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {SectionLoadCharts} from "@/components/tower-operator-training/section-load-charts";
 import {TrainingSectionNav} from "@/components/tower-operator-training/training-section-nav";
@@ -35,7 +36,7 @@ export default async function LoadChartsTrainingPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-7xl">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd data={buildTechArticleSchema({headline: title, description, url: pageUrl, locale, keywords: ["load chart", "capacity", "moment"]})} />
       <JsonLd data={buildWebPageSchema({name: title, description, url: pageUrl, locale, breadcrumb})} />
@@ -71,9 +72,11 @@ export default async function LoadChartsTrainingPage() {
         </p>
       </header>
 
+      <TrainingArticleLayout>
       <TrainingProse>
         <SectionLoadCharts />
       </TrainingProse>
+      </TrainingArticleLayout>
 
       <TrainingSectionNav current="/tower-cranes/operator-training-program/load-charts-capacity" />
     </article>

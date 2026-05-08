@@ -1,9 +1,30 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section9Module91Overswing() {
   return (
     <>
       <h2 id="section-9">Section 9 – Airspace, Property &amp; Infrastructure Regulation</h2>
       <p>
-        <strong>Regulatory authorities referenced:</strong> WorkSafeBC, BC Crane Safety, Transport Canada, Technical Safety BC, TransLink.
+        <strong>Regulatory authorities referenced:</strong>{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.technicalSafetyBc}>Technical Safety BC</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink>. This section
+        chains to{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="font-medium text-primary no-underline hover:underline">
+          Section 8 – Overlap &amp; right of way
+        </Link>
+        , urban practice in{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        , and BC statute context in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="text-primary no-underline hover:underline">
+          Section 1 – Regulatory framework
+        </Link>
+        .
       </p>
 
       <h3 id="module-9-1">Module 9.1 – Overswing &amp; Airspace Over Property</h3>
@@ -26,12 +47,14 @@ export function Section9Module91Overswing() {
       <h4>British Columbia Context</h4>
       <p>In British Columbia, overswing is addressed through occupational safety law, civil liability, and municipal permitting.</p>
       <p>
-        <strong>Workplace safety:</strong> WorkSafeBC regulates crane safety under the OHSR. While OHSR focuses on worker safety rather than
+        <strong>Workplace safety:</strong> <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> regulates crane safety under the
+        OHSR. While OHSR focuses on worker safety rather than
         property law, it requires that crane operations not create undue risk to workers or the public. Uncontrolled overswing risk may
         trigger compliance action.
       </p>
       <p>
-        <strong>Professional oversight:</strong> BC Crane Safety requires proper planning documentation, including engineered site drawings
+        <strong>Professional oversight:</strong> <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink> requires proper planning
+        documentation, including engineered site drawings
         identifying swing radius, adjacent properties, and infrastructure conflicts.
       </p>
       <p>
@@ -76,15 +99,18 @@ export function Section9Module91Overswing() {
 
       <h4>Infrastructure &amp; Public Authority Considerations</h4>
       <p>
-        <strong>Rail &amp; transit:</strong> Near SkyTrain or bus exchanges, TransLink coordination is typically required—hoarding, travel
+        <strong>Rail &amp; transit:</strong> Near SkyTrain or bus exchanges,{" "}
+        <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink> coordination is typically required—hoarding, travel
         restrictions, scheduled lift windows.
       </p>
       <p>
-        <strong>Navigable airspace:</strong> Substantial elevations may require Transport Canada notification—lighting, marking, height
+        <strong>Navigable airspace:</strong> Substantial elevations may require{" "}
+        <ExternalLink href={AUTHORITY_URLS.transportCanada}>Transport Canada</ExternalLink> notification—lighting, marking, height
         reporting.
       </p>
       <p>
-        <strong>Electrical &amp; technical:</strong> Intersection with regulated utilities may require Technical Safety BC consultation for
+        <strong>Electrical &amp; technical:</strong> Intersection with regulated utilities may require{" "}
+        <ExternalLink href={AUTHORITY_URLS.technicalSafetyBc}>Technical Safety BC</ExternalLink> consultation for
         clearance zones.
       </p>
       <p>Failure to coordinate has produced penalties, service disruption claims, and reputational damage.</p>

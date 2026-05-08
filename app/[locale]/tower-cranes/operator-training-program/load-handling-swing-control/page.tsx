@@ -4,6 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {Section17LoadHandlingSwingControl} from "@/components/tower-operator-training/section-17-load-handling-swing-control";
 import {TrainingSectionNav} from "@/components/tower-operator-training/training-section-nav";
@@ -42,7 +43,7 @@ export default async function LoadHandlingSwingControlPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-7xl">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -79,9 +80,11 @@ export default async function LoadHandlingSwingControlPage() {
         )}
       </header>
 
+      <TrainingArticleLayout>
       <TrainingProse>
         <Section17LoadHandlingSwingControl />
       </TrainingProse>
+      </TrainingArticleLayout>
 
       <TrainingSectionNav current="/tower-cranes/operator-training-program/load-handling-swing-control" />
     </article>

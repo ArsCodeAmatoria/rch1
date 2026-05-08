@@ -1,3 +1,5 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section13SelfErectTowerCranes() {
   return (
     <>
@@ -5,10 +7,28 @@ export function Section13SelfErectTowerCranes() {
 
       <h3 id="section-13-definition">Definition</h3>
       <p>
-        Self-erecting tower cranes (SETCs) are hydraulically erected tower cranes designed to fold for highway transport and self-assemble on
-        site without the routine use of an assist crane. Unlike conventional hammerhead or luffing-jib cranes—which require external lifting
-        equipment to stack mast sections and install the slewing assembly—SETCs use integrated hydraulic cylinders to raise the mast and deploy
-        the jib from a horizontal transport configuration into a vertical working position.
+        <strong>Self-erecting tower cranes (SETCs)</strong> fold for transport and self-assemble on site—typically without a routine assist crane.
+        Unlike conventional machines that need external lifts to stack mast and install slew gear, SETCs use <em>integrated hydraulics</em> to raise
+        mast and deploy jib from transport configuration.
+      </p>
+      <p>
+        Relate SETCs to{" "}
+        <Link href="/tower-cranes/operator-training-program/remote-operation" className="font-medium text-primary no-underline hover:underline">
+          Section 12 – Remote operation
+        </Link>
+        , confined sites in{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        , BC rules in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="text-primary no-underline hover:underline">
+          Section 1 – Regulatory framework
+        </Link>
+        , and lighter-chart practice via{" "}
+        <Link href="/redtc/load-charts" className="font-semibold text-primary no-underline hover:underline">
+          REDTC load chart drills
+        </Link>
+        .
       </p>
       <p>
         This distinction is not merely mechanical; it represents a different engineering philosophy. Conventional tower cranes evolved primarily to

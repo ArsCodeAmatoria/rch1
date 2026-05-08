@@ -1,3 +1,5 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section17LoadHandlingSwingControl() {
   return (
     <>
@@ -5,10 +7,28 @@ export function Section17LoadHandlingSwingControl() {
 
       <h3 id="section-17-purpose">Purpose</h3>
       <p>
-        Tower cranes lift on flexible ropes—loads respond to gravity, inertia, wind, and structural elasticity. Height and radius amplify motion;
-        abrupt handling drives incidents. Skilled operation combines smooth control with physics literacy: pendulum motion, catching swing, walking
-        loads, bucket and deflection effects, center of gravity, dynamics, wind sail, and disciplined communication. Material aligns with{" "}
-        <cite>CSA Z248</cite> and <cite>ASME B30.3</cite> expectations for controlled lifting.
+        Tower cranes lift on <strong>flexible ropes</strong>—loads respond to gravity, inertia, wind, and elasticity. Height and radius amplify motion;
+        abrupt handling drives incidents. Skilled operation pairs smooth control with physics literacy (pendulum, walking loads, COG, dynamics,
+        wind sail, communication)—consistent with <cite>CSA Z248</cite> and <cite>ASME B30.3</cite>.
+      </p>
+      <p>
+        Reinforce math in{" "}
+        <Link href="/tower-cranes/operator-training-program/mathematics" className="font-medium text-primary no-underline hover:underline">
+          Section 2 – Mathematics
+        </Link>
+        , rigging geometry in{" "}
+        <Link href="/rigging" className="text-primary no-underline hover:underline">
+          rigging topics
+        </Link>
+        , site overlap in{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="text-primary no-underline hover:underline">
+          Section 8 – Overlap &amp; right of way
+        </Link>
+        , and signals/ground interface in{" "}
+        <Link href="/tower-cranes/operator-training-program/public-safety-traffic-emergency" className="text-primary no-underline hover:underline">
+          Section 18 – Public safety &amp; traffic
+        </Link>
+        .
       </p>
 
       <h3 id="module-17-1">Module 17.1 – Basic Load Dynamics</h3>

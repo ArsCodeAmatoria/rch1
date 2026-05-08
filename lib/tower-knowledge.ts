@@ -149,28 +149,45 @@ const topicsEn: TowerTopic[] = [
   {
     slug: "luffing-jib-cranes",
     title: "Luffing Jib Cranes",
-    summary: "Operational controls for luffing jib cranes in constrained and high-density urban construction environments.",
-    operationalContext: "Luffing motion management is critical where airspace conflicts, adjacent structures, and multiple crane operations are present.",
+    summary:
+      "Luffing-jib tower cranes change load radius by pivoting the jib, not by trolley travel alone—ideal for tight urban footprints, overswing limits, and complex airspace. Success depends on chart-correct luffing sequences, limit-respected jib arcs, and anti-collision systems that model luffing height and radius together with slewing.",
+    operationalContext:
+      "On constrained sites the luffing crane trades horizontal reach for vertical compactness: the jib can be raised to clear neighboring buildings, transit, or another crane’s envelope, then lowered for picks—each move shifts both moment and tip elevation. That coupling makes interference control harder than on a hammerhead: slew, luff, and sometimes hoist must stay inside the engineered study, zoning map, and manufacturer’s approved configuration (counterweight, jib insert, reeving).",
     keyControls: [
-      "Luffing range limits and anti-collision zones are verified each shift.",
-      "Overlapping crane envelopes require coordinated movement protocols.",
-      "Blind sectors require dedicated signal strategy and checkpoint controls."
+      "Operative capacity and radius come from the luffing chart for the exact in-service configuration—never assume a hammerhead or outdated chart family.",
+      "Minimum and maximum luffing angles, two-block protection limits, and emergency-stop behavior must match the stamped lift plan and manufacturer limits; limit switches are not advisory.",
+      "Anti-collision / zoning must include luffing motion (tip path and height), not only slew and trolley; update profiles after climbing, jib changes, or tie-in moves.",
+      "Wind and out-of-service weathervane rules are configuration-specific; parked jib attitude must satisfy manufacturer and site storm plan.",
+      "Blind luffing or congested picks require positive radio discipline, agreed hold points, and a single signal authority.",
+      "Neighboring trades, hoists, or public corridors under changing radius need re-briefed exclusion and overswing agreements when the jib arc changes materially."
     ],
     procedureSteps: [
-      "Review luffing envelope against adjacent structures and crane interference maps.",
-      "Confirm anti-collision system status and active zoning profiles.",
-      "Sequence luffing and slewing movement using controlled command cadence.",
-      "Execute hold points before passing interference thresholds.",
-      "Capture deviations and controller interventions in operations log."
+      "Confirm active chart booklet: jib length, counterweight package, reeving, rope falls, and any regional chart addendum match the physical crane and posted configuration.",
+      "Plot the planned luffing arc against structure, hoist line, and load path; compare to the latest interference drawing—note any sector where luffing lowers the tip into another crane’s space.",
+      "Wake anti-collision / zoning: verify encoder references, forbidden sectors, and that luffing axes are enabled and match field geometry after any climb or jib change.",
+      "Walk limit checks pertinent to luffing: upper/lower boom limits, drum layers, two-block zones at extreme luff, and any cut-out that alters combined hoist/luff motion.",
+      "Execute luffing in smooth stages with agreed verbal calls at interference approach; hold before crossing engineered lines or when line-of-sight is lost.",
+      "After significant weather or shutdown, re-confirm wind speed, chart validity, and that parked jib complies with weathervane or storm pins per manual and site plan.",
+      "Log configuration changes, near-limit events, and any bypass or override with time, supervisor, and follow-up—enforcement and insurers increasingly expect traceable records."
     ],
-    inspectionFocus: ["Luffing mechanism", "Control response", "Anti-collision status"],
+    inspectionFocus: [
+      "Luffing winch, brake, and emergency lowering path; rope spooling, fleet angles, and discard criteria on luff ropes",
+      "Pivot / pendant pins, boom hinge, articulation clearances, and structural crack indicators per OEM intervals",
+      "Encoders, cable reels, or sensors that feed radius and boom angle to limits and anti-collision",
+      "Function test of combined motions used in production: hoist + luff, slew + luff near limits (without live overload)",
+      "Bolts and alignment on boom connection after jumps or boom extensions"
+    ],
     communicationProtocol: [
-      "Multi-crane coordination call signs are assigned before shift startup.",
-      "Movement through overlap zones requires explicit clearance confirmation."
+      "Assign crane call sign and luff-lead voice before picks that combine luff with slew near structures; read back hold and clear.",
+      "When two cranes share airspace, agree explicit priority and whether luff-up/luff-down is permitted while the other crane loads—no simultaneous conflicting envelope entry.",
+      "Signal team states planned jib attitude before each critical radius change; operator repeats and holds if ambiguity exists.",
+      "Radio failure or garbled handoff: stop motion, re-establish single control point, then resume—no coasting through overlap on momentum."
     ],
     coordinationRequirements: [
-      "Coordinate with neighboring crane teams and tower supervisors.",
-      "Maintain active communication with logistics and facade installation operations."
+      "Structural steel, facade, hoist cars, and tower mast: sequence luffing windows so swing arc changes do not surprise platform landings or mast climbers.",
+      "Integrate municipal or crane consultant overswing agreements when jib tip path changes elevation materially vs. the last permitted drawing.",
+      "Coordinate with lift director on picks where minimum radius is set by chart: luff-out combined with slew may be the only way to stay inside capacity—verify before committing hook.",
+      "For rail, transit, or energized corridors: re-validate clearance after any boom angle change that shifts the tip path over the corridor."
     ],
     standardsReferences: commonStandards,
     related: ["city-cranes", "communication-signals", "load-handling"]
@@ -294,13 +311,65 @@ const topicsEn: TowerTopic[] = [
   }
 ];
 
+/** Full French copy for topics where we publish complete translation (avoid stub “en préparation”). */
+const luffingTopicFr: TowerTopic = {
+  slug: "luffing-jib-cranes",
+  title: "Grues à flèche pivotante (luffing)",
+  summary:
+    "Les grues à tour à flèche pivotante modifient le rayon de levage en orientant la flèche, et non seulement en chariotant — adaptées aux emprises réduites, aux limites de survol et aux sites denses. La conformité repose sur les abaques luffing, les arcs de flèche autorisés et les anticollisions qui modélisent ensemble le levage, le rayon et la hauteur de pointe.",
+  operationalContext:
+    "Sur emprise étroite, la grue luffing échange du débattement horizontal contre un gabarit plus vertical : on peut remonter la flèche pour dégager des bâtiments voisins, le transit ou l’enveloppe d’une autre grue, puis la baisser pour approcher la charge — chaque mouvement modifie à la fois le moment et l’altitude du bout de flèche. Cette liaison impose une maîtrise des interférences plus exigeante que sur une grue à flèche horizontale : lacet, luffing et parfois levage doivent rester dans l’étude d’ingénierie, le profil de zonage et la configuration homologuée par le fabricant (contre-poids, flèche, réeving).",
+  keyControls: [
+    "Capacité et rayon : utiliser exclusivement l’abaque luffing correspondant à la configuration réellement en service — jamais un abaque type marteau ou une édition périmée.",
+    "Angles de flèche mini/maxi, protection anti-deux blocs et arrêts d’urgence : respecter le plan de levage approuvé et les limites constructeur ; les fins de course ne sont pas indicatives.",
+    "Anticollision / zonage : inclure le mouvement de luffing (trajectoire de pointe et hauteur), pas seulement lacet et chariot ; mettre à jour après saut, rallonge de flèche ou changement d’ancrage.",
+    "Règles vent et position tempête hors service : l’attitude de flèche au repos doit suivre fabricant et plan chantier.",
+    "Levée en angle mort ou en zone dense : radio structurée, jalons d’arrêt convenus et une seule autorité de signalisation.",
+    "Parties prenantes voisines : réviser zones d’exclusion et accords de survol quand l’arc de flèche change sensiblement."
+  ],
+  procedureSteps: [
+    "Valider la boîte à abaques : longueur de flèche, contre-poids, réeving, nombre de brins — et tout addendum régional conforme à la grue en place.",
+    "Tracer l’arc de luffing prévu vs. ouvrages, ligne de moufle et trajectoire de charge ; comparer au dernier plan d’interférences.",
+    "Réveiller anticollision / zonage : cotes codeurs, secteurs interdits, axes luffing actifs et cohérents après saut ou reconfiguration.",
+    "Tester les limites liées au luffing : butées bas/haut flèche, couches au tambour, zones deux blocs aux extrêmes, coupures hoist/luff.",
+    "Luffer par paliers avec appels convenus aux approches d’interférence ; arrêt avant ligne ingénierie ou perte de vue.",
+    "Après intempéries ou arrêt : revérifier vent, validité d’abaques et position de flèche (weathervane, consignes tempête).",
+    "Journaliser changements de configuration, approches de limite et tout contournement avec heure, responsable et suivi."
+  ],
+  inspectionFocus: [
+    "Treuil de luffing, frein et fil d’urgence ; spire, angle de passage et critères d’élimination des cordages de luffing",
+    "Axes pendantifs, fiche d’articulation, jeu et structure visible selon intervalle OEM",
+    "Codeurs, enrouleurs ou capteurs d’angle / rayon alimentant fins de course et anticollision",
+    "Essais de mouvements combinés utilisés en production près des limites (sans surcharge)",
+    "Boulons et alignement de raccord de flèche après saut ou extension"
+  ],
+  communicationProtocol: [
+    "Indicatif de grue et discipline radio avant levées combinant luffing et lacet près des ouvrages ; répétition des « hold » et « clear ».",
+    "En multi-grues : priorité et autorisation de luffer pendant chargement de l’autre — pas d’intrusion simultanée d’enveloppes.",
+    "L’équipe signale l’attitude de flèche prévue avant changements de rayon critiques ; l’opérateur répète et s’arrête en cas d’ambiguïté.",
+    "Perte radio : arrêt, reprise d’un point de commande unique, pas d’inertie à travers les zones de chevauchement."
+  ],
+  coordinationRequirements: [
+    "Structure, façade, monte-charges et monte-mat : fenêtres de luffing pour ne pas surprendre les accostages ou plates-formes.",
+    "Respect des accords municipal / consultant de survol si l’altitude de pointe évolue nettement vs. le dernier dossier.",
+    "Avec le chef de levage, valider les levées où le rayon minimum impose luff + lacet pour rester dans l’abaque.",
+    "Voies ferrées, traction ou lignes : revérifier après tout changement d’angle modifiant la trajectoire au-dessus du corridor."
+  ],
+  standardsReferences: commonStandards,
+  related: ["city-cranes", "communication-signals", "load-handling"]
+};
+
 export const towerKnowledge: Record<TowerLocale, TowerTopic[]> = {
   en: topicsEn,
-  fr: topicsEn.map((topic) => ({
-    ...topic,
-    title: `${topic.title} (FR)`,
-    summary: `Version francaise en preparation. ${topic.summary}`
-  }))
+  fr: topicsEn.map((topic) =>
+    topic.slug === "luffing-jib-cranes"
+      ? {...luffingTopicFr, title: `${luffingTopicFr.title} (FR)`}
+      : {
+          ...topic,
+          title: `${topic.title} (FR)`,
+          summary: `Version francaise en preparation. ${topic.summary}`
+        }
+  )
 };
 
 export function getTowerTopic(locale: TowerLocale, slug: string) {

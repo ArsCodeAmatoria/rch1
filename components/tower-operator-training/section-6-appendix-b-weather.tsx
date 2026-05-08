@@ -1,3 +1,5 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section6AppendixBWeather() {
   return (
     <>
@@ -5,11 +7,22 @@ export function Section6AppendixBWeather() {
       <h3>Step-by-Step Maintenance, Lubrication &amp; Weather Vane Procedures</h3>
       <p>
         <strong>Operator and Rigger Scope of Work.</strong> This appendix establishes a structured preventive maintenance and lubrication
-        program for tower cranes, including clear direction on weather vane (free slew) positioning during maintenance activities.
+        program for tower cranes, including <em>weather vane (free slew)</em> positioning during maintenance.
       </p>
       <p>
-        Guidance aligns with standards published by CSA Group under CSA Z248, harmonized with ASME B30.3, and enforced provincially by
-        WorkSafeBC.
+        Guidance aligns with CSA Z248 and ASME B30.3 under WorkSafeBC. Companion resources:{" "}
+        <Link href="/tower-cranes/operator-training-program/inspection-maintenance" className="font-medium text-primary no-underline hover:underline">
+          Section 6 – Inspection &amp; maintenance
+        </Link>
+        , wind and parked configuration in{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="text-primary no-underline hover:underline">
+          Section 3 – Load charts (wind limits)
+        </Link>
+        , and{" "}
+        <Link href="/tower-cranes/operator-training-program/climbing-procedures" className="text-primary no-underline hover:underline">
+          Section 5 – Climbing
+        </Link>{" "}
+        for exposed-height work.
       </p>
 
       <h4>1. Core Maintenance Principles</h4>

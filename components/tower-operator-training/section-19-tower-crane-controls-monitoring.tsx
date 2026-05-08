@@ -121,16 +121,35 @@ export function Section19TowerCraneControlsMonitoring() {
 
       <h3 id="section-19-final-thoughts">Final thoughts – Continuing your crane education</h3>
       <p>
-        Tower cranes combine mechanics, structures, rigging physics, regulation, site hazards, and teamwork. Safe operation is not only moving
-        material—it is continuous awareness of load behavior, geometry, weather, ground crews, and the public interface.
+        Tower cranes combine <strong>mechanics, structures, rigging physics, regulation</strong>, site hazards, and teamwork. Safe operation is
+        not only moving material—it is <em>continuous awareness</em> of load behavior, geometry, weather, ground crews, and the public
+        interface. Review related rigging context in our{" "}
+        <Link href="/rigging" className="font-medium text-primary no-underline hover:underline">
+          rigging section
+        </Link>{" "}
+        and the{" "}
+        <Link href="/tower-cranes" className="font-medium text-primary no-underline hover:underline">
+          tower cranes hub
+        </Link>
+        .
       </p>
       <p>
-        For exam preparation, this program aligns with themes commonly tested for trade certification. You can reinforce concepts with practice
-        questions and load-chart tools in{" "}
-        <Link href="/redtc" className="text-primary underline-offset-4 hover:underline">
-          REDTC
+        For exam preparation, this <Link href="/tower-cranes/operator-training-program" className="font-medium text-primary no-underline hover:underline">
+          operator training program
+        </Link>{" "}
+        aligns with themes commonly tested for trade certification. Reinforce concepts with{" "}
+        <Link href="/redtc/test" className="font-semibold text-primary no-underline hover:underline">
+          timed practice tests
         </Link>
-        , this site&rsquo;s study module for tower crane operators.
+        ,{" "}
+        <Link href="/redtc/load-charts" className="font-semibold text-primary no-underline hover:underline">
+          PDF load-chart quizzes
+        </Link>
+        , and the full{" "}
+        <Link href="/redtc" className="font-medium text-primary no-underline hover:underline">
+          REDTC study home
+        </Link>{" "}
+        on this site.
       </p>
       <p className="not-prose font-medium text-foreground">Lift with knowledge. Operate with discipline. Build with confidence.</p>
     </>

@@ -4,6 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {Section12RemoteOperation} from "@/components/tower-operator-training/section-12-remote-operation";
 import {TrainingSectionNav} from "@/components/tower-operator-training/training-section-nav";
@@ -35,7 +36,7 @@ export default async function RemoteOperationPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-7xl">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd data={buildTechArticleSchema({headline: `${title} | RCH1`, description, url: pageUrl, locale, keywords: ["remote crane", "OHSR"]})} />
       <JsonLd data={buildWebPageSchema({name: title, description, url: pageUrl, locale, breadcrumb})} />
@@ -54,9 +55,11 @@ export default async function RemoteOperationPage() {
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
 
+      <TrainingArticleLayout>
       <TrainingProse>
         <Section12RemoteOperation />
       </TrainingProse>
+      </TrainingArticleLayout>
 
       <TrainingSectionNav current="/tower-cranes/operator-training-program/remote-operation" />
     </article>

@@ -1,16 +1,33 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section8Modules8386() {
   return (
     <>
       <h3 id="module-8-3">Module 8.3 – Radio Communication Standards</h3>
       <p>
-        Clear, disciplined communication is a primary control measure in tower crane safety. In dense, multi-crane environments such as
-        Vancouver and Surrey, radio protocol is not informal practice—it is regulated operational infrastructure.
+        <strong>Clear, disciplined communication</strong> is a primary control in tower crane safety. In dense, multi-crane environments such as
+        Vancouver and Surrey, radio protocol is <em>regulated infrastructure</em>, not informal habit. See the opening modules in{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="font-medium text-primary no-underline hover:underline">
+          Section 8 – Overlap &amp; right of way
+        </Link>{" "}
+        for right-of-way context and{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="text-primary no-underline hover:underline">
+          Section 1 – OHSR &amp; standards alignment
+        </Link>
+        .
       </p>
       <p>In British Columbia, communication requirements are governed by:</p>
       <ul>
-        <li>WorkSafeBC – Occupational Health and Safety Regulation (OHSR), Part 14</li>
-        <li>BC Crane Safety</li>
-        <li>CSA Z248 – Code for Tower Cranes</li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> – Occupational Health and Safety Regulation (OHSR), Part 14
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248 – Code for Tower Cranes</ExternalLink>
+        </li>
       </ul>
       <p>
         Communication breakdown remains one of the most frequently identified contributing factors in crane incidents internationally. For
@@ -36,7 +53,8 @@ export function Section8Modules8386() {
       <p>In British Columbia, tower crane communication cannot operate on arbitrary site frequencies.</p>
       <p>
         <strong>Under OHSR 14.49:</strong> The two-way radio system used to direct crane movement must operate on a frequency and
-        transmitter power assigned and coordinated by WorkSafeBC or a person acceptable to the Board.
+        transmitter power assigned and coordinated by <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> or a person acceptable to the
+        Board.
       </p>
       <ul>
         <li>Multi-channel radios are not permitted for directing crane movement.</li>
@@ -44,14 +62,19 @@ export function Section8Modules8386() {
       </ul>
 
       <h4>Radio Frequency Coordination Application</h4>
-      <p>Before crane operations begin, the employer must submit a Radio Frequency Coordination Request to WorkSafeBC.</p>
+      <p>
+        Before crane operations begin, the employer must submit a Radio Frequency Coordination Request to{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>.
+      </p>
       <p>This application is required:</p>
       <ul>
         <li>When cranes will operate longer than one week.</li>
         <li>When assigned radio frequencies change.</li>
         <li>When multiple cranes require coordinated channel control.</li>
       </ul>
-      <p>WorkSafeBC assigns:</p>
+      <p>
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> assigns:
+      </p>
       <ul>
         <li>The specific operating frequency</li>
         <li>Permitted transmitter power</li>
@@ -148,7 +171,8 @@ export function Section8Modules8386() {
 
       <h4>Operational Philosophy</h4>
       <p>
-        Crane communication is structured command protocol governed by regulation. Dedicated WorkSafeBC-coordinated channels,
+        Crane communication is structured command protocol governed by regulation. Dedicated{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>-coordinated channels,
         foot-operated transmission, and disciplined call structure convert shared airspace into a managed operating system. Where
         communication degrades, risk increases; where communication stops, motion stops. Precision of language equals precision of
         movement.
@@ -159,14 +183,20 @@ export function Section8Modules8386() {
         Hand signals remain a legally recognized and operationally critical method of crane control—even where radio is primary—during
         structural steel erection, precast placement, initial rigging, blind picks with spotters, and radio failure.
       </p>
-      <p>In British Columbia, signal practices are informed by CSA Z248, ASME B30 signal standards, and WorkSafeBC OHSR Part 14.</p>
+      <p>
+        In British Columbia, signal practices are informed by{" "}
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.asmeOrg}>ASME B30</ExternalLink> signal standards, and{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> OHSR Part 14.
+      </p>
 
       <h4>Regulatory Clarification – Are Signals &ldquo;Mandatory&rdquo;?</h4>
       <p>OHSR requires signals be clear and understood; a designated signal person when the operator cannot clearly see the load; only one signaler for directional commands at a time; anyone may give a stop signal.</p>
       <p>
         The regulation does not prescribe a single mandatory national signal chart for all cases. The requirement is:{" "}
-        <strong>the signal system used must be understood and agreed upon by the operator and signaler before work begins.</strong> CSA Z248
-        and ASME B30 provide standardized charts representing best practice. Field-modified signals are permitted if pre-established,
+        <strong>the signal system used must be understood and agreed upon by the operator and signaler before work begins.</strong>{" "}
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink> and <ExternalLink href={AUTHORITY_URLS.asmeOrg}>ASME B30</ExternalLink>{" "}
+        provide standardized charts representing best practice. Field-modified signals are permitted if pre-established,
         communicated, and clearly understood. <strong>The legal obligation is clarity—not uniformity for its own sake.</strong>
       </p>
 
@@ -253,7 +283,8 @@ export function Section8Modules8386() {
       <h4>Historical Context</h4>
       <p>
         Standardized radio protocol accelerated after major incidents in dense cities in the 1970s–1980s (OSHA in the U.S.; coordinated
-        multi-crane operations in Europe). CSA Z248 formalized designated signalers, clear communication, and operational control. BC
+        multi-crane operations in Europe). <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink> formalized designated signalers, clear
+        communication, and operational control. BC
         integrated these into field expectation; CSA portions become enforceable when referenced by regulation or contract.
       </p>
 
@@ -298,7 +329,9 @@ export function Section8Modules8386() {
         Many incidents were coordination failures—two competent operators acting without structured priority rules.
       </p>
       <p>
-        CSA Z248 and WorkSafeBC emphasize formal coordination and documented sign-offs when equipment interference is possible. OHSR
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink> and{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> emphasize formal coordination and documented sign-offs when equipment
+        interference is possible. OHSR
         requires coordination where multiple employers&apos; activities overlap—providing the legal basis for sign-offs.
       </p>
 
@@ -339,8 +372,9 @@ export function Section8Modules8386() {
 
       <h4>SkyTrain or Transit-Adjacent Work</h4>
       <p>
-        In the Lower Mainland, crane work often occurs near TransLink elevated corridors: public safety, electrified systems, clearance
-        restrictions. Coordination may involve TransLink engineering or operations. Documentation may include restricted swing zones,
+        In the Lower Mainland, crane work often occurs near{" "}
+        <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink> elevated corridors: public safety, electrified systems, clearance
+        restrictions. Coordination may involve <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink> engineering or operations. Documentation may include restricted swing zones,
         engineered slew or tie-back limits, defined lift windows (often off-peak), and TOH (Track Occupancy Hold) authorization where
         required. Similar protocols exist internationally for rail-adjacent crane work.
       </p>

@@ -1,3 +1,6 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section16TowerCraneBasesFoundations() {
   return (
     <>
@@ -5,10 +8,30 @@ export function Section16TowerCraneBasesFoundations() {
 
       <h3 id="section-16-purpose">Purpose</h3>
       <p>
-        The base transfers vertical loads, horizontal forces, and overturning moments from the crane into ground or building structure. As height
-        grows, base reactions grow—foundation failure has caused catastrophic collapses independent of hoist or rope condition. Bases are
-        engineer-designed; in Canada CSA Z248 governs; BC compliance involves WorkSafeBC and BC Crane Safety. Configurations include reinforced
-        concrete foundations, rail-mounted systems, and structural steel or building-integrated supports—each matched to site and crane.
+        The <strong>base</strong> transfers vertical loads, horizontal forces, and overturning moments into ground or structure. As height grows,
+        reactions grow—<em>foundation failure</em> has collapsed cranes independent of hoist or rope. Engineering,{" "}
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink>, and BC enforcement (
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink>) frame design and inspection.
+      </p>
+      <p>
+        Link reactions to{" "}
+        <Link href="/tower-cranes/operator-training-program/climbing-procedures" className="font-medium text-primary no-underline hover:underline">
+          Section 5 – Climbing (jumping)
+        </Link>
+        , chart stability lines in{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="text-primary no-underline hover:underline">
+          Section 3 – Load charts
+        </Link>
+        , overlap loads in{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="text-primary no-underline hover:underline">
+          Section 8 – Overlap
+        </Link>
+        , and statics review in{" "}
+        <Link href="/tower-cranes/operator-training-program/mathematics" className="text-primary no-underline hover:underline">
+          Section 2 – Mathematics
+        </Link>
+        .
       </p>
 
       <h3 id="module-16-1">Module 16.1 – Historical Development of Crane Foundations</h3>
@@ -25,7 +48,10 @@ export function Section16TowerCraneBasesFoundations() {
         <li>David V. MacCollum, <cite>Construction Safety Engineering Principles</cite> (McGraw-Hill).</li>
         <li>Keith Haddock, <cite>Giant Earthmovers: An Illustrated History</cite> (MBI Publishing).</li>
         <li>Frank R. Spellman, <cite>Handbook of Construction Safety and Health</cite> (CRC Press).</li>
-        <li>WorkSafeBC OHSR Part 14; BC Crane Safety documentation.</li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> OHSR Part 14;{" "}
+          <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink> documentation.
+        </li>
       </ul>
 
       <h3 id="module-16-2">Module 16.2 – Forces Acting on a Tower Crane Base</h3>

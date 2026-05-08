@@ -4,6 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {Module1BcFramework} from "@/components/tower-operator-training/regulatory/module-1-bc";
 import {Module2CsaStandards} from "@/components/tower-operator-training/regulatory/module-2-csa";
@@ -36,7 +37,7 @@ export default async function RegulatoryStandardsTrainingPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-7xl">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -73,12 +74,13 @@ export default async function RegulatoryStandardsTrainingPage() {
         )}
       </header>
 
+      <TrainingArticleLayout>
       <TrainingProse>
-        <h2 id="section-1">Section 1 – Regulatory and Standards Framework</h2>
         <Module1BcFramework />
         <Module2CsaStandards />
         <Module3AsmeStandards />
       </TrainingProse>
+      </TrainingArticleLayout>
 
       <TrainingSectionNav current="/tower-cranes/operator-training-program/regulatory-standards" />
     </article>

@@ -11,7 +11,11 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  /** Serve load-chart PDFs from public/load-charts/ at /redtc/chart-pdf/* so links stay under REDTC. */
+  async rewrites() {
+    return [{source: "/redtc/chart-pdf/:file", destination: "/load-charts/:file"}];
+  }
 };
 
 export default withPWA(withNextIntl(nextConfig));

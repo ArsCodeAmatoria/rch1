@@ -1,3 +1,5 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section15TestBlocksLoadTesting() {
   return (
     <>
@@ -5,9 +7,28 @@ export function Section15TestBlocksLoadTesting() {
 
       <h3 id="section-15-purpose">Purpose</h3>
       <p>
-        Test blocks and kicker weights verify structural integrity and safety systems—hoist, LMI, overload protection, brakes, limits—under
-        controlled loading. Commissioning, major repair, and calibration depend on known weights. Practice draws on ASME B30.3, CSA Z248, and
-        in BC enforcement through WorkSafeBC with certification coordination by BC Crane Safety.
+        <strong>Test blocks and kickers</strong> verify integrity and safety systems—hoist, LMI, overload protection, brakes, limits—under
+        <em>controlled</em> loading. Commissioning, major repair, and calibration depend on known weights (ASME B30.3, CSA Z248; BC via
+        WorkSafeBC and BC Crane Safety).
+      </p>
+      <p>
+        Connect testing to{" "}
+        <Link href="/tower-cranes/operator-training-program/hoist-systems-wire-rope" className="font-medium text-primary no-underline hover:underline">
+          Section 14 – Hoist &amp; wire rope
+        </Link>
+        ,{" "}
+        <Link href="/tower-cranes/operator-training-program/tower-crane-controls-monitoring" className="text-primary no-underline hover:underline">
+          Section 19 – Controls &amp; LMI
+        </Link>
+        , regulatory tables in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="text-primary no-underline hover:underline">
+          Section 1 – Regulatory framework
+        </Link>
+        , and documentation habits in{" "}
+        <Link href="/tower-cranes/operator-training-program/inspection-maintenance" className="text-primary no-underline hover:underline">
+          Section 6 – Inspection &amp; maintenance
+        </Link>
+        .
       </p>
 
       <h3 id="module-15-1">Module 15.1 – Historical Development of Crane Load Testing</h3>

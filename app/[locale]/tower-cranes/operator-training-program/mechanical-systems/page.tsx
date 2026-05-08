@@ -4,6 +4,7 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {Module5HoistSystem} from "@/components/tower-operator-training/mechanical/module-5-hoist";
 import {Module6SlewSystem} from "@/components/tower-operator-training/mechanical/module-6-slew";
@@ -37,7 +38,7 @@ export default async function MechanicalSystemsTrainingPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 2xl:max-w-7xl">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd data={buildTechArticleSchema({headline: `${title} | Tower Crane Training`, description, url: pageUrl, locale, keywords: ["hoist", "slew", "luffing"]})} />
       <JsonLd data={buildWebPageSchema({name: title, description, url: pageUrl, locale, breadcrumb})} />
@@ -66,6 +67,7 @@ export default async function MechanicalSystemsTrainingPage() {
         )}
       </header>
 
+      <TrainingArticleLayout>
       <TrainingProse>
         <h2 id="section-4">Section 4 – Mechanical Systems</h2>
         <p>
@@ -77,6 +79,7 @@ export default async function MechanicalSystemsTrainingPage() {
         <Module7LuffingMechanism />
         <AppendixVfdExplained />
       </TrainingProse>
+      </TrainingArticleLayout>
 
       <TrainingSectionNav current="/tower-cranes/operator-training-program/mechanical-systems" />
     </article>

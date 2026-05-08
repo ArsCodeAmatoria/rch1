@@ -1,12 +1,31 @@
+import {Link} from "@/i18n/navigation";
+
 export function Module7LuffingMechanism() {
   return (
     <>
       <h2 id="module-7">Module 7 – Luffing Mechanism</h2>
       <p>
-        The luffing mechanism controls the vertical angle of the jib, allowing the operator to raise or lower the boom to vary working
-        radius without altering tower height. Unlike hammerhead cranes, where radius changes by trolley travel alone, a luffing crane
-        adjusts its reach through geometric movement of the entire jib structure. This capability makes luffing cranes indispensable in
-        dense urban environments where airspace is restricted and oversailing adjacent properties must be minimized.
+        The <strong>luffing mechanism</strong> sets jib angle to change radius without trolley travel alone—geometry moves the whole jib. That matters
+        in <em>dense urban airspace</em> where oversail must be minimized.
+      </p>
+      <p>
+        Connect luffing charts and angles to{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="font-medium text-primary no-underline hover:underline">
+          Section 3 – Load charts &amp; capacity
+        </Link>
+        , BC urban practice in{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        , property/airspace rules in{" "}
+        <Link href="/tower-cranes/operator-training-program/airspace-property-infrastructure" className="text-primary no-underline hover:underline">
+          Section 9 – Airspace &amp; infrastructure
+        </Link>
+        , and trigonometry refresh in{" "}
+        <Link href="/tower-cranes/operator-training-program/mathematics" className="text-primary no-underline hover:underline">
+          Section 2 – Mathematics
+        </Link>
+        .
       </p>
       <p>
         Historically, variable-angle booms appeared in maritime derricks and early dockside cranes of the nineteenth century. As cities

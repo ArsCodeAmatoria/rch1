@@ -1,17 +1,36 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section6InspectionCore() {
   return (
     <>
       <h2 id="section-6">Section 6 – Inspection &amp; Maintenance</h2>
       <p>
-        The modern tower crane is not simply a machine of steel and wire; it is a regulated system governed by engineering ethics,
-        legal obligation, and historical lessons written in accident reports. Inspection and maintenance standards evolved not from theory
-        alone but from structural failures, collapses, and hard-earned reforms across Europe and North America.
+        The modern tower crane is not only steel and wire—it is a <strong>regulated system</strong> governed by engineering ethics, legal
+        obligation, and lessons written in accident reports. Inspection and maintenance standards evolved from structural failures, collapses,
+        and reforms across Europe and North America.
       </p>
       <p>
-        The foundational Canadian reference for tower cranes is CSA Group, publisher of CSA Z248, Code for Tower Cranes. In the United
-        States, parallel guidance is provided under ASME standards, particularly ASME B30.3 within the B30 series. In British Columbia,
-        regulatory enforcement falls under WorkSafeBC, whose Occupational Health and Safety Regulation integrates and enforces CSA
-        requirements.
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink> and{" "}
+        <ExternalLink href={AUTHORITY_URLS.asmeB303TowerCranes}>ASME B30.3</ExternalLink> frame Canadian and parallel U.S. practice; in BC,{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> enforces OHSR integration. Link maintenance
+        discipline to{" "}
+        <Link href="/tower-cranes/operator-training-program/mechanical-systems" className="font-medium text-primary no-underline hover:underline">
+          Section 4 – Mechanical systems
+        </Link>
+        , rope and hoist detail in{" "}
+        <Link href="/tower-cranes/operator-training-program/hoist-systems-wire-rope" className="text-primary no-underline hover:underline">
+          Section 14 – Hoist &amp; wire rope
+        </Link>
+        , climbing wear in{" "}
+        <Link href="/tower-cranes/operator-training-program/climbing-procedures" className="text-primary no-underline hover:underline">
+          Section 5 – Climbing
+        </Link>
+        , and statutory context in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="text-primary no-underline hover:underline">
+          Section 1 – Regulatory framework
+        </Link>
+        .
       </p>
       <p>
         Historically, crane inspection protocols were minimal prior to the 1960s. As tower cranes proliferated in post-war
@@ -42,8 +61,9 @@ export function Section6InspectionCore() {
         <li>Wind conditions relative to operational limits</li>
       </ul>
       <p>
-        Under CSA Z248, the operator must not place a crane into service if a deficiency poses risk. In British Columbia, failure to
-        conduct or document this inspection may constitute a regulatory violation under WorkSafeBC enforcement.
+        Under <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink>, the operator must not place a crane into service if a
+        deficiency poses risk. In British Columbia, failure to conduct or document this inspection may constitute a regulatory violation under{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> enforcement.
       </p>
       <p>The philosophy is simple: the operator is the final barrier between minor defect and major incident.</p>
 
@@ -180,8 +200,10 @@ export function Section6InspectionCore() {
         stability, brake holding capability, limit switch functionality, and load chart accuracy.
       </p>
       <p>
-        In Canada, proof testing requirements follow CSA Z248, while U.S. equivalents reference ASME B30.3. In British Columbia,
-        documentation must be available upon inspection by WorkSafeBC officers.
+        In Canada, proof testing requirements follow{" "}
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248</ExternalLink>, while U.S. equivalents reference{" "}
+        <ExternalLink href={AUTHORITY_URLS.asmeB303TowerCranes}>ASME B30.3</ExternalLink>. In British Columbia, documentation must be available upon
+        inspection by <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> officers.
       </p>
 
       <h3>International and Canadian Context</h3>
@@ -193,7 +215,9 @@ export function Section6InspectionCore() {
       <p>Canada&apos;s regulatory approach emphasizes harmonization:</p>
       <ul>
         <li>CSA provides technical standards.</li>
-        <li>Provincial regulators such as WorkSafeBC enforce compliance.</li>
+        <li>
+          Provincial regulators such as <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> enforce compliance.
+        </li>
         <li>Engineers provide site-specific validation.</li>
         <li>Operators conduct daily oversight.</li>
       </ul>

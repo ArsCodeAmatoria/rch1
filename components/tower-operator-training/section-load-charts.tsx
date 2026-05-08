@@ -1,24 +1,41 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function SectionLoadCharts() {
   return (
     <>
       <h2 id="section-3">Section 3 – Load Charts and Capacity Interpretation</h2>
       <p>
-        Load charts are the authoritative operating limits of a tower crane. They are not advisory documents, nor are they approximate
-        guidelines. They are engineering instruments derived from structural analysis, stability modeling, controlled load testing,
-        and regulatory compliance requirements. In practice, a load chart represents the boundary between safe lifting and structural
-        failure.
+        Load charts are the <strong>authoritative operating limits</strong> of a tower crane—not approximate advice. They are engineering
+        instruments from structural analysis, stability modeling, load testing, and regulatory requirements. In practice, a load chart is
+        the boundary between <em>safe lifting</em> and structural failure.
       </p>
       <p>
-        Modern load charts exist because experience proved that informal judgment was insufficient. Throughout the late nineteenth and
-        early twentieth centuries, cranes were operated largely on empirical knowledge. As structures grew taller and loads heavier,
-        accidents exposed the limitations of experience alone. Engineering discipline replaced estimation. Rated capacity tables became
-        standardized, and regulatory bodies formalized marking and documentation requirements. Today, load charts are reinforced by
-        standards issued by the CSA Group and the American Society of Mechanical Engineers, embedding them within enforceable safety
-        codes.
+        Modern charts exist because informal judgment proved insufficient. As structures and loads grew, incidents showed the limits of
+        experience alone. Rated capacity tables and documentation rules were formalized; today they sit inside enforceable frameworks
+        described in our{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="font-medium text-primary no-underline hover:underline">
+          regulatory and standards overview (BC, CSA Z248, ASME B30.3)
+        </Link>{" "}
+        and the wider{" "}
+        <Link href="/standards" className="font-medium text-primary no-underline hover:underline">
+          standards hub
+        </Link>
+        . Official publications:{" "}
+        <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Z248 (CSA Group store)</ExternalLink>,{" "}
+        <ExternalLink href={AUTHORITY_URLS.asmeB303TowerCranes}>ASME B30.3 tower cranes (ASME)</ExternalLink>.
       </p>
       <p>
-        Understanding a load chart requires both mathematical literacy and mechanical comprehension. The operator must recognize not
-        only what the chart states, but why it states it.
+        Reading a chart well requires <strong>mathematical literacy</strong> and mechanical sense—moment, radius, and configuration logic
+        covered in{" "}
+        <Link href="/tower-cranes/operator-training-program/mathematics" className="font-medium text-primary no-underline hover:underline">
+          Section 2 – Mathematics for tower crane operators
+        </Link>
+        . You must know not only <em>what</em> the chart states, but <em>why</em>. For interactive chart quizzes on this site, use{" "}
+        <Link href="/redtc/load-charts" className="font-medium text-primary no-underline hover:underline">
+          REDTC PDF load chart practice
+        </Link>
+        .
       </p>
 
       <h3>The Governing Principle: Load Moment</h3>

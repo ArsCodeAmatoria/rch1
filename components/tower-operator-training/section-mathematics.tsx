@@ -1,23 +1,37 @@
+import {Link} from "@/i18n/navigation";
+
 export function SectionMathematics() {
   return (
     <>
       <h2 id="section-2">Section 2 – Mathematics for Tower Crane Operators</h2>
       <h3 id="module-4">Module 4 – Core Crane Mathematics</h3>
       <p>
-        A professional tower crane operator does not rely on instinct alone. You calculate. You verify. You understand why the machine
-        behaves the way it does. Mathematics is not abstract theory in this trade—it is stability, safety, structural integrity, and
-        professional judgment.
+        A professional operator does not rely on instinct alone: you <strong>calculate</strong>, you <strong>verify</strong>, you understand{" "}
+        <em>why</em> the machine behaves as it does. In this trade, math is not abstract—it is stability, safety, structural integrity, and
+        judgment.
       </p>
       <p>
-        Crane mathematics is rooted in principles that go back thousands of years. The ancient Greek mathematician Archimedes formalized
-        the law of the lever, stating that forces balance when their moments are equal. That same principle governs every modern tower
-        crane. When you read a load chart, you are applying the same mechanical laws first written in antiquity.
+        The law of the lever—<em>moments in balance</em>—governs every tower crane. When you read a{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="font-medium text-primary no-underline hover:underline">
+          load chart (Section 3)
+        </Link>
+        , you apply the same mechanical logic operators have used for generations, now embedded in CSA and ASME-based practice (
+        <Link href="/tower-cranes/operator-training-program/regulatory-standards" className="text-primary no-underline hover:underline">
+          regulatory framework
+        </Link>
+        ).
       </p>
       <p>
-        The industrial revolution refined these principles. By the late nineteenth and early twentieth centuries, engineers were
-        applying formalized statics, trigonometry, and material science to lifting machines. Today&apos;s tower cranes, governed by CSA
-        and international standards, still operate on those same mathematical foundations. The computer may assist you—but it does not
-        replace understanding.
+        Today&apos;s computers assist—but <strong>do not replace</strong> understanding. Those fundamentals feed directly into chart use,
+        rigging geometry, and site communication; see also{" "}
+        <Link href="/rigging" className="text-primary no-underline hover:underline">
+          rigging topics
+        </Link>{" "}
+        and{" "}
+        <Link href="/redtc/test" className="text-primary no-underline hover:underline">
+          REDTC practice questions
+        </Link>{" "}
+        for trade-style reinforcement.
       </p>
 
       <h4>Arithmetic Mastery</h4>

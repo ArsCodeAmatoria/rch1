@@ -1,24 +1,46 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section8OverlapRightOfWay() {
   return (
     <>
       <h2 id="section-8">Section 8 – Crane Overlap, Right of Way &amp; Communication Control</h2>
       <p>
-        Multi-crane environments are among the most complex challenges in tower crane work. In dense urban construction—Vancouver, Toronto,
-        New York, London—overlapping radii are the norm.
+        <strong>Multi-crane environments</strong> are among the most complex challenges in tower crane work. In dense urban construction—Vancouver,
+        Toronto, New York, London—overlapping radii are the <em>norm</em>, not the exception.
       </p>
       <p>
-        Early postwar European operations relied heavily on operator judgment and radio. As skylines intensified through the 1970s and
-        1980s, collision incidents increased, prompting formalized right-of-way rules, engineered overlap studies, and computerized
-        anti-collision systems. Today, overlap management is governed by codified safety requirements, not custom alone.
+        Early postwar operations relied on judgment and radio. Collision histories drove formal right-of-way rules, engineered overlap studies,
+        and anti-collision systems. Today overlap management is <strong>codified</strong>, not informal. Pair this section with{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="font-medium text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        ,{" "}
+        <Link href="/tower-cranes/operator-training-program/advanced-urban-compliance" className="text-primary no-underline hover:underline">
+          Section 11 – Advanced urban compliance
+        </Link>
+        , and BC duties in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-knowledge-requirements" className="text-primary no-underline hover:underline">
+          Section 10 – Regulatory knowledge
+        </Link>
+        .
       </p>
 
       <h3>Regulatory Alignment</h3>
       <p>Overlap and right-of-way protocols align with:</p>
       <ul>
-        <li>WorkSafeBC</li>
-        <li>BC Crane Safety</li>
-        <li>CSA Group – CSA Z248 Code for Tower Cranes</li>
-        <li>ASME B30.3 Tower Cranes</li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.csaZ248Product}>CSA Group – CSA Z248 Code for Tower Cranes</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink href={AUTHORITY_URLS.asmeB303TowerCranes}>ASME B30.3 Tower Cranes</ExternalLink>
+        </li>
       </ul>
       <p>
         In British Columbia, OHSR Part 14 requires employers to eliminate or control hazards from equipment interaction. Multi-crane overlap
@@ -103,8 +125,9 @@ export function Section8OverlapRightOfWay() {
 
       <h3 id="module-8-2">Module 8.2 – Crane Overlap Procedure (Step-by-Step)</h3>
       <p>
-        Multi-crane coordination in British Columbia is engineered, documented, and enforceable. Under WorkSafeBC and BC Crane Safety,
-        overlap is a predictable, controllable hazard. In Vancouver, Surrey, and other municipalities, engineered overlap studies are
+        Multi-crane coordination in British Columbia is engineered, documented, and enforceable. Under{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> and{" "}
+        <ExternalLink href={AUTHORITY_URLS.bcCraneSafety}>BC Crane Safety</ExternalLink>, overlap is a predictable, controllable hazard. In Vancouver, Surrey, and other municipalities, engineered overlap studies are
         reviewed during erection approval. The process below reflects industry practice aligned with CSA Z248 and OHSR Part 14.{" "}
         <strong>No step is discretionary.</strong>
       </p>
@@ -137,7 +160,7 @@ export function Section8OverlapRightOfWay() {
         <li>
           <strong>Issue written overlap agreement</strong> — Retained on site: engineered drawings, airspace diagrams, priority rules,
           communication protocol, emergency stop procedure, anti-collision configuration summary. Prime contractor ensures existence and
-          communication to affected parties. WorkSafeBC may request documentation.
+          communication to affected parties. <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> may request documentation.
         </li>
         <li>
           <strong>Obtain operator sign-off</strong> — Each operator reviews drawings, confirms priority rules and programmed limits, signs

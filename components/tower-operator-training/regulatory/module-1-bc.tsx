@@ -1,18 +1,36 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Module1BcFramework() {
   return (
     <>
-      <h2 id="module-1">Module 1 – British Columbia Legislative Framework</h2>
+      <h2 id="section-1">
+        Section 1 – Regulatory and Standards Framework — Module 1 – British Columbia Legislative Framework
+      </h2>
       <p>
-        Tower crane operations in British Columbia are governed by enforceable provincial legislation and regulation. Operators are not
-        merely equipment operators; they are certified tradespersons functioning within a statutory framework. Competence requires
-        mastery of both mechanical systems and regulatory obligations.
+        Tower crane operations in British Columbia sit under <strong>enforceable provincial law and regulation</strong>. Operators are not
+        merely machine drivers—they are <em>certified tradespersons</em> in a statutory system. Competence means both mechanical literacy
+        and regulatory discipline, developed further in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-knowledge-requirements" className="font-medium text-primary no-underline hover:underline">
+          Section 10 – Regulatory knowledge requirements (BC-specific)
+        </Link>{" "}
+        and practical systems knowledge in{" "}
+        <Link href="/tower-cranes/operator-training-program/mechanical-systems" className="text-primary no-underline hover:underline">
+          Section 4 – Mechanical systems
+        </Link>
+        . For code context beyond this program, see the{" "}
+        <Link href="/standards" className="text-primary no-underline hover:underline">
+          site standards overview
+        </Link>
+        .
       </p>
 
       <h3>1. Workers Compensation Act (British Columbia)</h3>
       <p>
         The Workers Compensation Act (British Columbia) establishes the legal authority for occupational health and safety enforcement
-        in the province. It empowers WorkSafeBC to create and enforce regulations, conduct inspections, investigate incidents, issue
-        compliance orders, impose administrative penalties, and suspend unsafe operations.
+        in the province. It empowers{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> to create and enforce regulations, conduct inspections,
+        investigate incidents, issue compliance orders, impose administrative penalties, and suspend unsafe operations.
       </p>
       <p>Under the Act:</p>
       <ul>
@@ -28,7 +46,8 @@ export function Module1BcFramework() {
       <h3>2. Occupational Health and Safety Regulation (OHSR)</h3>
       <p>
         The Occupational Health and Safety Regulation (OHSR) establishes enforceable technical requirements applicable to cranes and
-        hoisting operations.
+        hoisting operations. Consult the{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBcOhsRegulations}>current OHSR on WorkSafeBC</ExternalLink> for authoritative text.
       </p>
       <h4>Part 14 – Cranes and Hoists</h4>
       <p>Part 14 governs:</p>

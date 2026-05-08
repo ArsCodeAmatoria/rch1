@@ -1,3 +1,5 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section7UrbanOperations() {
   return (
     <>
@@ -5,10 +7,28 @@ export function Section7UrbanOperations() {
 
       <h3>7.1 Historical Development of Urban Tower Crane Operations</h3>
       <p>
-        Urban crane operations evolved in direct response to increasing building height, density, and public exposure. The modern tower
-        crane emerged in post–Second World War Europe, particularly in Germany and France, where rapid reconstruction required vertical
-        lifting systems capable of operating within narrow city blocks. By the 1960s and 1970s, high-rise construction in cities such as
-        New York, London, and Tokyo accelerated the refinement of tower crane design for dense environments.
+        <strong>Urban crane operations</strong> evolved with building height, density, and public exposure. The modern tower crane emerged in
+        post–Second World War Europe—vertical lifting within narrow blocks. By the 1960s–70s, high-rise construction in New York, London, and
+        Tokyo refined design for <em>dense environments</em>.
+      </p>
+      <p>
+        Overlaps, overswing, and multi-crane sites tie directly to{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="font-medium text-primary no-underline hover:underline">
+          Section 8 – Overlap &amp; right of way
+        </Link>
+        ,{" "}
+        <Link href="/tower-cranes/operator-training-program/airspace-property-infrastructure" className="text-primary no-underline hover:underline">
+          Section 9 – Airspace &amp; infrastructure
+        </Link>
+        , and{" "}
+        <Link href="/tower-cranes/operator-training-program/public-safety-traffic-emergency" className="text-primary no-underline hover:underline">
+          Section 18 – Public safety &amp; traffic
+        </Link>
+        ; chart discipline in{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="text-primary no-underline hover:underline">
+          Section 3 – Load charts
+        </Link>
+        .
       </p>
       <p>
         The luffing-jib crane became the preferred crane for restricted downtown sites because its variable jib angle allowed the operator

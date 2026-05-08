@@ -1,14 +1,36 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section9Module96SkytrainTransit() {
   return (
     <>
       <h3 id="module-9-6">Module 9.6 – SkyTrain &amp; Transit Infrastructure (Metro Vancouver)</h3>
       <p>
-        Urban rapid transit systems are among the most tightly controlled infrastructure corridors in modern cities. Elevated guideways,
-        automated trains, energized traction systems, and dense passenger volumes create a regulatory environment comparable to—and in some
-        respects stricter than—conventional railway systems.
+        <strong>Transit corridors</strong> (guideways, traction power, passengers) are among the most controlled interfaces for cranes. Link planning
+        to{" "}
+        <Link href="/tower-cranes/operator-training-program/public-safety-traffic-emergency" className="font-medium text-primary no-underline hover:underline">
+          Section 18 – Public safety &amp; traffic
+        </Link>
+        , rail concepts in{" "}
+        <Link
+          href={"/tower-cranes/operator-training-program/airspace-property-infrastructure#module-9-2" as never}
+          className="text-primary no-underline hover:underline"
+        >
+          Module 9.2 – Railway proximity
+        </Link>
+        , and metro urban density in{" "}
+        <Link href="/tower-cranes/operator-training-program/advanced-urban-compliance" className="text-primary no-underline hover:underline">
+          Section 11 – Advanced urban compliance
+        </Link>
+        .
       </p>
       <p>
-        In Metro Vancouver, transit infrastructure is governed by <strong>TransLink</strong>, which oversees the region&apos;s public transportation
+        Elevated guideways and energized traction create a regulatory environment comparable to—and sometimes stricter than—conventional freight
+        rail.
+      </p>
+      <p>
+        In Metro Vancouver, transit infrastructure is governed by{" "}
+        <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink>, which oversees the region&apos;s public transportation
         network, including the SkyTrain automated rapid transit system and the electric trolley bus <strong>Trolley Overhead (TOH)</strong> network.
       </p>
       <p>
@@ -21,11 +43,13 @@ export function Section9Module96SkytrainTransit() {
 
       <h4>Authority &amp; Oversight</h4>
       <p>
-        <strong>Primary authority:</strong> TransLink regulates construction encroachments, guideway protection, trolley overhead proximity,
+        <strong>Primary authority:</strong> <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink> regulates construction
+        encroachments, guideway protection, trolley overhead proximity,
         and operational coordination within its rights-of-way.
       </p>
       <p>
-        <strong>Additional oversight may involve:</strong> WorkSafeBC for occupational safety; municipal engineering for adjacent road and
+        <strong>Additional oversight may involve:</strong>{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> for occupational safety; municipal engineering for adjacent road and
         structural access.
       </p>
       <p>Transit authority approval is mandatory prior to crane erection, climbing, dismantling, or lifting within defined proximity zones.</p>
@@ -45,7 +69,8 @@ export function Section9Module96SkytrainTransit() {
         wires, feeder cables, span wires, poles, and guy systems—primarily in Vancouver and Burnaby within mixed traffic and pedestrian zones.
       </p>
       <p>
-        Where crane operations approach within <strong>three metres</strong> of any TOH component, coordination with TransLink&apos;s adjacent works
+        Where crane operations approach within <strong>three metres</strong> of any TOH component, coordination with{" "}
+        <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink>&apos;s adjacent works
         program is required. Entry within defined Limits of Approach requires an{" "}
         <strong>Independent Qualified Safety Watcher (IQSW)</strong>.
       </p>
@@ -72,7 +97,10 @@ export function Section9Module96SkytrainTransit() {
       <h4>Overswing Restrictions</h4>
       <p>
         No overswing of boom, jib, hoist line, or suspended load over SkyTrain infrastructure is permitted without{" "}
-        <strong>written authorization from TransLink</strong>. Approval typically requires an engineered lift plan, defined time window, assigned
+        <strong>
+          written authorization from <ExternalLink href={AUTHORITY_URLS.transLink}>TransLink</ExternalLink>
+        </strong>
+        . Approval typically requires an engineered lift plan, defined time window, assigned
         safety watchers or flaggers, and documented emergency protocol. Unauthorized overswing may bring immediate stop-work orders, penalties,
         and loss of crane privileges.
       </p>

@@ -1,10 +1,16 @@
+import {Link} from "@/i18n/navigation";
+
 export function AppendixVfdExplained() {
   return (
     <>
       <h2 id="appendix-vfd">Appendix – Understanding the VFD (Explained Simply)</h2>
       <p>
-        Before closing this section, it is worth pausing to understand one of the most important pieces of modern crane technology: the
-        Variable Frequency Drive, commonly called the VFD.
+        <strong>Variable Frequency Drives (VFDs)</strong> shape how modern hoist and slew motors ramp torque—this appendix explains them in plain
+        language. Technical hoist detail continues in{" "}
+        <Link href="/tower-cranes/operator-training-program/hoist-systems-wire-rope" className="font-medium text-primary no-underline hover:underline">
+          Section 14 – Hoist &amp; wire rope
+        </Link>{" "}
+        and <em>Module 5 – Hoist</em> above on the same page.
       </p>
 
       <h3>What Is a VFD?</h3>

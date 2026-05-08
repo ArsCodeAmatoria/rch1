@@ -1,3 +1,5 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section14HoistSystemsWireRope() {
   return (
     <>
@@ -5,15 +7,31 @@ export function Section14HoistSystemsWireRope() {
 
       <h3 id="section-14-purpose">Purpose</h3>
       <p>
-        This section gives tower crane operators technical understanding of hoist systems—drum mechanics, braking, wire rope design, inspection
-        criteria, and regulatory removal standards. The hoist carries the entire load and is among the most stressed and failure-critical
-        components; integrity of motor, drum, and rope ultimately controls every lift. Failure can cause catastrophic loss of load control.
+        This section gives operators technical understanding of <strong>hoist systems</strong>—drum mechanics, braking, wire rope design, inspection
+        criteria, and removal standards. The hoist carries the load; failure means <em>catastrophic loss of control</em>.
       </p>
       <p>
-        Operators must understand how the hoist functions, forces on the system, inspection requirements, and criteria for rope removal. Modern
-        hoists culminate millennia of lifting technology—from block-and-tackle and Hero of Alexandria&rsquo;s descriptions through steam winches
-        to electric hoists by the early 1900s. Gottlob Göbel&rsquo;s ~1910 self-assembling tower design helped establish electrically powered
-        tower cranes for high-rise work.
+        Relate hoists to the deeper mechanical narrative in{" "}
+        <Link href="/tower-cranes/operator-training-program/mechanical-systems" className="font-medium text-primary no-underline hover:underline">
+          Section 4 – Mechanical systems (hoist, slew, luffing, VFD appendix)
+        </Link>
+        , load-chart verification in{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="text-primary no-underline hover:underline">
+          Section 3 – Load charts &amp; capacity
+        </Link>
+        , inspection cadence in{" "}
+        <Link href="/tower-cranes/operator-training-program/inspection-maintenance" className="text-primary no-underline hover:underline">
+          Section 6 – Inspection &amp; maintenance
+        </Link>
+        , and chart drills in{" "}
+        <Link href="/redtc/load-charts" className="font-semibold text-primary no-underline hover:underline">
+          REDTC load chart practice
+        </Link>
+        .
+      </p>
+      <p>
+        Operators must understand forces, inspection requirements, and rope retirement criteria. Modern hoists culminate millennia of lifting
+        technology—from block-and-tackle through steam winches to early electric hoists and self-assembling tower concepts for high-rise work.
       </p>
 
       <h3 id="module-14-1">Module 14.1 – Hoist System Overview</h3>

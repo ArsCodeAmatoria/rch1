@@ -1,17 +1,31 @@
+import {Link} from "@/i18n/navigation";
+
 export function Module5HoistSystem() {
   return (
     <>
       <h2 id="module-5">Module 5 – Hoist System</h2>
       <p>
-        The hoist system is the primary load-handling mechanism of the tower crane. It converts electrical energy into controlled vertical
-        motion, transmitting torque through mechanical components to lift and lower suspended loads with precision and safety.
+        The <strong>hoist system</strong> is the primary load-handling mechanism—electrical energy becomes controlled vertical motion with precision and
+        braking redundancy.
       </p>
       <p>
-        Historically, hoisting mechanisms evolved from manually operated treadwheel cranes of the Roman era—devices described by Vitruvius
-        in De Architectura—to steam-driven winches in the nineteenth century, and eventually to fully electric hoist systems in the early
-        twentieth century. Modern tower crane hoist systems represent the culmination of this evolution: high-torque electric motors,
-        variable frequency drives (VFDs), redundant braking systems, and engineered wire rope assemblies operating under codified safety
-        standards such as CSA Z248 and ASME B30.3.
+        Continue into rope and drum detail in{" "}
+        <Link href="/tower-cranes/operator-training-program/hoist-systems-wire-rope" className="font-medium text-primary no-underline hover:underline">
+          Section 14 – Hoist systems &amp; wire rope
+        </Link>
+        , chart capacity checks in{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="text-primary no-underline hover:underline">
+          Section 3 – Load charts
+        </Link>
+        , and the{" "}
+        <Link
+          href={"/tower-cranes/operator-training-program/mechanical-systems#appendix-vfd" as never}
+          className="text-primary no-underline hover:underline"
+        >
+          VFD appendix
+        </Link>{" "}
+        for drive control context. Historically, hoists evolved from treadwheels to steam to modern electric systems with{" "}
+        <em>VFDs, redundant brakes, and engineered rope</em> under CSA Z248 and ASME B30.3.
       </p>
       <p>
         Understanding the hoist system requires not only mechanical literacy but also an appreciation for the engineering failures that

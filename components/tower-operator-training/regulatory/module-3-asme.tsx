@@ -1,16 +1,35 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Module3AsmeStandards() {
   return (
     <>
       <h2 id="module-3">Module 3 – ASME Standards (International Reference)</h2>
       <p className="text-sm text-muted-foreground">Published by: American Society of Mechanical Engineers</p>
       <p>
-        While CSA standards govern Canadian practice, ASME standards provide the principal United States reference framework. Operators
-        working in cross-border contexts must understand both systems.
+        <strong>CSA</strong> governs Canadian practice; <strong>ASME B30</strong> provides the principal U.S. reference. Operators in cross-border or OEM
+        documentation must understand <em>both</em> systems—compare{" "}
+        <Link
+          href={"/tower-cranes/operator-training-program/regulatory-standards#module-2" as never}
+          className="font-medium text-primary no-underline hover:underline"
+        >
+          Module 2 – CSA (above)
+        </Link>{" "}
+        and the{" "}
+        <Link href="/standards" className="text-primary no-underline hover:underline">
+          standards overview
+        </Link>
+        ; apply chart markings through{" "}
+        <Link href="/tower-cranes/operator-training-program/load-charts-capacity" className="text-primary no-underline hover:underline">
+          Section 3 – Load charts
+        </Link>
+        .
       </p>
 
       <h3>Primary Standard: ASME B30.3 – Tower Cranes</h3>
       <p>
-        ASME B30.3 establishes safety standards for tower cranes in the United States and in jurisdictions adopting ASME codes.
+        <ExternalLink href={AUTHORITY_URLS.asmeB303TowerCranes}>ASME B30.3 – Tower Cranes</ExternalLink> establishes safety standards in the U.S.
+        and in jurisdictions adopting ASME codes. Publisher hub: <ExternalLink href={AUTHORITY_URLS.asmeOrg}>ASME</ExternalLink>.
       </p>
       <h4>Coverage Includes:</h4>
       <ul>

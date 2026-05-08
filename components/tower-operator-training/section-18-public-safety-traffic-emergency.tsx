@@ -1,3 +1,6 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section18PublicSafetyTrafficEmergency() {
   return (
     <>
@@ -6,10 +9,31 @@ export function Section18PublicSafetyTrafficEmergency() {
 
       <h3 id="section-18-purpose">Purpose</h3>
       <p>
-        Urban lifts occur beside roads, sidewalks, transit, and occupied buildings. Suspended loads and swing zones demand traffic control,
+        <strong>Urban lifts</strong> occur beside roads, sidewalks, transit, and occupied buildings. Suspended loads and swing zones demand traffic control,
         pedestrian protection, exclusion buffers, municipal permits, and emergency readiness—including{" "}
         <strong>Dedicated Emergency Platform (DEP)</strong> rescue. Coordination involves operators, riggers, TCPs, supervision, municipalities,
-        and responders. Primary BC reference: WorkSafeBC <cite>OHSR Part 14 – Cranes and Hoists</cite> (current edition).
+        and responders. Primary BC reference: <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink>{" "}
+        <cite>OHSR Part 14 – Cranes and Hoists</cite> (see also the{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBcOhsRegulations}>searchable OHSR</ExternalLink>).
+      </p>
+      <p>
+        Connect planning with{" "}
+        <Link href="/tower-cranes/operator-training-program/urban-operations" className="font-medium text-primary no-underline hover:underline">
+          Section 7 – Urban operations
+        </Link>
+        ,{" "}
+        <Link href="/tower-cranes/operator-training-program/advanced-urban-compliance" className="text-primary no-underline hover:underline">
+          Section 11 – Advanced urban compliance
+        </Link>
+        , regulatory expectations in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-knowledge-requirements" className="text-primary no-underline hover:underline">
+          Section 10 – Regulatory knowledge
+        </Link>
+        , and site-wide themes in our{" "}
+        <Link href="/safety-program" className="text-primary no-underline hover:underline">
+          safety program library
+        </Link>
+        .
       </p>
 
       <h3 id="module-18-1">Module 18.1 – Tower Cranes in Urban Environments</h3>

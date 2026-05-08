@@ -1,16 +1,28 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section11UrbanCompliance() {
   return (
     <>
       <h2 id="section-11">Section 11 – Advanced Urban Compliance Integration</h2>
       <p>
-        Urban tower crane operations combine engineering design, operational discipline, and regulatory enforcement. In dense regions such as
-        the Lower Mainland, cranes are not isolated machines but components of a regulated urban system.
+        <strong>Urban tower crane operations</strong> unite engineering design, operational discipline, and enforcement. In the Lower Mainland, cranes
+        are not isolated—they are part of a <em>regulated urban system</em>.
       </p>
       <p>
-        Regulation intensified after high-profile collapses in North America and Europe in the late twentieth and early twenty-first
-        centuries—including 2008 New York City events and Canadian urban incidents—prompting stronger engineering review, anti-collision
-        formalization, and public protection planning. BC alignment integrates WorkSafeBC, BC Crane Safety, CSA Z248, and ASME B30. The urban
-        operator must work within a controlled compliance ecosystem—not only operate the crane mechanically.
+        High-profile collapses spurred stronger engineering review, anti-collision formalization, and public protection. BC integrates WorkSafeBC,
+        BC Crane Safety, CSA Z248, and ASME B30. Cross-link{" "}
+        <Link href="/tower-cranes/operator-training-program/overlap-right-of-way" className="font-medium text-primary no-underline hover:underline">
+          Section 8 – Overlap &amp; right of way
+        </Link>
+        ,{" "}
+        <Link href="/tower-cranes/operator-training-program/public-safety-traffic-emergency" className="text-primary no-underline hover:underline">
+          Section 18 – Public safety &amp; traffic
+        </Link>
+        , and documentation themes in{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-knowledge-requirements" className="text-primary no-underline hover:underline">
+          Section 10 – Regulatory knowledge
+        </Link>
+        .
       </p>
 
       <h3>Multi-crane high-rise coordination</h3>

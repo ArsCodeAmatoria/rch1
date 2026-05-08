@@ -1,22 +1,44 @@
+import {AUTHORITY_URLS, ExternalLink} from "@/components/tower-operator-training/external-link";
+import {Link} from "@/i18n/navigation";
+
 export function Section9Module95Electrical() {
   return (
     <>
       <h3 id="module-9-5">Module 9.5 – Electrical Hazards</h3>
       <p>
-        Overhead conductors share the work envelope with modern cranes. Early electrocutions from boom contact with live lines influenced
-        limits of approach and formal electrical hazard regulation. Internationally, Minimum Approach Distance (MAD) principles spread after
-        arc-flash and contact fatalities. In Canada, provincial regulators codified MAD; utilities such as BC Hydro provide clearance guidance.
+        <strong>Overhead electrical hazards</strong> share the crane envelope—<em>minimum approach distance (MAD)</em> rules exist because contact is
+        often lethal. Cross-train with{" "}
+        <Link href="/tower-cranes/operator-training-program/regulatory-knowledge-requirements" className="font-medium text-primary no-underline hover:underline">
+          Section 10 – Regulatory knowledge (electrical/OHSR)
+        </Link>
+        , pre-lift planning in{" "}
+        <Link href="/safety-program" className="text-primary no-underline hover:underline">
+          safety program topics
+        </Link>
+        , and site hazard threads in{" "}
+        <Link href="/knowledge" className="text-primary no-underline hover:underline">
+          knowledge library
+        </Link>
+        .
       </p>
       <p>
-        In British Columbia, electrical safety is regulated under the Safety Standards Act and OHSR. Technical Safety BC oversees electrical
-        legislation for high-voltage systems; WorkSafeBC enforces workplace compliance. Electricity is invisible, instantaneous, and lethal—no
+        Early electrocutions shaped MAD; provinces codified limits and utilities (e.g.,{" "}
+        <ExternalLink href={AUTHORITY_URLS.bcHydro}>BC Hydro</ExternalLink>) publish clearance guidance.
+      </p>
+      <p>
+        In British Columbia, electrical safety is regulated under the Safety Standards Act and OHSR.{" "}
+        <ExternalLink href={AUTHORITY_URLS.technicalSafetyBc}>Technical Safety BC</ExternalLink> oversees electrical legislation for high-voltage systems;{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> enforces workplace compliance. Electricity is invisible, instantaneous,
+        and lethal—no
         area is safe without verified planning and control.
       </p>
 
       <h4>Regulatory Authority</h4>
       <p>
-        Technical Safety BC administers provincial electrical safety; WorkSafeBC enforces minimum approach distances under{" "}
-        <strong>Part 19</strong> of the OHSR. Utility owners (BC Hydro, municipal providers) maintain independent clearance requirements
+        <ExternalLink href={AUTHORITY_URLS.technicalSafetyBc}>Technical Safety BC</ExternalLink> administers provincial electrical safety;{" "}
+        <ExternalLink href={AUTHORITY_URLS.workSafeBc}>WorkSafeBC</ExternalLink> enforces minimum approach distances under <strong>Part 19</strong> of the
+        OHSR. Utility owners (<ExternalLink href={AUTHORITY_URLS.bcHydro}>BC Hydro</ExternalLink>, municipal providers) maintain independent clearance
+        requirements
         coordinated before crane operation.
       </p>
 

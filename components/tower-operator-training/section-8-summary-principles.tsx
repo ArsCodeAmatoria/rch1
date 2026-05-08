@@ -1,10 +1,24 @@
+import {Link} from "@/i18n/navigation";
+
 export function Section8SummaryPrinciples() {
   return (
     <>
       <h2 id="section-8-summary">Summary – Right of Way &amp; Communication Principles</h2>
       <p>
-        Overlapping crane operations and equipment interference require clearly understood priority principles. While regulations may not list
-        every rule explicitly, industry standards—shaped by decades of incident investigation—have created widely accepted norms.
+        <strong>Overlapping crane operations</strong> require clearly understood priority principles. Industry standards—shaped by decades of
+        incident investigation—have created widely accepted norms beyond bare regulatory text. Continue to{" "}
+        <Link href="/tower-cranes/operator-training-program/load-handling-swing-control" className="font-medium text-primary no-underline hover:underline">
+          Section 17 – Load handling &amp; swing
+        </Link>
+        ,{" "}
+        <Link href="/tower-cranes/operator-training-program/tower-crane-controls-monitoring" className="text-primary no-underline hover:underline">
+          Section 19 – Controls &amp; monitoring
+        </Link>
+        , and signal/rigging context in{" "}
+        <Link href="/rigging" className="text-primary no-underline hover:underline">
+          rigging fundamentals
+        </Link>
+        .
       </p>
       <ul>
         <li>
