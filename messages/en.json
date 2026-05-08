@@ -1,0 +1,75 @@
+{
+  "navigation": {
+    "primaryNavigation": "Primary navigation",
+    "mobileNavigation": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Home",
+    "safetyProgram": "Safety Program",
+    "towerCranes": "Tower Cranes",
+    "rigging": "Rigging & Hoisting",
+    "hoisting": "Hoisting",
+    "standards": "Standards & Compliance",
+    "knowledge": "Knowledge Library",
+    "blog": "Technical Articles"
+  },
+  "buttons": {
+    "exploreSafetyProgram": "Explore Safety Program",
+    "viewTowerKnowledge": "View Tower Crane Knowledge",
+    "openKnowledgeLibrary": "Open complete knowledge library"
+  },
+  "common": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of",
+    "professionalScope": "Professional Scope",
+    "technicalHubs": "Technical Hubs"
+  },
+  "language": {
+    "switchToFrench": "Switch language to French",
+    "switchToEnglish": "Switch language to English"
+  },
+  "theme": {
+    "toggleTheme": "Toggle theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "lessonControls": {
+    "deckLabel": "Web lesson deck",
+    "noPages": "No lesson pages configured.",
+    "toggleFullscreen": "Toggle fullscreen"
+  },
+  "homepage": {
+    "badge": "RCH1 Safety Knowledge",
+    "headline": "Professional Crane & Construction Safety Programs",
+    "subheading": "Practical safety knowledge focused on field documentation, standards alignment, and procedures designed for real construction and lifting operations.",
+    "authorityTitle": "Authority Areas",
+    "knowledgeTitle": "Knowledge Showcase",
+    "overviewTitle": "Safety Program System Overview",
+    "overviewText1": "This site demonstrates professional safety systems, procedural controls, and field knowledge for crane and construction operations.",
+    "overviewText2": "It is structured as a technical reference environment that connects planning, execution, and compliance through practical documentation and clear workflows.",
+    "companyLinksTitle": "Company Links",
+    "companyLinksText": "Navigate core company knowledge areas and professional reference modules.",
+    "authorityCards": {
+      "towerTitle": "Tower Crane Operations",
+      "towerSummary": "Operational planning, pre-lift controls, communication protocol, and load path discipline for tower crane work.",
+      "riggingTitle": "Rigging & Hoisting",
+      "riggingSummary": "Engineered rigging methods, sling selection, critical lift sequencing, and controlled load movement.",
+      "docsTitle": "Safety Documentation",
+      "docsSummary": "Field-ready records for FLHA, SWP, inspections, permits, and verification workflows.",
+      "standardsTitle": "Standards & Compliance",
+      "standardsSummary": "Structured reference mapping for WorkSafeBC OHSR, CSA, ASME B30, and manufacturer requirements."
+    }
+  },
+  "headings": {
+    "safetyProgram": "Safety Program",
+    "towerCrane": "Tower Crane Knowledge",
+    "rigging": "Rigging & Hoisting Knowledge",
+    "standards": "Standards & Compliance"
+  },
+  "footer": {
+    "disclaimer": "References may include WorkSafeBC OHSR, CSA, ASME B30, EN standards, FEM, Technical Safety BC, and manufacturer requirements.",
+    "verification": "Employers must verify current regulatory requirements before execution. Manufacturer instructions and site-specific engineering requirements must always be followed."
+  }
+}
