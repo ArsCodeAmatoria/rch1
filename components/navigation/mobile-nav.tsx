@@ -15,10 +15,11 @@ export function MobileNav() {
   const t = useTranslations("navigation");
 
   return (
-    <div className="md:hidden">
+    <div className="xl:hidden">
       <Button
         size="icon"
         variant="outline"
+        className="border-white/30 bg-neutral-950 text-white hover:bg-neutral-900"
         aria-label={open ? t("closeMenu") : t("openMenu")}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
@@ -27,7 +28,7 @@ export function MobileNav() {
       </Button>
 
       {open && (
-        <div className="absolute inset-x-0 top-16 z-50 border-b border-border bg-background px-4 py-4 shadow-sm">
+        <div className="absolute inset-x-0 top-20 z-50 bg-neutral-950 px-4 py-4 shadow-sm">
           <nav aria-label={t("mobileNavigation")}>
             <ul className="space-y-2">
               {navigationLinks.map((item) => {
@@ -37,7 +38,7 @@ export function MobileNav() {
                     <Link
                       href={item.href}
                       className={`block rounded-md px-3 py-2 text-sm ${
-                        isActive ? "bg-accent text-accent-foreground" : "text-foreground/85 hover:bg-accent"
+                        isActive ? "bg-primary text-primary-foreground" : "text-white/85 hover:bg-neutral-900 hover:text-white"
                       }`}
                       onClick={() => setOpen(false)}
                     >
@@ -48,7 +49,7 @@ export function MobileNav() {
               })}
             </ul>
           </nav>
-          <div className="mt-4 flex items-center gap-2 border-t border-border pt-4">
+          <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-white/20 pt-4">
             <LanguageSwitcher />
             <ThemeToggle />
           </div>

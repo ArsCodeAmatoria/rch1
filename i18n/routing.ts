@@ -30,6 +30,30 @@ export const routing = defineRouting({
       en: "/knowledge",
       fr: "/knowledge"
     },
+    "/redtc": {
+      en: "/redtc",
+      fr: "/redtc"
+    },
+    "/redtc/test": {
+      en: "/redtc/test",
+      fr: "/redtc/test"
+    },
+    "/redtc/test/master": {
+      en: "/redtc/test/master",
+      fr: "/redtc/test/master"
+    },
+    "/redtc/test/review": {
+      en: "/redtc/test/review",
+      fr: "/redtc/test/review"
+    },
+    "/redtc/load-charts": {
+      en: "/redtc/load-charts",
+      fr: "/redtc/load-charts"
+    },
+    "/redtc/load-charts/[id]": {
+      en: "/redtc/load-charts/[id]",
+      fr: "/redtc/load-charts/[id]"
+    },
     "/blog": {
       en: "/blog",
       fr: "/blog"

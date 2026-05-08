@@ -5,5 +5,6 @@ export const navigationLinks = [
   {href: "/hoisting", key: "hoisting"},
   {href: "/standards", key: "standards"},
   {href: "/knowledge", key: "knowledge"},
+  {href: "/redtc", key: "redtc"},
   {href: "/blog", key: "blog"}
 ] as const;
