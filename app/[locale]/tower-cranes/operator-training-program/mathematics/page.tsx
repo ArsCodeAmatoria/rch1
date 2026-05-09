@@ -19,8 +19,8 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
     path: "/tower-cranes/operator-training-program/mathematics",
     title: "Mathematics for Tower Crane Operators",
     description:
-      "Arithmetic, unit conversion, moments, trigonometry for luffing rigs, sling angles, wind and dynamic amplification, and critical-lift judgment.",
-    keywords: ["crane mathematics", "load moment", "sling angle tension", "tower crane trigonometry"]
+      "Crane and rigging mathematics program: conversions, ratios, algebra, force vs mass, and kN; plus operator arithmetic, moments, trigonometry, sling angles, and critical-lift judgment.",
+    keywords: ["crane mathematics", "rigging math", "load moment", "sling angle tension", "tower crane trigonometry"]
   }));
 }
 
@@ -28,7 +28,8 @@ export default async function MathematicsTrainingPage() {
   const locale = (await getLocale()) as "en" | "fr";
   const pageUrl = `${SITE_URL}/${locale}/tower-cranes/operator-training-program/mathematics`;
   const title = "Mathematics for Tower Crane Operators";
-  const description = "Core operational mathematics: moments, charts logic, rigging geometry, and dynamic effects.";
+  const description =
+    "Foundations-first crane and rigging math (forces, prefixes, conversions) plus tower-operator curriculum: moments, charts logic, geometry, wind, and critical lifts.";
 
   const breadcrumb = [
     {name: "Home", url: `${SITE_URL}/${locale}`},

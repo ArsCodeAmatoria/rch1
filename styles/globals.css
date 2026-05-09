@@ -120,6 +120,20 @@ button {
   transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
+/* KaTeX: keep symbols at full foreground contrast (blocks use .katex-block panel) */
+.katex {
+  color: hsl(var(--foreground));
+}
+
+/* Inline wrap: inherit surrounding text colour unless nested in a block */
+.katex-inline-wrap .katex {
+  color: inherit;
+}
+
+.katex-block .katex {
+  color: hsl(var(--foreground));
+}
+
 @media print {
   header, footer, button {
     display: none !important;

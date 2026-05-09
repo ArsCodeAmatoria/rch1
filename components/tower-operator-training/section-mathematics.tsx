@@ -1,8 +1,28 @@
 import {Link} from "@/i18n/navigation";
 
+import {CraneRiggingMathematicsProgramFoundations} from "@/components/tower-operator-training/mathematics-crane-rigging-program-foundations";
+import {CraneRiggingMathematicsGeometryTrig} from "@/components/tower-operator-training/mathematics-crane-rigging-program-sections-geometry-trigonometry";
+import {CraneRiggingMathematicsSection5Tension} from "@/components/tower-operator-training/mathematics-crane-rigging-program-section5-tension";
+import {CraneRiggingMathematicsSections6And7Crane} from "@/components/tower-operator-training/mathematics-crane-rigging-program-sections-6-7-crane";
+import {CraneRiggingMathematicsSections8Through10} from "@/components/tower-operator-training/mathematics-crane-rigging-program-sections-8-10";
+import {CraneRiggingMathematicsSections11And12} from "@/components/tower-operator-training/mathematics-crane-rigging-program-sections-11-12";
+import {CraneRiggingMathematicsSection13Wind} from "@/components/tower-operator-training/mathematics-crane-rigging-program-section13-wind";
+import {CraneRiggingMathematicsSections14Through17} from "@/components/tower-operator-training/mathematics-crane-rigging-program-sections-14-17";
+
 export function SectionMathematics() {
   return (
     <>
+      <CraneRiggingMathematicsProgramFoundations />
+      <CraneRiggingMathematicsGeometryTrig />
+      <CraneRiggingMathematicsSection5Tension />
+      <CraneRiggingMathematicsSections6And7Crane />
+      <CraneRiggingMathematicsSections8Through10 />
+      <CraneRiggingMathematicsSections11And12 />
+      <CraneRiggingMathematicsSection13Wind />
+      <CraneRiggingMathematicsSections14Through17 />
+
+      <hr />
+
       <h2 id="section-2">Section 2 – Mathematics for Tower Crane Operators</h2>
       <h3 id="module-4">Module 4 – Core Crane Mathematics</h3>
       <p>
