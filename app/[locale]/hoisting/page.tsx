@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
@@ -10,17 +8,14 @@ import {buildBreadcrumbSchema, buildWebPageSchema} from "@/lib/schema";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderImageMeta(
-    "hub-hoisting",
-    buildPageMetadata({
-      locale,
-      path: "/hoisting",
-      title: "Hoisting Procedures and Field Controls",
-      description:
+  return buildPageMetadata({
+    locale,
+    path: "/hoisting",
+    title: "Hoisting Procedures and Field Controls",
+    description:
         "Hoisting operations reference aligned to rigging strategy, communication protocols, exclusion zones, and controlled load movement for construction sites.",
-      keywords: ["rigging and hoisting", "crane safety", "construction safety documentation"]
-    })
-  );
+    keywords: ["rigging and hoisting", "crane safety", "construction safety documentation"]
+    });
 }
 
 export default function HoistingPage() {
@@ -44,8 +39,6 @@ async function HoistingPageContent() {
       />
       <h1 className="text-3xl font-bold">Hoisting</h1>
       <p className="text-muted-foreground">Hoisting practices are integrated with rigging planning, communication controls, and lift execution procedures.</p>
-
-      <ContentImagePlaceholder id="hub-hoisting" />
 
       <div className="rounded-lg border border-border bg-card p-6 text-sm text-muted-foreground">
         Use the rigging library for detailed hoisting procedures, including sling selection, critical lift controls, and load control strategies.

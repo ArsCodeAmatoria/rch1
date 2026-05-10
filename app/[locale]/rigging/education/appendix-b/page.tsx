@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 
 import {RiggingEducationAppendixBBasicRiggingMath} from "@/components/rigging/rigging-education-appendix-b-basic-rigging-math";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {Badge} from "@/components/ui/badge";
@@ -46,24 +45,21 @@ const toc = [
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const isFr = locale === "fr";
-  return mergePlaceholderImageMeta(
-    "hub-rigging",
-    buildPageMetadata({
-      locale,
-      path: "/rigging/education/appendix-b",
-      title: isFr ? "Annexe B — Référence de mathématiques de montage et formules" : titleEn,
-      description: isFr
+  return buildPageMetadata({
+    locale,
+    path: "/rigging/education/appendix-b",
+    title: isFr ? "Annexe B — Référence de mathématiques de montage et formules" : titleEn,
+    description: isFr
         ? "Annexe : angles de élingues, moments, COG, pression, charges dynamiques, conversions. (Texte principal en anglais.)"
         : descriptionEn,
-      keywords: [
+    keywords: [
         "rigging sling angle formula",
         "load moment crane",
         "center of gravity rigging",
         "sling tension multiplier",
         "wire rope broken wire criteria"
       ]
-    })
-  );
+    });
 }
 
 export default async function RiggingEducationAppendixBPage() {
@@ -79,7 +75,7 @@ export default async function RiggingEducationAppendixBPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -120,7 +116,7 @@ export default async function RiggingEducationAppendixBPage() {
         ) : null}
       </header>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
         <RiggingEducationAppendixBBasicRiggingMath locale={locale} />
         <aside className="not-prose mt-10 lg:sticky lg:top-24 lg:mt-0 lg:h-fit">
           <div className="rounded-lg border border-border bg-card p-4 text-sm">

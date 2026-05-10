@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -16,14 +14,14 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("inspection-maintenance", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/inspection-maintenance",
     title: "Inspection & Maintenance – Tower Crane Training",
     description:
       "CSA and ASME inspection categories, documentation, proof testing, Appendices A–B: operator/rigger schedules, maintenance, weather vane procedures.",
     keywords: ["tower crane inspection", "pre-shift inspection", "CSA Z248 inspection", "weather vane procedure", "crane logbook BC"]
-  }));
+  });
 }
 
 export default async function InspectionMaintenancePage() {
@@ -59,8 +57,6 @@ export default async function InspectionMaintenancePage() {
         <p className="text-muted-foreground">{description}</p>
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="inspection-maintenance" />
 
       <TrainingArticleLayout>
       <TrainingProse>

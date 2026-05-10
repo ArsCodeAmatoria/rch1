@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -17,17 +15,14 @@ const links = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderImageMeta(
-    "hub-knowledge",
-    buildPageMetadata({
-      locale,
-      path: "/knowledge",
-      title: "Construction Safety Knowledge Library",
-      description:
+  return buildPageMetadata({
+    locale,
+    path: "/knowledge",
+    title: "Construction Safety Knowledge Library",
+    description:
         "Structured internal knowledge library linking crane safety procedures, tower crane operations, rigging and hoisting controls, and standards/compliance references.",
-      keywords: ["construction safety program", "crane safety", "rigging and hoisting", "construction safety documentation"]
-    })
-  );
+    keywords: ["construction safety program", "crane safety", "rigging and hoisting", "construction safety documentation"]
+    });
 }
 
 export default async function KnowledgePage() {
@@ -47,8 +42,6 @@ export default async function KnowledgePage() {
       />
       <h1 className="text-3xl font-bold">Knowledge Library</h1>
       <p className="text-muted-foreground">Structured internal linking across safety program modules, crane operations guidance, rigging references, and standards interpretation.</p>
-
-      <ContentImagePlaceholder id="hub-knowledge" />
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="grid gap-4 md:grid-cols-2">

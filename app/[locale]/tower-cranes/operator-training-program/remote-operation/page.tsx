@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -14,14 +12,14 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("remote-operation", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/remote-operation",
     title: "Remote Operation of Tower Cranes (BC)",
     description:
       "OHSR Part 14 remote control, fail-safe and LMI, hazards vs. cab operation, when remote use is appropriate for self-erectors and urban sites.",
     keywords: ["remote tower crane", "BC OHSR Part 14 crane", "radio crane remote", "self erect crane remote"]
-  }));
+  });
 }
 
 export default async function RemoteOperationPage() {
@@ -57,8 +55,6 @@ export default async function RemoteOperationPage() {
         <p className="text-muted-foreground">{description}</p>
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="remote-operation" />
 
       <TrainingArticleLayout>
       <TrainingProse>

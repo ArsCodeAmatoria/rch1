@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 
 import {RiggingEducationModule10ChainfallsLeverHoists} from "@/components/rigging/rigging-education-module-10-chainfalls-lever-hoists";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {Badge} from "@/components/ui/badge";
@@ -43,16 +42,14 @@ const toc = [
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const isFr = locale === "fr";
-  return mergePlaceholderImageMeta(
-    "hub-rigging",
-    buildPageMetadata({
-      locale,
-      path: "/rigging/education/module-10",
-      title: isFr ? "Module 10 — Palans à chaîne, palans à levier et tension" : titleEn,
-      description: isFr
+  return buildPageMetadata({
+    locale,
+    path: "/rigging/education/module-10",
+    title: isFr ? "Module 10 — Palans à chaîne, palans à levier et tension" : titleEn,
+    description: isFr
         ? "Module pédagogique : palans manuels, palans à levier, énergie emmagasinée et ancrages. (Texte principal en anglais.)"
         : descriptionEn,
-      keywords: [
+    keywords: [
         "chainfall hoist",
         "lever hoist come along",
         "ASME B30.21",
@@ -60,8 +57,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
         "tensioning rigging",
         "snap back wire rope"
       ]
-    })
-  );
+    });
 }
 
 export default async function RiggingEducationModule10Page() {
@@ -77,7 +73,7 @@ export default async function RiggingEducationModule10Page() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -118,7 +114,7 @@ export default async function RiggingEducationModule10Page() {
         ) : null}
       </header>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
         <RiggingEducationModule10ChainfallsLeverHoists locale={locale} />
         <aside className="not-prose mt-10 lg:sticky lg:top-24 lg:mt-0 lg:h-fit">
           <div className="rounded-lg border border-border bg-card p-4 text-sm">

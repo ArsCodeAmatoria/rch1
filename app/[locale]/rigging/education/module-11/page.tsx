@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 
 import {RiggingEducationModule11MultipleCraneTandem} from "@/components/rigging/rigging-education-module-11-multiple-crane-tandem";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {Badge} from "@/components/ui/badge";
@@ -41,24 +40,21 @@ const toc = [
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const isFr = locale === "fr";
-  return mergePlaceholderImageMeta(
-    "hub-rigging",
-    buildPageMetadata({
-      locale,
-      path: "/rigging/education/module-11",
-      title: isFr ? "Module 11 — Levages multi-grues et en tandem" : titleEn,
-      description: isFr
+  return buildPageMetadata({
+    locale,
+    path: "/rigging/education/module-11",
+    title: isFr ? "Module 11 — Levages multi-grues et en tandem" : titleEn,
+    description: isFr
         ? "Module pédagogique : partage de charge, coordination et levages critiques multi-grues. (Texte principal en anglais.)"
         : descriptionEn,
-      keywords: [
+    keywords: [
         "tandem crane lift",
         "dual crane lift planning",
         "critical lift multiple cranes",
         "ASME B30 tandem",
         "load sharing two cranes"
       ]
-    })
-  );
+    });
 }
 
 export default async function RiggingEducationModule11Page() {
@@ -74,7 +70,7 @@ export default async function RiggingEducationModule11Page() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -115,7 +111,7 @@ export default async function RiggingEducationModule11Page() {
         ) : null}
       </header>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
         <RiggingEducationModule11MultipleCraneTandem locale={locale} />
         <aside className="not-prose mt-10 lg:sticky lg:top-24 lg:mt-0 lg:h-fit">
           <div className="rounded-lg border border-border bg-card p-4 text-sm">

@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 
 import {RiggingEducationModule20FinalIntegrationAppliedRiggingReadiness} from "@/components/rigging/rigging-education-module-20-final-integration-applied-rigging-readiness";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {Badge} from "@/components/ui/badge";
@@ -38,26 +37,23 @@ const toc = [
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const isFr = locale === "fr";
-  return mergePlaceholderImageMeta(
-    "hub-rigging",
-    buildPageMetadata({
-      locale,
-      path: "/rigging/education/module-20",
-      title: isFr
+  return buildPageMetadata({
+    locale,
+    path: "/rigging/education/module-20",
+    title: isFr
         ? "Module 20 — Intégration finale : savoir de montage appliqué et préparation opérationnelle"
         : titleEn,
-      description: isFr
+    description: isFr
         ? "Module sommatoire : système de levage, conscience situationnelle, équipe. (Texte principal en anglais.)"
         : descriptionEn,
-      keywords: [
+    keywords: [
         "rigging operational readiness",
         "integrated lift planning",
         "crane rigging situational awareness",
         "rigging force path",
         "lifting team coordination"
       ]
-    })
-  );
+    });
 }
 
 export default async function RiggingEducationModule20Page() {
@@ -73,7 +69,7 @@ export default async function RiggingEducationModule20Page() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -114,7 +110,7 @@ export default async function RiggingEducationModule20Page() {
         ) : null}
       </header>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
         <RiggingEducationModule20FinalIntegrationAppliedRiggingReadiness locale={locale} />
         <aside className="not-prose mt-10 lg:sticky lg:top-24 lg:mt-0 lg:h-fit">
           <div className="rounded-lg border border-border bg-card p-4 text-sm">

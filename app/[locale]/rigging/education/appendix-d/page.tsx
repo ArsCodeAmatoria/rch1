@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 
 import {RiggingEducationAppendixDCraneTypesOperationalCharacteristics} from "@/components/rigging/rigging-education-appendix-d-crane-types-operational-characteristics";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {Badge} from "@/components/ui/badge";
@@ -50,24 +49,21 @@ const toc = [
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const isFr = locale === "fr";
-  return mergePlaceholderImageMeta(
-    "hub-rigging",
-    buildPageMetadata({
-      locale,
-      path: "/rigging/education/appendix-d",
-      title: isFr ? "Annexe D — Types de grues et caractéristiques opérationnelles" : titleEn,
-      description: isFr
+  return buildPageMetadata({
+    locale,
+    path: "/rigging/education/appendix-d",
+    title: isFr ? "Annexe D — Types de grues et caractéristiques opérationnelles" : titleEn,
+    description: isFr
         ? "Annexe : grues à tour, mobiles, portiques, stabilité, rayon, vent, sol. (Texte principal en anglais.)"
         : descriptionEn,
-      keywords: [
+    keywords: [
         "tower crane vs mobile crane",
         "crane stability outriggers",
         "load moment crane radius",
         "luffing jib tower crane",
         "ASME B30.5 mobile cranes"
       ]
-    })
-  );
+    });
 }
 
 export default async function RiggingEducationAppendixDPage() {
@@ -83,7 +79,7 @@ export default async function RiggingEducationAppendixDPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -124,7 +120,7 @@ export default async function RiggingEducationAppendixDPage() {
         ) : null}
       </header>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
         <RiggingEducationAppendixDCraneTypesOperationalCharacteristics locale={locale} />
         <aside className="not-prose mt-10 lg:sticky lg:top-24 lg:mt-0 lg:h-fit">
           <div className="rounded-lg border border-border bg-card p-4 text-sm">

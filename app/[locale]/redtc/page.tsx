@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {Link} from "@/i18n/navigation";
-import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
 import Image from "next/image";
 import { ArrowRight, ChevronRight, Award, HardHat, GraduationCap, Timer, FileSpreadsheet, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -157,12 +156,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border bg-muted/20">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <ContentImagePlaceholder id="hub-redtc" />
         </div>
       </section>
 

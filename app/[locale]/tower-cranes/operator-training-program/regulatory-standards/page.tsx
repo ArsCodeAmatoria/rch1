@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -16,14 +14,14 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("regulatory-standards", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/regulatory-standards",
     title: "Regulatory & Standards Framework – Tower Crane Training",
     description:
       "British Columbia OHSR, critical lifts, certification, CSA Z248, related CSA standards, and ASME B30.3 reference for tower crane operators.",
     keywords: ["OHSR Part 14", "CSA Z248", "ASME B30.3", "critical lift BC", "BC crane certification"]
-  }));
+  });
 }
 
 export default async function RegulatoryStandardsTrainingPage() {
@@ -76,8 +74,6 @@ export default async function RegulatoryStandardsTrainingPage() {
           <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
         )}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="regulatory-standards" />
 
       <TrainingArticleLayout>
       <TrainingProse>

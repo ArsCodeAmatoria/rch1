@@ -1,16 +1,19 @@
 import {Separator} from "@/components/ui/separator";
+import {riggingEducationArticleClass} from "@/components/rigging/rigging-education-prose";
 
 type Locale = "en" | "fr";
+
+const overviewSupportingText = "text-foreground/85 dark:text-muted-foreground";
 
 /** Long-form educational introduction: crane rigging & advanced rigging (reference scope, purpose, standards awareness). */
 export function CraneRiggingEducationOverview({locale}: {readonly locale: Locale}) {
   const rig = (slug: string) => `/${locale}/rigging/${slug}`;
   const eduModule = (slug: string) => `/${locale}/rigging/education/${slug}`;
   return (
-    <div className="prose prose-slate max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-border/70 prose-h2:pb-2 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-p:leading-relaxed prose-p:text-foreground/90 prose-li:marker:text-muted-foreground">
-      <p className="not-prose text-lg font-medium text-muted-foreground">Technical education &amp; reference material</p>
+    <div className={riggingEducationArticleClass}>
+      <p className={`not-prose text-lg font-medium ${overviewSupportingText}`}>Technical education &amp; reference material</p>
 
-      <section id="introduction" className="not-prose mt-6 space-y-5 text-base leading-relaxed text-foreground/90">
+      <section id="introduction" className="not-prose mt-6 space-y-5 text-base leading-relaxed text-foreground">
         <p>
           Crane rigging is a critical component of crane and hoisting operations within construction, industrial, marine, infrastructure,
           manufacturing, and heavy lifting environments. Proper rigging practices are essential for maintaining load stability, protecting
@@ -29,128 +32,61 @@ export function CraneRiggingEducationOverview({locale}: {readonly locale: Locale
       </section>
 
       <h2 id="purpose">Purpose of this material</h2>
-      <p>The purpose of this material is to provide structured educational information related to crane rigging and advanced rigging operations.</p>
       <p>
-        <strong>Topics throughout this resource explore:</strong>
+        The purpose of this material is to provide structured educational information related to crane rigging and advanced rigging operations. Topics
+        throughout the resource explore rigging hardware and sling systems, inspection principles and removal criteria, load behavior and center of gravity,
+        sling forces and rigging calculations, crane awareness for riggers, communication and signaling, load control, environmental and operational hazards,
+        lift planning, and critical or engineered lifts.
       </p>
-      <ul>
-        <li>Rigging hardware and sling systems</li>
-        <li>Inspection principles and removal criteria</li>
-        <li>Load behavior and center of gravity</li>
-        <li>Sling forces and rigging calculations</li>
-        <li>Crane awareness for riggers</li>
-        <li>Communication systems and signaling</li>
-        <li>Load control techniques</li>
-        <li>Environmental and operational hazards</li>
-        <li>Lift planning concepts</li>
-        <li>Critical and engineered lift awareness</li>
-      </ul>
       <p>
-        <strong>The material is designed to support:</strong>
+        The material is designed to support apprenticeship and trade education, career development, technical reference, industry awareness, continuing
+        education, and broader construction safety knowledge.
       </p>
-      <ul>
-        <li>Apprenticeship learning</li>
-        <li>Trade education</li>
-        <li>Career development</li>
-        <li>Technical reference</li>
-        <li>Industry awareness</li>
-        <li>Continuing education</li>
-        <li>Construction safety knowledge</li>
-      </ul>
 
       <h2 id="industry-context">Industry context</h2>
-      <p>Rigging operations are used in nearly every sector involving material handling and lifting equipment. Modern rigging work may involve:</p>
-      <ul>
-        <li>Tower cranes</li>
-        <li>Mobile cranes</li>
-        <li>Self-erecting cranes</li>
-        <li>Overhead cranes</li>
-        <li>Gantry systems</li>
-        <li>Marine lifting systems</li>
-        <li>Industrial hoisting systems</li>
-        <li>Specialized engineered lifting devices</li>
-      </ul>
       <p>
-        Rigging personnel must understand how loads behave during lifting operations and how forces affect equipment, cranes, structures, and
-        personnel working around lifting activities.
+        Rigging operations appear in nearly every sector that uses material handling and lifting equipment. Modern work may use tower, mobile, or
+        self-erecting cranes, overhead and gantry systems, marine or industrial hoisting, and specialized engineered devices. Riggers must understand how loads
+        behave and how forces affect equipment, cranes, supporting structures, and people near the lift.
       </p>
       <p>
-        <strong>Even relatively simple lifts may involve:</strong>
+        Even straightforward lifts can involve dynamic loading, sling-angle amplification, instability, weather or ground effects, communication gaps, tight
+        sites, and multiple trades in the same airspace—so rigging demands both technical knowledge and situational awareness.
       </p>
-      <ul>
-        <li>Dynamic loading</li>
-        <li>Sling angle force amplification</li>
-        <li>Load instability</li>
-        <li>Environmental effects</li>
-        <li>Communication challenges</li>
-        <li>Restricted work areas</li>
-        <li>Multiple trades working simultaneously</li>
-      </ul>
-      <p>Because of these variables, rigging requires both technical knowledge and situational awareness.</p>
 
       <h2 id="standards">Standards, regulations &amp; industry references</h2>
-      <p>This educational material references concepts commonly associated with:</p>
-      <ul>
-        <li>WorkSafeBC Occupational Health &amp; Safety Regulation (OHSR)</li>
-        <li>BC Crane Safety guidance</li>
-        <li>CSA standards</li>
-        <li>ASME B30 standards</li>
-        <li>EN and FEM lifting principles</li>
-        <li>Manufacturer operating requirements</li>
-        <li>Engineered lift planning principles</li>
-      </ul>
       <p>
-        These references are included for educational and awareness purposes and should always be supplemented by site-specific procedures,
-        engineered instructions, manufacturer documentation, and applicable regulatory requirements.
+        This material references ideas commonly associated with the WorkSafeBC OHSR, BC Crane Safety guidance, CSA and ASME B30 standards, EN/FEM lifting
+        concepts, manufacturer requirements, and engineered lift planning. These references support education and awareness only; always follow site-specific
+        procedures, engineered instructions, manufacturer documentation, and the regulatory requirements in force for your work.
       </p>
 
       <h2 id="areas-of-study">Areas of study</h2>
-      <p>This resource explores both foundational and advanced rigging concepts, including:</p>
+      <p>This resource moves from fundamentals through advanced practice and planning:</p>
 
       <h3>Rigging fundamentals</h3>
-      <ul>
-        <li>Rigging hardware</li>
-        <li>Sling types</li>
-        <li>Hitch configurations</li>
-        <li>Inspection principles</li>
-        <li>Basic load handling</li>
-      </ul>
+      <p>
+        Hardware and sling types, hitch configurations, inspection thinking, and basic load handling establish how connections and angles behave before loads
+        leave the ground.
+      </p>
 
       <h3>Rigging mathematics &amp; physics</h3>
-      <ul>
-        <li>Sling angle calculations</li>
-        <li>Force vectors</li>
-        <li>Center of gravity</li>
-        <li>Load distribution</li>
-        <li>Dynamic loading effects</li>
-      </ul>
+      <p>Sling angles, force vectors, center of gravity, load sharing, and dynamic effects explain why small geometry changes can sharply increase forces.</p>
 
       <h3>Crane awareness</h3>
-      <ul>
-        <li>Radius awareness</li>
-        <li>Swing hazards</li>
-        <li>Load path considerations</li>
-        <li>Powerline hazards</li>
-        <li>Environmental limitations</li>
-      </ul>
+      <p>
+        Radius, swing path, ground and structural interaction, powerlines, and environmental limits tie rigging choices to how the crane actually moves and
+        reacts.
+      </p>
 
       <h3>Advanced rigging concepts</h3>
-      <ul>
-        <li>Non-symmetrical loading</li>
-        <li>Multiple crane lifts</li>
-        <li>Specialized lifting devices</li>
-        <li>Load manipulation</li>
-        <li>Engineered lifting systems</li>
-      </ul>
+      <p>
+        Asymmetric loading, multi-crane picks, specialty devices, load manipulation, and engineered systems introduce coordination and verification beyond
+        textbook symmetric lifts.
+      </p>
 
       <h3>Lift planning concepts</h3>
-      <ul>
-        <li>Pre-lift planning</li>
-        <li>Hazard identification</li>
-        <li>Communication systems</li>
-        <li>Critical lift awareness</li>
-        <li>Contingency considerations</li>
-      </ul>
+      <p>Pre-lift hazard identification, communication plans, critical-lift triggers, and contingencies turn technical knowledge into a repeatable field process.</p>
 
       <h2 id="philosophy">Educational philosophy</h2>
       <p>
@@ -158,25 +94,14 @@ export function CraneRiggingEducationOverview({locale}: {readonly locale: Locale
         or regulatory requirements.
       </p>
       <p>
-        <strong>Safe rigging practices depend on:</strong>
-      </p>
-      <ul>
-        <li>Proper planning</li>
-        <li>Competent supervision</li>
-        <li>Equipment inspection</li>
-        <li>Clear communication</li>
-        <li>Situational awareness</li>
-        <li>Understanding load behavior</li>
-        <li>Adherence to applicable standards and procedures</li>
-      </ul>
-      <p>
-        Rigging is both a technical discipline and a practical field skill developed through continued study, observation, mentorship, and
-        experience within lifting operations.
+        Safe rigging depends on planning, competent supervision, disciplined inspection, clear communication, situational awareness, understanding load
+        behavior, and consistent adherence to applicable standards and procedures. Rigging is both a technical discipline and a field skill built through study,
+        observation, mentorship, and experience.
       </p>
 
       <div className="not-prose my-10 rounded-xl border border-border bg-muted/25 p-6 dark:bg-muted/15">
         <h2 className="text-lg font-semibold text-foreground">Curriculum modules</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        <p className={`mt-2 text-sm leading-relaxed ${overviewSupportingText}`}>
           Structured units that build on this overview—through math, field practice, and communication—then advanced sling geometry, load
           stability, suspended load control, manual hoists / tensioning, multi-crane / tandem lifts, below-the-hook specialty devices, crane
           physics for riggers, environmental / site hazards, lift planning / critical lifts, practical field rigging applications, and safety
@@ -345,7 +270,7 @@ export function CraneRiggingEducationOverview({locale}: {readonly locale: Locale
 
       <div className="not-prose rounded-xl border border-border bg-card p-6">
         <h2 className="text-lg font-semibold text-foreground">Continue in the rigging library</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        <p className={`mt-2 text-sm leading-relaxed ${overviewSupportingText}`}>
           Topic pages expand these themes into procedure-oriented summaries, planning callouts, and field controls.
         </p>
         <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2">

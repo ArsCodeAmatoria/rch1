@@ -1,9 +1,8 @@
 import {KaTeXBlock, KaTeXInline} from "@/components/katex/katex-math";
+import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
 
 type Locale = "en" | "fr";
 
-const proseArticle =
-  "prose prose-slate max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-border/70 prose-h2:pb-2 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-h4:mt-5 prose-h4:mb-2 prose-h4:text-lg prose-p:leading-relaxed prose-p:text-foreground/90 prose-li:marker:text-muted-foreground";
 
 const rk = String.raw;
 
@@ -40,7 +39,7 @@ export function RiggingEducationAppendixDCraneTypesOperationalCharacteristics({l
   const appendixC = `/${locale}/rigging/education/appendix-c`;
   const appendixE = `/${locale}/rigging/education/appendix-e`;
   return (
-    <div className={proseArticle}>
+    <div className={riggingEducationArticleClass}>
       <h2 id="regulatory-references-appendix-d">Regulatory &amp; standards references</h2>
       <p>This appendix references concepts commonly associated with:</p>
       <ul>
@@ -79,7 +78,7 @@ export function RiggingEducationAppendixDCraneTypesOperationalCharacteristics({l
         <li>Personnel safety</li>
       </ul>
       <p>This appendix provides operational awareness information related to common crane types used in construction and industrial environments.</p>
-      <p className="not-prose text-sm text-muted-foreground">
+      <p className={riggingEducationNavStripClass}>
         <a href={edu} className="font-medium text-primary hover:underline">
           ← Education overview
         </a>
@@ -660,7 +659,7 @@ export function RiggingEducationAppendixDCraneTypesOperationalCharacteristics({l
         manufacturer load charts, applicable regulations, engineered lift plans, and approved site procedures.
       </p>
 
-      <div className="not-prose mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-6 text-sm text-muted-foreground">
+      <div className={riggingEducationFooterRowClass}>
         <a href={appendixC} className="font-medium text-primary hover:underline">
           ← Appendix C — Rigging equipment identification &amp; hardware reference
         </a>

@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -15,14 +13,14 @@ import {Link} from "@/i18n/navigation";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("load-charts-capacity", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/load-charts-capacity",
     title: "Load Charts & Capacity Interpretation",
     description:
       "Load moment principles, hammerhead, flat top, and luffing charts, structural vs stability limits, wind, incidents, and operator responsibility.",
     keywords: ["tower crane load chart", "load moment", "stability limit", "luffing chart", "Big Blue crane"]
-  }));
+  });
 }
 
 export default async function LoadChartsTrainingPage() {
@@ -74,8 +72,6 @@ export default async function LoadChartsTrainingPage() {
           .
         </p>
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="load-charts-capacity" />
 
       <TrainingArticleLayout>
       <TrainingProse>

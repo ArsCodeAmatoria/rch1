@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {Link} from "@/i18n/navigation";
-import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
 import { FileText, ExternalLink, ArrowRight, BookOpen, CheckCircle, Building2, TrendingUp, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import loadChartData from "@/data/redtc/load-chart-questions.json";
@@ -174,8 +173,6 @@ export default function LoadChartsPage() {
               {charts.length} crane charts with {totalQuestions} questions.
             </p>
           </div>
-
-          <ContentImagePlaceholder id="redtc-load-charts-catalog" className="mb-10" />
 
           {/* How to Use Section */}
           <div className="mb-10 p-6 border border-border rounded-lg bg-muted/20">

@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {Separator} from "@/components/ui/separator";
@@ -13,17 +11,14 @@ import {KnowledgeSidebar} from "@/components/layout/knowledge-sidebar";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderImageMeta(
-    "hub-safety-program",
-    buildPageMetadata({
-      locale,
-      path: "/safety-program",
-      title: "Tower Crane and Rigging Safety Program",
-      description:
+  return buildPageMetadata({
+    locale,
+    path: "/safety-program",
+    title: "Tower Crane and Rigging Safety Program",
+    description:
         "Field-ready construction safety program with procedural controls for lift planning, crane communication, exclusion zones, inspections, and critical lift execution.",
-      keywords: ["construction safety program", "crane safety", "construction safety documentation"]
-    })
-  );
+    keywords: ["construction safety program", "crane safety", "construction safety documentation"]
+    });
 }
 
 export default async function SafetyProgramPage() {
@@ -52,10 +47,6 @@ export default async function SafetyProgramPage() {
         <p className="max-w-4xl text-sm text-muted-foreground">
           Structured for supervisory teams, lift directors, operators, and riggers requiring procedural consistency and standards-aware execution controls.
         </p>
-
-        <div className="mt-6 max-w-4xl">
-          <ContentImagePlaceholder id="hub-safety-program" />
-        </div>
       </header>
 
       <Separator />

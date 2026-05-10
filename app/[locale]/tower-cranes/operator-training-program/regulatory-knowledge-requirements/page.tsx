@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -14,14 +12,14 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("regulatory-knowledge-requirements", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/regulatory-knowledge-requirements",
     title: "Tower Crane Regulatory Knowledge (BC)",
     description:
       "WorkSafeBC, BC Crane Safety, CSA and ASME context; operator duties under OHSR Part 14; rigger duties under Part 15; certification, logs, wind, overlap.",
     keywords: ["OHSR Part 14", "OHSR Part 15", "BC Crane Safety", "tower crane logbook", "refuse unsafe work BC"]
-  }));
+  });
 }
 
 export default async function RegulatoryKnowledgeRequirementsPage() {
@@ -57,8 +55,6 @@ export default async function RegulatoryKnowledgeRequirementsPage() {
         <p className="text-muted-foreground">{description}</p>
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="regulatory-knowledge-requirements" />
 
       <TrainingArticleLayout>
       <TrainingProse>

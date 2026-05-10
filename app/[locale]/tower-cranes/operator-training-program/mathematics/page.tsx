@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -16,14 +14,14 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("mathematics", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/mathematics",
     title: "Mathematics for Tower Crane Operators",
     description:
       "Crane and rigging mathematics program: conversions, ratios, algebra, force vs mass, and kN; plus operator arithmetic, moments, trigonometry, sling angles, and critical-lift judgment.",
     keywords: ["crane mathematics", "rigging math", "load moment", "sling angle tension", "tower crane trigonometry"]
-  }));
+  });
 }
 
 export default async function MathematicsTrainingPage() {
@@ -69,8 +67,6 @@ export default async function MathematicsTrainingPage() {
           <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
         )}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="mathematics" />
 
       <TrainingArticleLayout tocTone="math">
         <TrainingProse track="mathematics">

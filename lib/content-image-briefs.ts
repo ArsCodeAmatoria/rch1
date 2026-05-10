@@ -1,6 +1,5 @@
 /**
- * Editorial / design briefs for photos or illustrations still to produce.
- * Shown via ContentImagePlaceholder; also surfaced in <meta name="rch1:placeholder_*"> for searchability in raw HTML.
+ * Editorial notes for hero/hub imagery — alt text and suggested paths for assets under `public/`.
  */
 export type ContentImageBrief = {
   /** Stable id (snake-ish). */

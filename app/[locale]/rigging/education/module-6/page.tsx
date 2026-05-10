@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 
 import {RiggingEducationModule6RiggingMath} from "@/components/rigging/rigging-education-module-6-rigging-math";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {Badge} from "@/components/ui/badge";
@@ -49,16 +48,14 @@ const toc = [
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const isFr = locale === "fr";
-  return mergePlaceholderImageMeta(
-    "hub-rigging",
-    buildPageMetadata({
-      locale,
-      path: "/rigging/education/module-6",
-      title: isFr ? "Module 6 — Calculs de charge et mathématiques d’élingage" : titleEn,
-      description: isFr
+  return buildPageMetadata({
+    locale,
+    path: "/rigging/education/module-6",
+    title: isFr ? "Module 6 — Calculs de charge et mathématiques d’élingage" : titleEn,
+    description: isFr
         ? "Module pédagogique : centre de gravité, angles d’élingue, moment de charge, vecteurs de force. (Texte principal en anglais.)"
         : descriptionEn,
-      keywords: [
+    keywords: [
         "rigging calculations",
         "sling tension formula",
         "load moment crane",
@@ -66,8 +63,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
         "ASME B30.9",
         "rigging math"
       ]
-    })
-  );
+    });
 }
 
 export default async function RiggingEducationModule6Page() {
@@ -83,7 +79,7 @@ export default async function RiggingEducationModule6Page() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -124,7 +120,7 @@ export default async function RiggingEducationModule6Page() {
         ) : null}
       </header>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
         <div className="math-training-prose min-w-0">
           <RiggingEducationModule6RiggingMath locale={locale} />
         </div>

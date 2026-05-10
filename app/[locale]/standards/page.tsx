@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {Separator} from "@/components/ui/separator";
@@ -13,17 +11,14 @@ import {KnowledgeSidebar} from "@/components/layout/knowledge-sidebar";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderImageMeta(
-    "hub-standards",
-    buildPageMetadata({
-      locale,
-      path: "/standards",
-      title: "Standards and Compliance Reference Hub",
-      description:
+  return buildPageMetadata({
+    locale,
+    path: "/standards",
+    title: "Standards and Compliance Reference Hub",
+    description:
         "Operational standards reference for WorkSafeBC, CSA standards, ASME B30, Technical Safety BC, and manufacturer requirements in crane and construction safety programs.",
-      keywords: ["WorkSafeBC", "CSA standards", "ASME B30", "Technical Safety BC"]
-    })
-  );
+    keywords: ["WorkSafeBC", "CSA standards", "ASME B30", "Technical Safety BC"]
+    });
 }
 
 export default async function StandardsPage() {
@@ -52,10 +47,6 @@ export default async function StandardsPage() {
         <p className="max-w-4xl text-sm text-muted-foreground">
           Employers must verify current regulatory requirements and site applicability before execution. This section provides operational reference context and does not provide legal advice.
         </p>
-
-        <div className="mt-6 max-w-4xl">
-          <ContentImagePlaceholder id="hub-standards" />
-        </div>
       </header>
 
       <Separator />

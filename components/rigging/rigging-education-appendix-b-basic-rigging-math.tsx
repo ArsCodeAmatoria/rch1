@@ -1,9 +1,8 @@
 import {KaTeXBlock, KaTeXInline} from "@/components/katex/katex-math";
+import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
 
 type Locale = "en" | "fr";
 
-const proseArticle =
-  "prose prose-slate max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-border/70 prose-h2:pb-2 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-p:leading-relaxed prose-p:text-foreground/90 prose-li:marker:text-muted-foreground";
 
 const tableWrap = "not-prose my-6 overflow-x-auto rounded-lg border border-border bg-card text-sm";
 
@@ -42,7 +41,7 @@ export function RiggingEducationAppendixBBasicRiggingMath({locale}: {readonly lo
   const appendixD = `/${locale}/rigging/education/appendix-d`;
   const appendixE = `/${locale}/rigging/education/appendix-e`;
   return (
-    <div className={proseArticle}>
+    <div className={riggingEducationArticleClass}>
       <h2 id="regulatory-standards-references-appendix-b">Regulatory &amp; standards references</h2>
       <p>This appendix references concepts commonly associated with:</p>
       <ul>
@@ -86,7 +85,7 @@ export function RiggingEducationAppendixBBasicRiggingMath({locale}: {readonly lo
         <li>Professional engineering review</li>
       </ul>
       <p>Complex or critical lifts may require advanced engineering analysis.</p>
-      <p className="not-prose text-sm text-muted-foreground">
+      <p className={riggingEducationNavStripClass}>
         <a href={edu} className="font-medium text-primary hover:underline">
           ← Education overview
         </a>
@@ -546,7 +545,7 @@ export function RiggingEducationAppendixBBasicRiggingMath({locale}: {readonly lo
       </ul>
       <p>Mathematical awareness must always be combined with practical field observation and safe lifting practices.</p>
 
-      <div className="not-prose mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-6 text-sm text-muted-foreground">
+      <div className={riggingEducationFooterRowClass}>
         <a href={appendixA} className="font-medium text-primary hover:underline">
           ← Appendix A — Standard hand signals
         </a>

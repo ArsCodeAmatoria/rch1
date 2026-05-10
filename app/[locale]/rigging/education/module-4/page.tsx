@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 
 import {RiggingEducationModule4CraneAwareness} from "@/components/rigging/rigging-education-module-4-crane-awareness";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
 import {Badge} from "@/components/ui/badge";
@@ -42,16 +41,14 @@ const toc = [
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const isFr = locale === "fr";
-  return mergePlaceholderImageMeta(
-    "hub-rigging",
-    buildPageMetadata({
-      locale,
-      path: "/rigging/education/module-4",
-      title: isFr ? "Module 4 — Conscience des grues pour les élingueurs" : titleEn,
-      description: isFr
+  return buildPageMetadata({
+    locale,
+    path: "/rigging/education/module-4",
+    title: isFr ? "Module 4 — Conscience des grues pour les élingueurs" : titleEn,
+    description: isFr
         ? "Module pédagogique : rayon, trajectoire des charges, lignes électriques, coordination et sensibilisation pour l’élingueur. (Texte principal en anglais.)"
         : descriptionEn,
-      keywords: [
+    keywords: [
         "crane awareness rigging",
         "load path lifting",
         "swing radius crane",
@@ -59,8 +56,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
         "ASME B30.3 tower crane",
         "blind lift signaling"
       ]
-    })
-  );
+    });
 }
 
 export default async function RiggingEducationModule4Page() {
@@ -76,7 +72,7 @@ export default async function RiggingEducationModule4Page() {
   ];
 
   return (
-    <article className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema(breadcrumb)} />
       <JsonLd
         data={buildTechArticleSchema({
@@ -117,7 +113,7 @@ export default async function RiggingEducationModule4Page() {
         ) : null}
       </header>
 
-      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+      <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">
         <RiggingEducationModule4CraneAwareness locale={locale} />
         <aside className="not-prose mt-10 lg:sticky lg:top-24 lg:mt-0 lg:h-fit">
           <div className="rounded-lg border border-border bg-card p-4 text-sm">

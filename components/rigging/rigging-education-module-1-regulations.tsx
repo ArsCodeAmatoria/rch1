@@ -1,7 +1,6 @@
+import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
 type Locale = "en" | "fr";
 
-const proseArticle =
-  "prose prose-slate max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-border/70 prose-h2:pb-2 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-p:leading-relaxed prose-p:text-foreground/90 prose-li:marker:text-muted-foreground";
 
 /** Module 1 — Regulations, standards & responsibilities (BC / general framing; educational). */
 export function RiggingEducationModule1Regulations({locale}: {readonly locale: Locale}) {
@@ -36,8 +35,8 @@ export function RiggingEducationModule1Regulations({locale}: {readonly locale: L
   const appendixD = `/${locale}/rigging/education/appendix-d`;
   const appendixE = `/${locale}/rigging/education/appendix-e`;
   return (
-    <div className={proseArticle}>
-      <section id="introduction" className="not-prose space-y-5 text-base leading-relaxed text-foreground/90">
+    <div className={riggingEducationArticleClass}>
+      <section id="introduction" className="not-prose space-y-5 text-base leading-relaxed text-foreground">
         <p>
           Rigging operations exist within a highly regulated environment due to the significant hazards associated with lifting, suspended
           loads, crane operations, and material handling activities.
@@ -50,7 +49,7 @@ export function RiggingEducationModule1Regulations({locale}: {readonly locale: L
           This section explores the regulatory framework, industry standards, worker responsibilities, and operational duties commonly
           associated with crane and rigging activities.
         </p>
-        <p className="text-sm text-muted-foreground">
+        <p className={riggingEducationNavStripClass}>
           <a href={edu} className="font-medium text-primary hover:underline">
             ← Rigging education overview
           </a>
@@ -58,60 +57,27 @@ export function RiggingEducationModule1Regulations({locale}: {readonly locale: L
       </section>
 
       <h2 id="why-regulations">Why regulations exist</h2>
-      <p>Lifting operations involve hazards capable of causing:</p>
-      <ul>
-        <li>Structural failure</li>
-        <li>Equipment damage</li>
-        <li>Crane overturning</li>
-        <li>Dropped loads</li>
-        <li>Crushing incidents</li>
-        <li>Pinch point injuries</li>
-        <li>Electrocution</li>
-        <li>Fatal incidents</li>
-      </ul>
-      <p>Rigging failures often result from:</p>
-      <ul>
-        <li>Improper equipment selection</li>
-        <li>Inadequate inspections</li>
-        <li>Poor communication</li>
-        <li>Lack of planning</li>
-        <li>Improper load control</li>
-        <li>Overloading</li>
-        <li>Human error</li>
-        <li>Environmental conditions</li>
-      </ul>
-      <p>Regulations and standards are intended to reduce these risks by establishing minimum operational expectations and safe work practices.</p>
+      <p>
+        Lifting operations can produce structural failure, equipment damage, crane overturning, dropped loads, crushing or pinch injuries, electrocution, and
+        fatal incidents. Rigging failures often trace back to poor equipment selection, skipped or shallow inspections, weak communication, missing planning,
+        incorrect load control, overload, human error, or adverse environment. Regulations and standards aim to reduce those risks by setting minimum
+        expectations for how lifts are planned, communicated, and executed.
+      </p>
 
       <h2 id="regulatory-framework">Regulatory framework</h2>
       <h3>WorkSafeBC Occupational Health &amp; Safety Regulation (OHSR)</h3>
-      <p>In British Columbia, crane and rigging operations are primarily governed through:</p>
-      <ul>
-        <li>OHSR Part 14 — Material Handling</li>
-        <li>OHSR Part 15 — Rigging</li>
-        <li>Additional sections related to mobile equipment, fall protection, electrical hazards, and occupational safety</li>
-      </ul>
-      <p>These regulations establish requirements related to:</p>
-      <ul>
-        <li>Equipment use</li>
-        <li>Inspections</li>
-        <li>Worker competency</li>
-        <li>Safe lifting practices</li>
-        <li>Hazard controls</li>
-        <li>Communication procedures</li>
-        <li>Operational responsibilities</li>
-      </ul>
+      <p>
+        In British Columbia, crane and rigging work is framed largely through OHSR Part 14 (Material Handling) and Part 15 (Rigging), alongside other parts that
+        address mobile equipment, fall protection, electrical hazards, and general occupational safety. Together they spell out expectations for equipment use,
+        inspections, worker competency, safe lifting practices, hazard controls, communication, and who is responsible on site.
+      </p>
 
       <h2 id="industry-standards">Industry standards &amp; references</h2>
-      <p>In addition to regulatory requirements, crane and rigging industries commonly reference:</p>
-      <ul>
-        <li>CSA standards</li>
-        <li>ASME B30 standards</li>
-        <li>BC Crane Safety guidance</li>
-        <li>Manufacturer operating manuals</li>
-        <li>Engineered lift procedures</li>
-        <li>EN and FEM lifting principles</li>
-      </ul>
-      <p>These standards often provide additional operational guidance beyond minimum regulatory requirements.</p>
+      <p>
+        Beyond statute and regulation, employers and crews frequently rely on CSA and ASME B30 publications, BC Crane Safety guidance, manufacturer manuals,
+        engineered lift procedures, and EN/FEM concepts where applicable. Those references usually deepen operational detail beyond minimum legal requirements but
+        must still align with the law and your employer&apos;s adopted procedures.
+      </p>
 
       <h2 id="competent-qualified">Competent vs qualified workers</h2>
       <h3>Competent worker</h3>
@@ -263,7 +229,7 @@ export function RiggingEducationModule1Regulations({locale}: {readonly locale: L
       </ul>
       <p>Safe lifting operations depend on continuous attention to detail and proactive hazard management.</p>
 
-      <div className="not-prose mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-6 text-sm text-muted-foreground">
+      <div className={riggingEducationFooterRowClass}>
         <a href={m2} className="font-medium text-primary hover:underline">
           Module 2 — Equipment →
         </a>

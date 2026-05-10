@@ -1,7 +1,6 @@
+import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
 type Locale = "en" | "fr";
 
-const proseArticle =
-  "prose prose-slate max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-border/70 prose-h2:pb-2 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-h4:mt-5 prose-h4:mb-2 prose-h4:text-lg prose-p:leading-relaxed prose-p:text-foreground/90 prose-li:marker:text-muted-foreground";
 
 /** Module 4 — Crane awareness for riggers (radius, charts, swing, powerlines, coordination). */
 export function RiggingEducationModule4CraneAwareness({locale}: {readonly locale: Locale}) {
@@ -36,7 +35,7 @@ export function RiggingEducationModule4CraneAwareness({locale}: {readonly locale
   const appendixD = `/${locale}/rigging/education/appendix-d`;
   const appendixE = `/${locale}/rigging/education/appendix-e`;
   return (
-    <div className={proseArticle}>
+    <div className={riggingEducationArticleClass}>
       <h2 id="regulatory-references">Regulatory &amp; standards references</h2>
       <p>This section references concepts commonly associated with:</p>
       <ul>
@@ -73,7 +72,7 @@ export function RiggingEducationModule4CraneAwareness({locale}: {readonly locale
         <li>Safe lift execution</li>
       </ul>
       <p>Understanding crane awareness helps rigging personnel recognize operational risks and work safely around lifting activities.</p>
-      <p className="not-prose text-sm text-muted-foreground">
+      <p className={riggingEducationNavStripClass}>
         <a href={edu} className="font-medium text-primary hover:underline">
           ← Education overview
         </a>
@@ -509,7 +508,7 @@ export function RiggingEducationModule4CraneAwareness({locale}: {readonly locale
       <p>Situational awareness is one of the most important safety skills in lifting operations.</p>
       <p>Riggers must constantly evaluate changing conditions throughout every phase of a lift.</p>
 
-      <div className="not-prose mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-6 text-sm text-muted-foreground">
+      <div className={riggingEducationFooterRowClass}>
         <a href={m3} className="font-medium text-primary hover:underline">
           ← Module 3
         </a>

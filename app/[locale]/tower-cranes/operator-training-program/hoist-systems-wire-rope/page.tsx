@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -14,7 +12,7 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("hoist-systems-wire-rope", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/hoist-systems-wire-rope",
     title: "Hoist Systems, Drum & Wire Rope (BC)",
@@ -29,7 +27,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       "anti two block",
       "load moment indicator"
     ]
-  }));
+  });
 }
 
 export default async function HoistSystemsWireRopePage() {
@@ -83,8 +81,6 @@ export default async function HoistSystemsWireRopePage() {
           <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
         )}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="hoist-systems-wire-rope" />
 
       <TrainingArticleLayout>
       <TrainingProse>

@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -14,7 +12,7 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("test-blocks-load-testing", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/test-blocks-load-testing",
     title: "Test Blocks, Kickers & Load Testing (BC)",
@@ -28,7 +26,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       "BC Crane Safety",
       "LMI calibration test"
     ]
-  }));
+  });
 }
 
 export default async function TestBlocksLoadTestingPage() {
@@ -82,8 +80,6 @@ export default async function TestBlocksLoadTestingPage() {
           <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
         )}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="test-blocks-load-testing" />
 
       <TrainingArticleLayout>
       <TrainingProse>

@@ -4,31 +4,26 @@ import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {Separator} from "@/components/ui/separator";
-import {mergePlaceholderImageMeta} from "@/lib/content-image-metadata";
 import {buildMetadata, SITE_URL} from "@/lib/seo";
 import {getAllBlogArticles, BLOG_CATEGORIES} from "@/lib/blog";
-import {ContentImagePlaceholder} from "@/components/media/content-image-placeholder";
 import {BlogSearch} from "@/components/blog/blog-search";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildBreadcrumbSchema, buildCollectionPageSchema, buildWebPageSchema} from "@/lib/schema";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderImageMeta(
-    "hub-blog",
-    buildMetadata({
-      locale: locale as "en" | "fr",
-      title: "Crane and Rigging Technical Articles",
-      description:
-        "RCH1 technical safety publication for crane operations, rigging and hoisting procedures, standards updates, inspections, and construction safety documentation.",
-      canonicalPath: `/${locale}/blog`,
-      enPath: "/en/blog",
-      frPath: "/fr/blog",
-      image: "/og/rch1-blog-og.jpg",
-      keywords: ["crane safety", "tower crane operations", "rigging and hoisting", "construction safety documentation"],
-      section: "blog"
-    })
-  );
+  return buildMetadata({
+    locale: locale as "en" | "fr",
+    title: "Crane and Rigging Technical Articles",
+    description:
+      "RCH1 technical safety publication for crane operations, rigging and hoisting procedures, standards updates, inspections, and construction safety documentation.",
+    canonicalPath: `/${locale}/blog`,
+    enPath: "/en/blog",
+    frPath: "/fr/blog",
+    image: "/og/rch1-blog-og.jpg",
+    keywords: ["crane safety", "tower crane operations", "rigging and hoisting", "construction safety documentation"],
+    section: "blog"
+  });
 }
 
 const icons = [BookText, FileSearch, ShieldCheck, Scale, Wrench, Newspaper];
@@ -76,10 +71,6 @@ export default async function BlogPage() {
         <p className="max-w-4xl text-muted-foreground">
           Industry knowledge center for tower crane operations, rigging and hoisting procedures, standards references, and field-ready safety documentation.
         </p>
-
-        <div className="mt-6 max-w-4xl">
-          <ContentImagePlaceholder id="hub-blog" />
-        </div>
       </header>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_330px]">

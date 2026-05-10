@@ -1,7 +1,5 @@
 import type {Metadata} from "next";
 
-import {OperatorTrainingLeadPlaceholder} from "@/components/media/operator-training-lead-placeholder";
-import {mergePlaceholderForTrainingSection} from "@/lib/content-image-metadata";
 import {getLocale} from "next-intl/server";
 import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
@@ -16,7 +14,7 @@ import {TrainingSectionNav} from "@/components/tower-operator-training/training-
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  return mergePlaceholderForTrainingSection("overlap-right-of-way", buildPageMetadata({
+  return buildPageMetadata({
     locale,
     path: "/tower-cranes/operator-training-program/overlap-right-of-way",
     title: "Crane Overlap, Right of Way & Communication",
@@ -30,7 +28,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
       "hands free crane radio",
       "multi-crane Vancouver"
     ]
-  }));
+  });
 }
 
 export default async function OverlapRightOfWayPage() {
@@ -66,8 +64,6 @@ export default async function OverlapRightOfWayPage() {
         <p className="text-muted-foreground">{description}</p>
         {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
-
-      <OperatorTrainingLeadPlaceholder section="overlap-right-of-way" />
 
       <TrainingArticleLayout>
       <TrainingProse>

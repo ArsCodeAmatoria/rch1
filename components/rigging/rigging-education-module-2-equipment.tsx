@@ -1,7 +1,6 @@
+import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
 type Locale = "en" | "fr";
 
-const proseArticle =
-  "prose prose-slate max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:tracking-tight prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-border/70 prose-h2:pb-2 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-h4:mt-5 prose-h4:mb-2 prose-h4:text-lg prose-p:leading-relaxed prose-p:text-foreground/90 prose-li:marker:text-muted-foreground";
 
 /** Module 2 — Rigging equipment knowledge (hardware, slings, BTH, compatibility). */
 export function RiggingEducationModule2Equipment({locale}: {readonly locale: Locale}) {
@@ -36,8 +35,8 @@ export function RiggingEducationModule2Equipment({locale}: {readonly locale: Loc
   const appendixD = `/${locale}/rigging/education/appendix-d`;
   const appendixE = `/${locale}/rigging/education/appendix-e`;
   return (
-    <div className={proseArticle}>
-      <section id="introduction" className="not-prose space-y-5 text-base leading-relaxed text-foreground/90">
+    <div className={riggingEducationArticleClass}>
+      <section id="introduction" className="not-prose space-y-5 text-base leading-relaxed text-foreground">
         <p>
           Rigging operations rely on a wide range of lifting hardware, sling systems, connection devices, and below-the-hook equipment
           designed to safely support, secure, and control loads during lifting activities.
@@ -51,7 +50,7 @@ export function RiggingEducationModule2Equipment({locale}: {readonly locale: Loc
           This section explores common rigging hardware, sling systems, lifting attachments, and below-the-hook devices used throughout
           construction, industrial, marine, and heavy lifting environments.
         </p>
-        <p className="text-sm text-muted-foreground">
+        <p className={riggingEducationNavStripClass}>
           <a href={edu} className="font-medium text-primary hover:underline">
             ← Rigging education overview
           </a>
@@ -549,7 +548,7 @@ export function RiggingEducationModule2Equipment({locale}: {readonly locale: Loc
       </ul>
       <p>Ignoring manufacturer specifications may create unsafe lifting conditions and invalidate equipment ratings.</p>
 
-      <div className="not-prose mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-6 text-sm text-muted-foreground">
+      <div className={riggingEducationFooterRowClass}>
         <a href={m1} className="font-medium text-primary hover:underline">
           ← Module 1
         </a>
