@@ -70,9 +70,9 @@ export function CraneRiggingMathematicsSections8Through10() {
       <h4 id="hw-8-5-multipliers">8.5 Using multipliers (faster method)</h4>
       <KaTeXBlock tex={rk`\text{Multiplier} = \frac{1}{\sin\theta};\quad T = (\text{load per leg})\times\text{Multiplier}`} />
       <div className="not-prose my-6 overflow-x-auto rounded-lg border border-border">
-        <table className="w-full min-w-md border-collapse text-left text-sm">
+        <table className="w-full min-w-md border-collapse text-left text-sm text-foreground [&_th]:text-foreground [&_td]:font-medium [&_td]:text-foreground [&_.katex]:text-foreground!">
           <thead>
-            <tr className="border-b border-border bg-muted/40">
+            <tr className="border-b border-border bg-muted/50 dark:bg-muted/45">
               <th className="px-3 py-2 font-semibold">Angle</th>
               <th className="px-3 py-2 font-semibold">
                 <KaTeXInline tex={rk`\sin\theta`} />
@@ -82,19 +82,19 @@ export function CraneRiggingMathematicsSections8Through10() {
           </thead>
           <tbody>
             <tr className="border-b border-border/70">
-              <td className="px-3 py-2"><KaTeXInline tex={rk`30^{\circ}`} /></td>
-              <td className="px-3 py-2">0.500</td>
-              <td className="px-3 py-2">2.000</td>
+              <td className="px-3 py-2 tabular-nums"><KaTeXInline tex={rk`30^{\circ}`} /></td>
+              <td className="px-3 py-2 tabular-nums">0.500</td>
+              <td className="px-3 py-2 tabular-nums">2.000</td>
             </tr>
             <tr className="border-b border-border/70">
-              <td className="px-3 py-2"><KaTeXInline tex={rk`45^{\circ}`} /></td>
-              <td className="px-3 py-2">0.707</td>
-              <td className="px-3 py-2">1.414</td>
+              <td className="px-3 py-2 tabular-nums"><KaTeXInline tex={rk`45^{\circ}`} /></td>
+              <td className="px-3 py-2 tabular-nums">0.707</td>
+              <td className="px-3 py-2 tabular-nums">1.414</td>
             </tr>
             <tr>
-              <td className="px-3 py-2"><KaTeXInline tex={rk`60^{\circ}`} /></td>
-              <td className="px-3 py-2">0.866</td>
-              <td className="px-3 py-2">1.155</td>
+              <td className="px-3 py-2 tabular-nums"><KaTeXInline tex={rk`60^{\circ}`} /></td>
+              <td className="px-3 py-2 tabular-nums">0.866</td>
+              <td className="px-3 py-2 tabular-nums">1.155</td>
             </tr>
           </tbody>
         </table>

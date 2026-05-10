@@ -50,12 +50,14 @@ function NavLinks({
   sections,
   activeId,
   onNavigate,
-  className
+  className,
+  tone = "default"
 }: {
   sections: HeadingEntry[];
   activeId: string | null;
   onNavigate: (id: string) => void;
   className?: string;
+  tone?: "default" | "math";
 }) {
   return (
     <nav aria-label="On this page" className={cn("space-y-0.5", className)}>
@@ -72,8 +74,10 @@ function NavLinks({
               depth === 2 && "pl-7",
               depth >= 3 && "pl-9",
               activeId === id
-                ? "border-primary bg-primary/5 font-medium text-foreground"
-                : "border-transparent text-muted-foreground hover:border-border hover:bg-muted/40 hover:text-foreground"
+                ? "border-primary bg-primary/5 font-semibold text-foreground"
+                : tone === "math"
+                  ? "border-transparent text-foreground/78 hover:border-primary/35 hover:bg-primary/[0.06] hover:text-foreground"
+                  : "border-transparent text-muted-foreground hover:border-border hover:bg-muted/40 hover:text-foreground"
             )}
             onClick={(e) => {
               e.preventDefault();
@@ -88,7 +92,7 @@ function NavLinks({
   );
 }
 
-export function TrainingTableOfContents() {
+export function TrainingTableOfContents({tone = "default"}: {tone?: "default" | "math"}) {
   const [sections, setSections] = useState<HeadingEntry[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
 
@@ -138,18 +142,25 @@ export function TrainingTableOfContents() {
     <>
       <details className="group rounded-xl border border-border bg-card/50 p-1 shadow-sm backdrop-blur-sm xl:hidden">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-3 py-2.5 text-sm font-semibold text-foreground [&::-webkit-details-marker]:hidden">
-          <span>On this page</span>
+          <span>{tone === "math" ? "Jump to section" : "On this page"}</span>
           <ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" aria-hidden />
         </summary>
         <div className="max-h-[min(50vh,22rem)] overflow-y-auto border-t border-border px-2 py-3">
-          <NavLinks sections={sections} activeId={activeId} onNavigate={navigate} />
+          <NavLinks sections={sections} activeId={activeId} onNavigate={navigate} tone={tone} />
         </div>
       </details>
 
       <div className="hidden xl:block">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">On this page</p>
-        <div className="max-h-[calc(100vh-8rem)] overflow-y-auto pr-1">
-          <NavLinks sections={sections} activeId={activeId} onNavigate={navigate} />
+        <p
+          className={cn(
+            "mb-3 text-xs font-semibold tracking-wide",
+            tone === "math" ? "text-foreground/85" : "uppercase tracking-wider text-muted-foreground"
+          )}
+        >
+          {tone === "math" ? "On this page (all sections)" : "On this page"}
+        </p>
+        <div className="max-h-[calc(100vh-8rem)] overflow-y-auto overscroll-contain pr-1">
+          <NavLinks sections={sections} activeId={activeId} onNavigate={navigate} tone={tone} />
         </div>
       </div>
     </>

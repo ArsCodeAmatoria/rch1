@@ -105,9 +105,9 @@ export function CraneRiggingMathematicsSections11And12() {
 
       <h4 id="tw-11-10-compare-levels">11.10 Comparing test levels</h4>
       <div className="not-prose my-4 overflow-x-auto rounded-lg border border-border">
-        <table className="w-full min-w-md border-collapse text-left text-sm">
+        <table className="w-full min-w-md border-collapse text-left text-sm text-foreground [&_th]:text-foreground [&_td]:font-medium [&_td]:text-foreground [&_.katex]:text-foreground!">
           <thead>
-            <tr className="border-b border-border bg-muted/40">
+            <tr className="border-b border-border bg-muted/50 dark:bg-muted/45">
               <th className="px-3 py-2 font-semibold">Test level</th>
               <th className="px-3 py-2 font-semibold">
                 <KaTeXInline tex={rk`W_{\mathrm{test}}`} /> (rated 8000 kg)
@@ -116,16 +116,16 @@ export function CraneRiggingMathematicsSections11And12() {
           </thead>
           <tbody>
             <tr className="border-b border-border/70">
-              <td className="px-3 py-2">105%</td>
-              <td className="px-3 py-2">8400 kg</td>
+              <td className="px-3 py-2 tabular-nums">105%</td>
+              <td className="px-3 py-2 tabular-nums">8400 kg</td>
             </tr>
             <tr className="border-b border-border/70">
-              <td className="px-3 py-2">110%</td>
-              <td className="px-3 py-2">8800 kg</td>
+              <td className="px-3 py-2 tabular-nums">110%</td>
+              <td className="px-3 py-2 tabular-nums">8800 kg</td>
             </tr>
             <tr>
-              <td className="px-3 py-2">125%</td>
-              <td className="px-3 py-2">10,000 kg</td>
+              <td className="px-3 py-2 tabular-nums">125%</td>
+              <td className="px-3 py-2 tabular-nums">10,000 kg</td>
             </tr>
           </tbody>
         </table>

@@ -98,6 +98,130 @@ export const routing = defineRouting({
       en: "/rigging",
       fr: "/rigging"
     },
+    "/rigging/education": {
+      en: "/rigging/education",
+      fr: "/rigging/education"
+    },
+    "/rigging/education/module-1": {
+      en: "/rigging/education/module-1",
+      fr: "/rigging/education/module-1"
+    },
+    "/rigging/education/module-2": {
+      en: "/rigging/education/module-2",
+      fr: "/rigging/education/module-2"
+    },
+    "/rigging/education/module-3": {
+      en: "/rigging/education/module-3",
+      fr: "/rigging/education/module-3"
+    },
+    "/rigging/education/module-4": {
+      en: "/rigging/education/module-4",
+      fr: "/rigging/education/module-4"
+    },
+    "/rigging/education/module-5": {
+      en: "/rigging/education/module-5",
+      fr: "/rigging/education/module-5"
+    },
+    "/rigging/education/module-6": {
+      en: "/rigging/education/module-6",
+      fr: "/rigging/education/module-6"
+    },
+    "/rigging/education/module-7": {
+      en: "/rigging/education/module-7",
+      fr: "/rigging/education/module-7"
+    },
+    "/rigging/education/module-8": {
+      en: "/rigging/education/module-8",
+      fr: "/rigging/education/module-8"
+    },
+    "/rigging/education/module-9": {
+      en: "/rigging/education/module-9",
+      fr: "/rigging/education/module-9"
+    },
+    "/rigging/education/module-10": {
+      en: "/rigging/education/module-10",
+      fr: "/rigging/education/module-10"
+    },
+    "/rigging/education/module-11": {
+      en: "/rigging/education/module-11",
+      fr: "/rigging/education/module-11"
+    },
+    "/rigging/education/module-12": {
+      en: "/rigging/education/module-12",
+      fr: "/rigging/education/module-12"
+    },
+    "/rigging/education/module-13": {
+      en: "/rigging/education/module-13",
+      fr: "/rigging/education/module-13"
+    },
+    "/rigging/education/module-14": {
+      en: "/rigging/education/module-14",
+      fr: "/rigging/education/module-14"
+    },
+    "/rigging/education/module-15": {
+      en: "/rigging/education/module-15",
+      fr: "/rigging/education/module-15"
+    },
+    "/rigging/education/module-16": {
+      en: "/rigging/education/module-16",
+      fr: "/rigging/education/module-16"
+    },
+    "/rigging/education/module-17": {
+      en: "/rigging/education/module-17",
+      fr: "/rigging/education/module-17"
+    },
+    "/rigging/education/module-18": {
+      en: "/rigging/education/module-18",
+      fr: "/rigging/education/module-18"
+    },
+    "/rigging/education/module-19": {
+      en: "/rigging/education/module-19",
+      fr: "/rigging/education/module-19"
+    },
+    "/rigging/education/module-20": {
+      en: "/rigging/education/module-20",
+      fr: "/rigging/education/module-20"
+    },
+    "/rigging/education/module-21": {
+      en: "/rigging/education/module-21",
+      fr: "/rigging/education/module-21"
+    },
+    "/rigging/education/module-22": {
+      en: "/rigging/education/module-22",
+      fr: "/rigging/education/module-22"
+    },
+    "/rigging/education/module-23": {
+      en: "/rigging/education/module-23",
+      fr: "/rigging/education/module-23"
+    },
+    "/rigging/education/module-24": {
+      en: "/rigging/education/module-24",
+      fr: "/rigging/education/module-24"
+    },
+    "/rigging/education/module-25": {
+      en: "/rigging/education/module-25",
+      fr: "/rigging/education/module-25"
+    },
+    "/rigging/education/appendix-a": {
+      en: "/rigging/education/appendix-a",
+      fr: "/rigging/education/appendix-a"
+    },
+    "/rigging/education/appendix-b": {
+      en: "/rigging/education/appendix-b",
+      fr: "/rigging/education/appendix-b"
+    },
+    "/rigging/education/appendix-c": {
+      en: "/rigging/education/appendix-c",
+      fr: "/rigging/education/appendix-c"
+    },
+    "/rigging/education/appendix-d": {
+      en: "/rigging/education/appendix-d",
+      fr: "/rigging/education/appendix-d"
+    },
+    "/rigging/education/appendix-e": {
+      en: "/rigging/education/appendix-e",
+      fr: "/rigging/education/appendix-e"
+    },
     "/hoisting": {
       en: "/hoisting",
       fr: "/hoisting"

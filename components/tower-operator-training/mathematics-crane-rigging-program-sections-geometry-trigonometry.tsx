@@ -1,4 +1,5 @@
 import {KaTeXBlock, KaTeXInline} from "@/components/katex/katex-math";
+import {MathTip} from "@/components/tower-operator-training/training-content-callouts";
 
 const rk = String.raw;
 
@@ -28,6 +29,12 @@ export function CraneRiggingMathematicsGeometryTrig() {
           Space → volume
         </li>
       </ul>
+
+      <MathTip>
+        Rough-sketch the load as a simple solid <em>before</em>
+        {" "}
+        you choose a formula — calling a stack a &ldquo;rectangle&rdquo; when it acts like a cylinder (or missing the hollow core) is how area and volume checks quietly diverge.
+      </MathTip>
 
       <h5 id="geometry-what-means">What geometry means</h5>
       <p>

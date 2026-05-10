@@ -1,4 +1,5 @@
 import {KaTeXBlock, KaTeXInline} from "@/components/katex/katex-math";
+import {MathKeyIdea} from "@/components/tower-operator-training/training-content-callouts";
 
 const rk = String.raw;
 
@@ -47,6 +48,11 @@ export function CraneRiggingMathematicsSection5Tension() {
         <strong>Tension per leg</strong> (<KaTeXInline tex={rk`W`} /> = total load; <KaTeXInline tex={rk`\theta`} /> measured from horizontal; <KaTeXInline tex={rk`T`} /> =
         tension per sling):
       </p>
+
+      <MathKeyIdea>
+        A flatter sling leg (smaller angle measured the way your procedure defines it) increases axial tension in the leg even when the lifted weight is unchanged—always align your sketch, chart, and calculator to the <em>same</em> angle convention.
+      </MathKeyIdea>
+
       <KaTeXBlock tex={rk`T = \frac{W}{2\sin\theta}`} />
 
       <h5 id="two-leg-vars">Variables</h5>
@@ -75,7 +81,7 @@ export function CraneRiggingMathematicsSection5Tension() {
       <p>
         <strong>Step 2 — reference:</strong>
       </p>
-      <KaTeXBlock tex={rk`\sin 30^{\circ}=0{,}5,\quad \sin 60^{\circ}\approx 0{,}866,\quad \cos 30^{\circ}\approx 0{,}866}`} />
+      <KaTeXBlock tex={rk`\sin 30^{\circ}=0{,}5,\quad \sin 60^{\circ}\approx 0{,}866,\quad \cos 30^{\circ}\approx 0{,}866`} />
 
       <p>
         <strong>Step 3 — apply:</strong>
@@ -88,9 +94,9 @@ export function CraneRiggingMathematicsSection5Tension() {
 
       <h5 id="angle-multiplier-table">Angle multipliers &amp; reductions</h5>
       <div className="not-prose my-6 overflow-x-auto rounded-lg border border-border">
-        <table className="w-full min-w-md border-collapse text-left text-sm">
+        <table className="w-full min-w-md border-collapse text-left text-sm text-foreground [&_th]:text-foreground [&_td]:font-medium [&_td]:text-foreground [&_.katex]:text-foreground!">
           <thead>
-            <tr className="border-b border-border bg-muted/40">
+            <tr className="border-b border-border bg-muted/50 dark:bg-muted/45">
               <th className="px-3 py-2 font-semibold">Angle</th>
               <th className="px-3 py-2 font-semibold">
                 <KaTeXInline tex={rk`\sin\theta`} />
@@ -99,30 +105,30 @@ export function CraneRiggingMathematicsSection5Tension() {
               <th className="px-3 py-2 font-semibold">Reduction <KaTeXInline tex={rk`\sin\theta`} /></th>
             </tr>
           </thead>
-          <tbody className="text-foreground/90">
+          <tbody>
             <tr className="border-b border-border/70">
-              <td className="px-3 py-2"><KaTeXInline tex={rk`90^{\circ}`} /></td>
-              <td className="px-3 py-2">1.000</td>
-              <td className="px-3 py-2">1.000</td>
-              <td className="px-3 py-2">1.000</td>
+              <td className="px-3 py-2 tabular-nums"><KaTeXInline tex={rk`90^{\circ}`} /></td>
+              <td className="px-3 py-2 tabular-nums">1.000</td>
+              <td className="px-3 py-2 tabular-nums">1.000</td>
+              <td className="px-3 py-2 tabular-nums">1.000</td>
             </tr>
             <tr className="border-b border-border/70">
-              <td className="px-3 py-2"><KaTeXInline tex={rk`60^{\circ}`} /></td>
-              <td className="px-3 py-2">0.866</td>
-              <td className="px-3 py-2">1.155</td>
-              <td className="px-3 py-2">0.866</td>
+              <td className="px-3 py-2 tabular-nums"><KaTeXInline tex={rk`60^{\circ}`} /></td>
+              <td className="px-3 py-2 tabular-nums">0.866</td>
+              <td className="px-3 py-2 tabular-nums">1.155</td>
+              <td className="px-3 py-2 tabular-nums">0.866</td>
             </tr>
             <tr className="border-b border-border/70">
-              <td className="px-3 py-2"><KaTeXInline tex={rk`45^{\circ}`} /></td>
-              <td className="px-3 py-2">0.707</td>
-              <td className="px-3 py-2">1.414</td>
-              <td className="px-3 py-2">0.707</td>
+              <td className="px-3 py-2 tabular-nums"><KaTeXInline tex={rk`45^{\circ}`} /></td>
+              <td className="px-3 py-2 tabular-nums">0.707</td>
+              <td className="px-3 py-2 tabular-nums">1.414</td>
+              <td className="px-3 py-2 tabular-nums">0.707</td>
             </tr>
             <tr>
-              <td className="px-3 py-2"><KaTeXInline tex={rk`30^{\circ}`} /></td>
-              <td className="px-3 py-2">0.500</td>
-              <td className="px-3 py-2">2.000</td>
-              <td className="px-3 py-2">0.500</td>
+              <td className="px-3 py-2 tabular-nums"><KaTeXInline tex={rk`30^{\circ}`} /></td>
+              <td className="px-3 py-2 tabular-nums">0.500</td>
+              <td className="px-3 py-2 tabular-nums">2.000</td>
+              <td className="px-3 py-2 tabular-nums">0.500</td>
             </tr>
           </tbody>
         </table>

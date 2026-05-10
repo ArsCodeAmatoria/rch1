@@ -7,6 +7,8 @@ import {Badge} from "@/components/ui/badge";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {MathematicsQuickReference} from "@/components/tower-operator-training/mathematics-quick-reference";
+import {MathematicsScrollTopButton} from "@/components/tower-operator-training/mathematics-scroll-top-button";
 import {TrainingArticleLayout} from "@/components/tower-operator-training/training-article-layout";
 import {TrainingProse} from "@/components/tower-operator-training/training-prose";
 import {SectionMathematics} from "@/components/tower-operator-training/section-mathematics";
@@ -70,12 +72,14 @@ export default async function MathematicsTrainingPage() {
 
       <OperatorTrainingLeadPlaceholder section="mathematics" />
 
-      <TrainingArticleLayout>
-      <TrainingProse>
-        <SectionMathematics />
-      </TrainingProse>
+      <TrainingArticleLayout tocTone="math">
+        <TrainingProse track="mathematics">
+          <MathematicsQuickReference />
+          <SectionMathematics />
+        </TrainingProse>
       </TrainingArticleLayout>
 
+      <MathematicsScrollTopButton />
       <TrainingSectionNav current="/tower-cranes/operator-training-program/mathematics" />
     </article>
   );

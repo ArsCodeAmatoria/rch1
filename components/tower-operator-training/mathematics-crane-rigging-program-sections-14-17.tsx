@@ -1,6 +1,7 @@
 import type {ReactNode} from "react";
 
 import {Link} from "@/i18n/navigation";
+import {MathDidYouKnow, MathTip} from "@/components/tower-operator-training/training-content-callouts";
 import {
   CraneRiggingDesmosFigure,
   type CraneRiggingDesmosFigureKey,
@@ -179,6 +180,10 @@ export function CraneRiggingMathematicsSections14Through17() {
       <h4 id="gb-14-2">14.2 The big idea</h4>
       <p>Same force over smaller area ⇒ higher pressure. Spread the force over larger effective area ⇒ lower pressure.</p>
 
+      <MathTip>
+        Crawler tracks, outrigger pads, and engineered mats are the <em>only</em> spreading path between crane reactions and the soil—if that interface is under-sized, the failure mode is bearing or punch, not &ldquo;hook overload&rdquo; on the chart.
+      </MathTip>
+
       <h4 id="gb-14-3">14.3 Ground pressure formula</h4>
       <KaTeXBlock tex={rk`P = \frac{F}{A}`} />
       <ul className="text-sm">
@@ -191,6 +196,10 @@ export function CraneRiggingMathematicsSections14Through17() {
 
       <h4 id="gb-14-4">14.4 Simple explanation</h4>
       <p>Same body weight—snowshoes vs stiletto heels—inverse area controls sinkage risk.</p>
+
+      <MathDidYouKnow>
+        Civil mats and temporary roads use the same mental model: engineers trade increased footprint (or geogrid / compacted lift thickness) for lower contact stress so soft subgrades do not shear under rolling equipment.
+      </MathDidYouKnow>
 
       <h4 id="gb-14-5">14.5 Worked example</h4>
       <KaTeXBlock tex={rk`P = \frac{10{,}000\ \mathrm{N}}{2\ \mathrm{m}^2}=5000\ \mathrm{N}/\mathrm{m}^2 = 5\ \mathrm{kPa}`} />
@@ -216,7 +225,7 @@ export function CraneRiggingMathematicsSections14Through17() {
       <KaTeXBlock tex={rk`50\ \mathrm{kN}/1\ \mathrm{m}^2=50\ \mathrm{kPa};\quad 50\ \mathrm{kN}/2\ \mathrm{m}^2=25\ \mathrm{kPa}`} />
 
       <DesmosFigureFrame variant="pressure-vs-area">
-        Model <KaTeXInline tex={rk`P=F/A`} /> as <KaTeXInline tex={rk`y=w/x`} /> with reaction <KaTeXInline tex={rk`w`} /> (kN) on pad area <KaTeXInline tex={rk`A`} /> (m²). Move the <KaTeXInline tex={rk`w`} /> slider to see pressure fall as footprint grows—or rise if you pile more reaction into the same mat. See also the{" "}
+        Fixed teaching case: <KaTeXInline tex={rk`F=50\ \mathrm{kN}`} /> on pad area <KaTeXInline tex={rk`A`} /> (m²), so <KaTeXInline tex={rk`P=F/A`} /> traces <KaTeXInline tex={rk`y=50/x`} />—pressure drops as the footprint widens. See also the{" "}
         <a className={pageA} href="#appendix-outrigger-pad-sizing">
           appendix on pad sizing
         </a>
@@ -279,8 +288,8 @@ export function CraneRiggingMathematicsSections14Through17() {
       <KaTeXBlock tex={rk`P=\frac{F}{A}\quad\Rightarrow\quad A_{\mathrm{req}}\ge\frac{F}{P_{\mathrm{design}}}`} />
 
       <DesmosFigureFrame variant="pressure-vs-allowable">
-        Blue curve: <KaTeXInline tex={rk`w/A`} /> for reaction <KaTeXInline tex={rk`w`} /> (kN). Red line: allowable or design pressure <KaTeXInline tex={rk`p`} /> (kPa). Where they cross,{" "}
-        <KaTeXInline tex={rk`A\approx w/p`} />—the minimum pad area intuition behind <KaTeXInline tex={rk`A_{\mathrm{req}}`} /> sizing. Compare horizontal <KaTeXInline tex={rk`p`} /> to{" "}
+        Fixed teaching case: blue <KaTeXInline tex={rk`P=F/A`} /> with <KaTeXInline tex={rk`F=120\ \mathrm{kN}`} /> so <KaTeXInline tex={rk`y=120/x`} />; red line <KaTeXInline tex={rk`P=60\ \mathrm{kPa}`} /> (design/allowable illustration). Crossing area <KaTeXInline tex={rk`A\approx 2\ \mathrm{m}^2`} /> matches{" "}
+        <KaTeXInline tex={rk`A_{\mathrm{req}}\ge F/P`} />—compare that horizontal ceiling to{" "}
         <a className={pageA} href="#gb-14-11">
           design pressure after factor of safety
         </a>
@@ -517,7 +526,7 @@ export function CraneRiggingMathematicsSections14Through17() {
       <KaTeXBlock tex={rk`M=10{\cdot}5=50\ \mathrm{kN\,m};\quad M=10{\cdot}10=100\ \mathrm{kN\,m};\quad F=\frac{M}{d}`} />
 
       <DesmosFigureFrame variant="moment-vs-radius">
-        <KaTeXInline tex={rk`M=F\cdot r`} /> with radius <KaTeXInline tex={rk`r`} /> (m). Drag <KaTeXInline tex={rk`F`} /> (kN): blue is <KaTeXInline tex={rk`M=F\cdot r`} />, orange is <KaTeXInline tex={rk`M=2F\cdot r`} />—double the hook load doubles the moment slope at every radius (
+        Fixed teaching lines: <KaTeXInline tex={rk`M=F\cdot r`} /> with radius <KaTeXInline tex={rk`r`} /> (m). Blue uses <KaTeXInline tex={rk`F=10\ \mathrm{kN}`} /> (<KaTeXInline tex={rk`y=10x`} />), orange uses <KaTeXInline tex={rk`F=20\ \mathrm{kN}`} /> (<KaTeXInline tex={rk`y=20x`} />)—doubling hook load doubles the moment slope at every radius (
         <a className={pageA} href="#section-16-torsion">
           Section 16 — Torsion
         </a>{" "}

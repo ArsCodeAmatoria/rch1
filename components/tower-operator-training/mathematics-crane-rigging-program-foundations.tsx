@@ -1,4 +1,5 @@
 import {KaTeXBlock, KaTeXInline} from "@/components/katex/katex-math";
+import {MathDidYouKnow, MathKeyIdea, MathTip} from "@/components/tower-operator-training/training-content-callouts";
 
 /** KaTeX source with safe backslashes inside JSX (`\mathrm` ≠ `\r` + `mathrm` in JSX attributes). */
 const rk = String.raw;
@@ -21,6 +22,10 @@ export function CraneRiggingMathematicsProgramFoundations() {
         advanced applied calculations involving geometry, trigonometry, force systems, and crane mechanics.
       </p>
       <p>All sections are strictly focused on quantitative relationships, formulas, and calculations.</p>
+
+      <MathKeyIdea>
+        Treat each block below as a field checklist: the goal is to recognise which relationship governs the question (weight? angle? radius? bearing pressure?) before you touch a calculator.
+      </MathKeyIdea>
 
       <h2 id="section-1-foundations-conversions">Section 1 — Foundations and conversions</h2>
       <h3 id="foundations-intro">Mathematics through real understanding</h3>
@@ -51,6 +56,10 @@ export function CraneRiggingMathematicsProgramFoundations() {
       </ul>
       <p>These relationships are always active, whether calculated or not.</p>
 
+      <MathTip>
+        When a lift plan lists a &ldquo;ballpark&rdquo; capacity, ask what was included: hook load only, or rigging, block, bucket, wind factors, and dynamic effects? Missing ingredients is how informal math quietly drifts from the engineered case.
+      </MathTip>
+
       <h5 id="what-you-calculate-basic">What you are actually calculating</h5>
       <p>Even in basic lifts, you are working with:</p>
       <ul>
@@ -79,6 +88,10 @@ export function CraneRiggingMathematicsProgramFoundations() {
       </ul>
       <p>This is early understanding of force, inclined planes, and mechanical advantage.</p>
 
+      <MathDidYouKnow>
+        Teams still move multi-hundred-tonne bridge spans and vessels with walking systems, strand jacks, and skid beaches—the control problem is the same as a pyramid block: balance the centre of gravity, stage the reaction path, and never outrun the friction or stability envelope.
+      </MathDidYouKnow>
+
       <h5 id="history-moai">Easter Island — Moai movement</h5>
       <p>
         Statues weighing up to <strong>~80 tonnes</strong>, likely moved using controlled rocking and rope systems. This required control of balance,
@@ -96,6 +109,10 @@ export function CraneRiggingMathematicsProgramFoundations() {
 
       <h4 id="foundations-1-3">1.3 Basic arithmetic (the foundation)</h4>
       <p>All rigging math is built on four operations: addition, subtraction, multiplication, and division.</p>
+
+      <MathTip>
+        Keep one unit system active per scratch path (e.g. stay in kN until the end, or stay in kg force-equivalents with clear labels). Switching kN ↔ kg mid-stream without writing the conversion is the commonest way two competent checkers disagree.
+      </MathTip>
 
       <h5 id="arith-example-load">Jobsite example — total load</h5>
       <p>4 bundles at 500 kg each; rigging weight = 200 kg.</p>

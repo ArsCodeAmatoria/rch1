@@ -22,7 +22,7 @@ export function KaTeXBlock({tex}: {readonly tex: string}) {
   const html = katex.renderToString(tex, {...common, displayMode: true});
   return (
     <div
-      className="katex-block not-prose my-6 overflow-x-auto px-2 py-2 text-center text-foreground [&_.katex]:text-[1.0625rem] [&_.katex]:text-foreground! [&_.katex-display]:my-0 [&_.katex-display]:text-foreground!"
+      className="katex-block not-prose my-6 overflow-x-auto text-center text-base leading-normal text-foreground [&_.katex]:text-foreground! [&_.katex-display]:my-0 [&_.katex-display]:text-foreground!"
       dangerouslySetInnerHTML={{__html: html}}
     />
   );

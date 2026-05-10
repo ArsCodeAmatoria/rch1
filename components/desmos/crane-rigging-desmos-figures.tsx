@@ -43,8 +43,9 @@ type FigurePreset = {
 
 const FIGURES: Record<string, FigurePreset> = {
   "pressure-vs-area": {
-    height: 360,
-    ariaLabel: "Desmos graph: bearing pressure versus pad area as P equals F divided by A with interactive force slider",
+    height: 300,
+    ariaLabel:
+      "Desmos graph: bearing pressure P in kPa versus pad area A in square metres for a fixed 50 kilonewton reaction, P equals fifty over A",
     calculatorOptions: {
       keypad: false,
       expressionsTopbar: false,
@@ -52,18 +53,13 @@ const FIGURES: Record<string, FigurePreset> = {
       border: false,
       zoomButtons: true,
       projectorMode: false,
-      expressions: true,
+      expressions: false,
       graphpaper: true,
     },
     expressions: [
       {
-        id: "F_kN",
-        latex: String.raw`w=50`,
-        sliderBounds: {min: 10, max: 200, step: 5},
-      },
-      {
         id: "P_curve",
-        latex: String.raw`y=\frac{w}{x}`,
+        latex: String.raw`y=\frac{50}{x}`,
         color: "#2d70b3",
       },
     ],
@@ -76,37 +72,27 @@ const FIGURES: Record<string, FigurePreset> = {
     mathBounds: {left: 0.35, right: 5.2, bottom: 0, top: 140},
   },
   "pressure-vs-allowable": {
-    height: 380,
+    height: 300,
     ariaLabel:
-      "Desmos graph: inverse pad curve versus horizontal allowable pressure line showing required pad area intuition",
+      "Desmos graph: pad curve y equals one hundred twenty over area versus horizontal line at sixty kilopascal allowable pressure",
     calculatorOptions: {
       keypad: false,
       expressionsTopbar: false,
       settingsMenu: true,
       border: false,
       zoomButtons: true,
-      expressions: true,
+      expressions: false,
       graphpaper: true,
     },
     expressions: [
       {
-        id: "w_kN",
-        latex: String.raw`w=120`,
-        sliderBounds: {min: 40, max: 260, step: 10},
-      },
-      {
-        id: "p_allow",
-        latex: String.raw`p=60`,
-        sliderBounds: {min: 30, max: 160, step: 5},
-      },
-      {
         id: "pad_curve",
-        latex: String.raw`y=\frac{w}{x}`,
+        latex: String.raw`y=\frac{120}{x}`,
         color: "#2d70b3",
       },
       {
         id: "allow_line",
-        latex: String.raw`y=p`,
+        latex: String.raw`y=60`,
         color: "#c74440",
       },
     ],
@@ -119,32 +105,27 @@ const FIGURES: Record<string, FigurePreset> = {
     mathBounds: {left: 0.35, right: 5.2, bottom: 0, top: 200},
   },
   "moment-vs-radius": {
-    height: 360,
+    height: 300,
     ariaLabel:
-      "Desmos graph: load moment versus radius with slider for hook load doubling the slope versus doubled load curve",
+      "Desmos graph: moment M equals F times radius for ten kilonewtons and twenty kilonewtons hook loads as proportional lines through the origin",
     calculatorOptions: {
       keypad: false,
       expressionsTopbar: false,
       settingsMenu: true,
       border: false,
       zoomButtons: true,
-      expressions: true,
+      expressions: false,
       graphpaper: true,
     },
     expressions: [
       {
-        id: "F_slider",
-        latex: String.raw`F=10`,
-        sliderBounds: {min: 5, max: 80, step: 5},
-      },
-      {
-        id: "line_one",
-        latex: String.raw`y=F\cdot x`,
+        id: "line_10kn",
+        latex: String.raw`y=10x`,
         color: "#2d70b3",
       },
       {
-        id: "line_double_load",
-        latex: String.raw`y=2\cdot F\cdot x`,
+        id: "line_20kn",
+        latex: String.raw`y=20x`,
         color: "#c74440",
       },
     ],
@@ -157,7 +138,7 @@ const FIGURES: Record<string, FigurePreset> = {
     mathBounds: {left: 0, right: 12, bottom: 0, top: 140},
   },
   "deflection-length-cubed": {
-    height: 360,
+    height: 300,
     ariaLabel:
       "Desmos graph: cubic scaling y equals x cubed illustrating deflection ratio versus length ratio for similar beams",
     calculatorOptions: {
@@ -166,7 +147,7 @@ const FIGURES: Record<string, FigurePreset> = {
       settingsMenu: true,
       border: false,
       zoomButtons: true,
-      expressions: true,
+      expressions: false,
       graphpaper: true,
     },
     expressions: [],

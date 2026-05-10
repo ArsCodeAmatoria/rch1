@@ -132,6 +132,34 @@ button {
 
 .katex-block .katex {
   color: hsl(var(--foreground));
+  /* Match prose line: block wrapper sets Tailwind text-base; formulas scale with curriculum zoom */
+  font-size: 1em;
+}
+
+.math-training-prose .katex-block .katex {
+  font-size: 1.3em;
+  font-weight: 600;
+  font-feature-settings:
+    "lnum",
+    "tnum";
+}
+
+/* Inline & display math in crane mathematics track: larger than prose, semibold */
+.math-training-prose .katex-inline-wrap .katex {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.math-training-prose table tbody tr:nth-child(even) {
+  background-color: hsl(var(--foreground) / 0.042);
+}
+
+.dark .math-training-prose table tbody tr:nth-child(even) {
+  background-color: hsl(var(--foreground) / 0.058);
+}
+
+.math-training-prose table tbody tr {
+  border-color: hsl(var(--foreground) / 0.08);
 }
 
 @media print {
