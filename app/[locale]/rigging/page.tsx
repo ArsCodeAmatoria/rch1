@@ -10,6 +10,42 @@ import {JsonLd} from "@/components/seo/JsonLd";
 import {buildBreadcrumbSchema, buildCollectionPageSchema} from "@/lib/schema";
 import {KnowledgeSidebar} from "@/components/layout/knowledge-sidebar";
 
+const RIGGING_EDUCATION_MODULES: {n: number; title: string}[] = [
+  {n: 1, title: "Regulations & standards"},
+  {n: 2, title: "Rigging equipment"},
+  {n: 3, title: "Inspection & removal"},
+  {n: 4, title: "Crane awareness"},
+  {n: 5, title: "Basic rigging"},
+  {n: 6, title: "Rigging math"},
+  {n: 7, title: "Communication"},
+  {n: 8, title: "Advanced sling geometry"},
+  {n: 9, title: "Advanced load control"},
+  {n: 10, title: "Chainfalls & lever hoists"},
+  {n: 11, title: "Tandem lifts"},
+  {n: 12, title: "Specialty BTH devices"},
+  {n: 13, title: "Crane physics"},
+  {n: 14, title: "Environment & site"},
+  {n: 15, title: "Lift planning"},
+  {n: 16, title: "Field rigging"},
+  {n: 17, title: "Safety culture"},
+  {n: 18, title: "Reference tables"},
+  {n: 19, title: "Glossary"},
+  {n: 20, title: "Integration"},
+  {n: 21, title: "Rope & knots"},
+  {n: 22, title: "Block & tackle"},
+  {n: 23, title: "Heavy lift"},
+  {n: 24, title: "Tower cranes"},
+  {n: 25, title: "Incidents"}
+];
+
+const RIGGING_EDUCATION_APPENDICES: {letter: string; slug: string; title: string}[] = [
+  {letter: "A", slug: "appendix-a", title: "Hand signals"},
+  {letter: "B", slug: "appendix-b", title: "Rigging math"},
+  {letter: "C", slug: "appendix-c", title: "Hardware ID"},
+  {letter: "D", slug: "appendix-d", title: "Crane types"},
+  {letter: "E", slug: "appendix-e", title: "BC compliance"}
+];
+
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   return buildPageMetadata({
@@ -28,7 +64,7 @@ export default async function RiggingPage() {
   const pageUrl = `${SITE_URL}/${locale}/rigging`;
 
   return (
-    <section className="mx-auto max-w-7xl space-y-8 px-4 py-10 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <JsonLd data={buildBreadcrumbSchema([{name: "Home", url: `${SITE_URL}/${locale}`}, {name: "Rigging", url: pageUrl}])} />
       <JsonLd
         data={buildCollectionPageSchema({
@@ -39,133 +75,94 @@ export default async function RiggingPage() {
           breadcrumb: [{name: "Home", url: `${SITE_URL}/${locale}`}, {name: "Rigging", url: pageUrl}]
         })}
       />
-      <header className="space-y-4 rounded-xl border border-border bg-card p-6">
-        <Badge className="w-fit">Rigging & Hoisting Knowledge Hub</Badge>
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Rigging Operations and Hoisting Control Systems</h1>
-        <p className="max-w-4xl text-muted-foreground">
-          Professional field reference for rigging setup, sling strategy, exclusion controls, communication protocols, and high-risk lift execution.
-        </p>
 
-        <div className="not-prose mt-6 max-w-4xl rounded-lg border border-primary/25 bg-primary/6 p-5 dark:bg-primary/10">
-          <p className="text-sm font-semibold text-foreground">Crane rigging &amp; advanced rigging — education</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Structured introduction: purpose, industry context, standards awareness, areas of study, and how this library supports trade
-            learning and technical reference.
-          </p>
-          <div className="not-prose mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <Link href="/rigging/education" className="font-medium text-primary underline-offset-4 hover:underline">
-              Educational overview
-            </Link>
-            <Link href="/rigging/education/module-1" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 1 — Regulations &amp; standards
-            </Link>
-            <Link href="/rigging/education/module-2" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 2 — Rigging equipment
-            </Link>
-            <Link href="/rigging/education/module-3" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 3 — Inspection &amp; removal
-            </Link>
-            <Link href="/rigging/education/module-4" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 4 — Crane awareness
-            </Link>
-            <Link href="/rigging/education/module-5" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 5 — Basic rigging
-            </Link>
-            <Link href="/rigging/education/module-6" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 6 — Rigging math
-            </Link>
-            <Link href="/rigging/education/module-7" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 7 — Communication
-            </Link>
-            <Link href="/rigging/education/module-8" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 8 — Advanced sling geometry
-            </Link>
-            <Link href="/rigging/education/module-9" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 9 — Advanced load control
-            </Link>
-            <Link href="/rigging/education/module-10" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 10 — Chainfalls &amp; lever hoists
-            </Link>
-            <Link href="/rigging/education/module-11" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 11 — Tandem lifts
-            </Link>
-            <Link href="/rigging/education/module-12" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 12 — Specialty BTH devices
-            </Link>
-            <Link href="/rigging/education/module-13" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 13 — Crane physics
-            </Link>
-            <Link href="/rigging/education/module-14" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 14 — Environment &amp; site
-            </Link>
-            <Link href="/rigging/education/module-15" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 15 — Lift planning
-            </Link>
-            <Link href="/rigging/education/module-16" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 16 — Field rigging
-            </Link>
-            <Link href="/rigging/education/module-17" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 17 — Safety culture
-            </Link>
-            <Link href="/rigging/education/module-18" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 18 — Reference tables
-            </Link>
-            <Link href="/rigging/education/module-19" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 19 — Glossary
-            </Link>
-            <Link href="/rigging/education/module-20" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 20 — Integration
-            </Link>
-            <Link href="/rigging/education/module-21" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 21 — Rope &amp; knots
-            </Link>
-            <Link href="/rigging/education/module-22" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 22 — Block &amp; tackle
-            </Link>
-            <Link href="/rigging/education/module-23" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 23 — Heavy lift
-            </Link>
-            <Link href="/rigging/education/module-24" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 24 — Tower cranes
-            </Link>
-            <Link href="/rigging/education/module-25" className="font-medium text-primary underline-offset-4 hover:underline">
-              Module 25 — Incidents
-            </Link>
-            <Link href="/rigging/education/appendix-a" className="font-medium text-primary underline-offset-4 hover:underline">
-              Appendix A — Hand signals
-            </Link>
-            <Link href="/rigging/education/appendix-b" className="font-medium text-primary underline-offset-4 hover:underline">
-              Appendix B — Rigging math
-            </Link>
-            <Link href="/rigging/education/appendix-c" className="font-medium text-primary underline-offset-4 hover:underline">
-              Appendix C — Hardware ID
-            </Link>
-            <Link href="/rigging/education/appendix-d" className="font-medium text-primary underline-offset-4 hover:underline">
-              Appendix D — Crane types
-            </Link>
-            <Link href="/rigging/education/appendix-e" className="font-medium text-primary underline-offset-4 hover:underline">
-              Appendix E — BC compliance
-            </Link>
+      <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-10">
+        <div className="min-w-0 space-y-8">
+          <header className="space-y-4 rounded-xl border border-border bg-card p-6">
+            <Badge className="w-fit">Rigging & Hoisting Knowledge Hub</Badge>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Rigging Operations and Hoisting Control Systems</h1>
+            <p className="text-muted-foreground">
+              Professional field reference for rigging setup, sling strategy, exclusion controls, communication protocols, and high-risk lift execution.
+            </p>
+
+            <div className="not-prose mt-6 w-full rounded-lg border border-primary/25 bg-primary/6 p-5 dark:bg-primary/10">
+              <div className="border-b border-primary/20 pb-4">
+                <p className="text-sm font-semibold text-foreground">Crane rigging &amp; advanced rigging — education</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Structured introduction: purpose, industry context, standards awareness, areas of study, and how this library supports trade
+                  learning and technical reference.
+                </p>
+                <Link
+                  href="/rigging/education"
+                  className="mt-4 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                >
+                  Educational overview
+                </Link>
+              </div>
+
+              <div className="mt-5 space-y-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Modules 1–25</p>
+                <ul className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+                  {RIGGING_EDUCATION_MODULES.map(({n, title}) => (
+                    <li key={n}>
+                      <Link
+                        href={`/rigging/education/module-${n}` as never}
+                        className="group flex gap-3 rounded-lg border border-border/80 bg-background/60 px-3 py-2.5 text-sm shadow-sm transition-colors hover:border-primary/45 hover:bg-accent/60"
+                      >
+                        <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-muted text-xs font-semibold tabular-nums text-muted-foreground group-hover:bg-primary/15 group-hover:text-primary">
+                          {n}
+                        </span>
+                        <span className="min-w-0 flex-1 leading-snug">
+                          <span className="sr-only">Module {n} — </span>
+                          <span className="font-medium text-foreground">{title}</span>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-8 space-y-3 border-t border-primary/20 pt-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Appendices</p>
+                <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  {RIGGING_EDUCATION_APPENDICES.map(({letter, slug, title}) => (
+                    <li key={slug}>
+                      <Link
+                        href={`/rigging/education/${slug}` as never}
+                        className="group flex gap-3 rounded-lg border border-border/80 bg-background/60 px-3 py-2.5 text-sm shadow-sm transition-colors hover:border-primary/45 hover:bg-accent/60"
+                      >
+                        <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-muted text-xs font-bold text-muted-foreground group-hover:bg-primary/15 group-hover:text-primary">
+                          {letter}
+                        </span>
+                        <span className="min-w-0 flex-1 leading-snug">
+                          <span className="sr-only">Appendix {letter} — </span>
+                          <span className="font-medium text-foreground">{title}</span>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </header>
+
+          <Separator />
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {topics.map((topic, index) => (
+              <a
+                key={topic.slug}
+                href={`/${locale}/rigging/${topic.slug}`}
+                className="rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50"
+              >
+                <p className="text-xs text-muted-foreground">Rigging Topic {index + 1}</p>
+                <h2 className="mt-2 text-lg font-semibold">{topic.title}</h2>
+                <p className="mt-2 text-sm text-muted-foreground">{topic.summary}</p>
+              </a>
+            ))}
           </div>
         </div>
-      </header>
 
-      <Separator />
-
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {topics.map((topic, index) => (
-            <a
-              key={topic.slug}
-              href={`/${locale}/rigging/${topic.slug}`}
-              className="rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50"
-            >
-              <p className="text-xs text-muted-foreground">Rigging Topic {index + 1}</p>
-              <h2 className="mt-2 text-lg font-semibold">{topic.title}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">{topic.summary}</p>
-            </a>
-          ))}
-        </div>
         <KnowledgeSidebar
           title="Rigging and Hoisting Context"
           intro="Field controls for sling selection, load control, tag line usage, and critical lift execution."
