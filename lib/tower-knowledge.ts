@@ -1,4 +1,4 @@
-export type TowerLocale = "en" | "fr";
+export type TowerLocale = "en";
 
 export type TowerTopic = {
   slug: string;
@@ -311,71 +311,14 @@ const topicsEn: TowerTopic[] = [
   }
 ];
 
-/** Full French copy for topics where we publish complete translation (avoid stub “en préparation”). */
-const luffingTopicFr: TowerTopic = {
-  slug: "luffing-jib-cranes",
-  title: "Grues à flèche pivotante (luffing)",
-  summary:
-    "Les grues à tour à flèche pivotante modifient le rayon de levage en orientant la flèche, et non seulement en chariotant — adaptées aux emprises réduites, aux limites de survol et aux sites denses. La conformité repose sur les abaques luffing, les arcs de flèche autorisés et les anticollisions qui modélisent ensemble le levage, le rayon et la hauteur de pointe.",
-  operationalContext:
-    "Sur emprise étroite, la grue luffing échange du débattement horizontal contre un gabarit plus vertical : on peut remonter la flèche pour dégager des bâtiments voisins, le transit ou l’enveloppe d’une autre grue, puis la baisser pour approcher la charge — chaque mouvement modifie à la fois le moment et l’altitude du bout de flèche. Cette liaison impose une maîtrise des interférences plus exigeante que sur une grue à flèche horizontale : lacet, luffing et parfois levage doivent rester dans l’étude d’ingénierie, le profil de zonage et la configuration homologuée par le fabricant (contre-poids, flèche, réeving).",
-  keyControls: [
-    "Capacité et rayon : utiliser exclusivement l’abaque luffing correspondant à la configuration réellement en service — jamais un abaque type marteau ou une édition périmée.",
-    "Angles de flèche mini/maxi, protection anti-deux blocs et arrêts d’urgence : respecter le plan de levage approuvé et les limites constructeur ; les fins de course ne sont pas indicatives.",
-    "Anticollision / zonage : inclure le mouvement de luffing (trajectoire de pointe et hauteur), pas seulement lacet et chariot ; mettre à jour après saut, rallonge de flèche ou changement d’ancrage.",
-    "Règles vent et position tempête hors service : l’attitude de flèche au repos doit suivre fabricant et plan chantier.",
-    "Levée en angle mort ou en zone dense : radio structurée, jalons d’arrêt convenus et une seule autorité de signalisation.",
-    "Parties prenantes voisines : réviser zones d’exclusion et accords de survol quand l’arc de flèche change sensiblement."
-  ],
-  procedureSteps: [
-    "Valider la boîte à abaques : longueur de flèche, contre-poids, réeving, nombre de brins — et tout addendum régional conforme à la grue en place.",
-    "Tracer l’arc de luffing prévu vs. ouvrages, ligne de moufle et trajectoire de charge ; comparer au dernier plan d’interférences.",
-    "Réveiller anticollision / zonage : cotes codeurs, secteurs interdits, axes luffing actifs et cohérents après saut ou reconfiguration.",
-    "Tester les limites liées au luffing : butées bas/haut flèche, couches au tambour, zones deux blocs aux extrêmes, coupures hoist/luff.",
-    "Luffer par paliers avec appels convenus aux approches d’interférence ; arrêt avant ligne ingénierie ou perte de vue.",
-    "Après intempéries ou arrêt : revérifier vent, validité d’abaques et position de flèche (weathervane, consignes tempête).",
-    "Journaliser changements de configuration, approches de limite et tout contournement avec heure, responsable et suivi."
-  ],
-  inspectionFocus: [
-    "Treuil de luffing, frein et fil d’urgence ; spire, angle de passage et critères d’élimination des cordages de luffing",
-    "Axes pendantifs, fiche d’articulation, jeu et structure visible selon intervalle OEM",
-    "Codeurs, enrouleurs ou capteurs d’angle / rayon alimentant fins de course et anticollision",
-    "Essais de mouvements combinés utilisés en production près des limites (sans surcharge)",
-    "Boulons et alignement de raccord de flèche après saut ou extension"
-  ],
-  communicationProtocol: [
-    "Indicatif de grue et discipline radio avant levées combinant luffing et lacet près des ouvrages ; répétition des « hold » et « clear ».",
-    "En multi-grues : priorité et autorisation de luffer pendant chargement de l’autre — pas d’intrusion simultanée d’enveloppes.",
-    "L’équipe signale l’attitude de flèche prévue avant changements de rayon critiques ; l’opérateur répète et s’arrête en cas d’ambiguïté.",
-    "Perte radio : arrêt, reprise d’un point de commande unique, pas d’inertie à travers les zones de chevauchement."
-  ],
-  coordinationRequirements: [
-    "Structure, façade, monte-charges et monte-mat : fenêtres de luffing pour ne pas surprendre les accostages ou plates-formes.",
-    "Respect des accords municipal / consultant de survol si l’altitude de pointe évolue nettement vs. le dernier dossier.",
-    "Avec le chef de levage, valider les levées où le rayon minimum impose luff + lacet pour rester dans l’abaque.",
-    "Voies ferrées, traction ou lignes : revérifier après tout changement d’angle modifiant la trajectoire au-dessus du corridor."
-  ],
-  standardsReferences: commonStandards,
-  related: ["city-cranes", "communication-signals", "load-handling"]
-};
-
 export const towerKnowledge: Record<TowerLocale, TowerTopic[]> = {
-  en: topicsEn,
-  fr: topicsEn.map((topic) =>
-    topic.slug === "luffing-jib-cranes"
-      ? {...luffingTopicFr, title: `${luffingTopicFr.title} (FR)`}
-      : {
-          ...topic,
-          title: `${topic.title} (FR)`,
-          summary: `Version francaise en preparation. ${topic.summary}`
-        }
-  )
+  en: topicsEn
 };
 
-export function getTowerTopic(locale: TowerLocale, slug: string) {
-  return towerKnowledge[locale].find((topic) => topic.slug === slug);
+export function getTowerTopic(_locale: TowerLocale, slug: string) {
+  return topicsEn.find((topic) => topic.slug === slug);
 }
 
-export function getTowerTopicIndex(locale: TowerLocale, slug: string) {
-  return towerKnowledge[locale].findIndex((topic) => topic.slug === slug);
+export function getTowerTopicIndex(_locale: TowerLocale, slug: string) {
+  return topicsEn.findIndex((topic) => topic.slug === slug);
 }

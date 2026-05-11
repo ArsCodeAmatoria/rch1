@@ -28,8 +28,8 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function TowerCranesPage() {
-  const locale = (await getLocale()) as "en" | "fr";
-  const topics = towerKnowledge[locale];
+  const locale = await getLocale();
+  const topics = towerKnowledge.en;
   const pageUrl = `${SITE_URL}/${locale}/tower-cranes`;
 
   return (

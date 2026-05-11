@@ -24,7 +24,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function LoadChartsTrainingPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = await getLocale();
   const pageUrl = `${SITE_URL}/${locale}/tower-cranes/operator-training-program/load-charts-capacity`;
   const title = "Load Charts and Capacity Interpretation";
   const description = "Authoritative chart use: moment logic, configuration specificity, environmental limits, and professional accountability.";
@@ -61,9 +61,6 @@ export default async function LoadChartsTrainingPage() {
         <Badge>Section 3</Badge>
         <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{title}</h1>
         <p className="text-muted-foreground">{description}</p>
-        {locale === "fr" && (
-          <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
-        )}
         <p className="text-sm text-muted-foreground">
           For structured chart quizzes and practice, use{" "}
           <Link href="/redtc/load-charts" className="text-primary underline-offset-4 hover:underline">

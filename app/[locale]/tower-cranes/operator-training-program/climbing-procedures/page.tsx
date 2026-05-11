@@ -23,7 +23,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function ClimbingProceduresPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = await getLocale();
   const pageUrl = `${SITE_URL}/${locale}/tower-cranes/operator-training-program/climbing-procedures`;
   const title = "Climbing (Jumping) Procedures";
   const description = "CSA and ASME-aligned climbing controls, engineering validation, wind restrictions, and post-climb inspection.";
@@ -52,7 +52,6 @@ export default async function ClimbingProceduresPage() {
         <Badge>Section 5</Badge>
         <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{title}</h1>
         <p className="text-muted-foreground">{description}</p>
-        {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
 
       <TrainingArticleLayout>

@@ -40,16 +40,11 @@ const toc = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  const isFr = locale === "fr";
   return buildPageMetadata({
     locale,
     path: "/rigging/education/module-17",
-    title: isFr
-        ? "Module 17 — Culture de sécurité du montage, facteurs humains et prise de décision opérationnelle"
-        : titleEn,
-    description: isFr
-        ? "Module pédagogique : culture de sécurité, fatigue, pression, autorisation d’arrêt, leadership. (Texte principal en anglais.)"
-        : descriptionEn,
+    title: titleEn,
+    description: descriptionEn,
     keywords: [
         "rigging safety culture",
         "stop work authority crane",
@@ -61,7 +56,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function RiggingEducationModule17Page() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const pageUrl = `${SITE_URL}/${locale}/rigging/education/module-17`;
   const educationUrl = `${SITE_URL}/${locale}/rigging/education`;
   const riggingHubUrl = `${SITE_URL}/${locale}/rigging`;
@@ -107,11 +102,11 @@ export default async function RiggingEducationModule17Page() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[2rem] sm:leading-tight">
           Module 17 — Rigging safety culture, human factors &amp; operational decision-making
         </h1>
-        {locale === "fr" ? (
-          <p className="text-sm text-muted-foreground">
-            Le corps de cette page est en anglais; une traduction complète pourra être ajoutée ultérieurement.
-          </p>
-        ) : null}
+        <p className="not-prose pt-1">
+          <Link href={"/rigging/education/slides/module-17" as never} className="text-sm font-medium text-primary hover:underline">
+            Slide lesson (presenter mode)
+          </Link>
+        </p>
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

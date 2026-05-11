@@ -42,20 +42,17 @@ const toc = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  const isFr = locale === "fr";
   return buildPageMetadata({
     locale,
     path: "/rigging/education/module-15",
-    title: isFr ? "Module 15 — Planification des levages et levages critiques" : titleEn,
-    description: isFr
-        ? "Module pédagogique : planification, levages critiques, réunions préalables, documentation. (Texte principal en anglais.)"
-        : descriptionEn,
+    title: titleEn,
+    description: descriptionEn,
     keywords: ["critical lift planning", "pre-lift meeting crane", "engineered lift plan", "lift director crane", "crane lift plan BC"]
     });
 }
 
 export default async function RiggingEducationModule15Page() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const pageUrl = `${SITE_URL}/${locale}/rigging/education/module-15`;
   const educationUrl = `${SITE_URL}/${locale}/rigging/education`;
   const riggingHubUrl = `${SITE_URL}/${locale}/rigging`;
@@ -101,11 +98,11 @@ export default async function RiggingEducationModule15Page() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[2rem] sm:leading-tight">
           Module 15 — Lift planning &amp; critical lifts
         </h1>
-        {locale === "fr" ? (
-          <p className="text-sm text-muted-foreground">
-            Le corps de cette page est en anglais; une traduction complète pourra être ajoutée ultérieurement.
-          </p>
-        ) : null}
+        <p className="not-prose pt-1">
+          <Link href={"/rigging/education/slides/module-15" as never} className="text-sm font-medium text-primary hover:underline">
+            Slide lesson (presenter mode)
+          </Link>
+        </p>
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

@@ -35,7 +35,7 @@ const toc = [
 
 export default async function RiggingTopicPage({params}: {params: Promise<{topic: string}>}) {
   const {topic: slug} = await params;
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const topic = getRiggingTopic(locale, slug);
   if (!topic) return notFound();
 

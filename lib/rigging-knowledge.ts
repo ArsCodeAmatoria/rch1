@@ -1,4 +1,4 @@
-export type RiggingLocale = "en" | "fr";
+export type RiggingLocale = "en";
 
 export type RiggingTopic = {
   slug: string;
@@ -294,12 +294,7 @@ const topicsEn: RiggingTopic[] = [
 ];
 
 export const riggingKnowledge: Record<RiggingLocale, RiggingTopic[]> = {
-  en: topicsEn,
-  fr: topicsEn.map((topic) => ({
-    ...topic,
-    title: `${topic.title} (FR)`,
-    summary: `Version francaise en preparation. ${topic.summary}`
-  }))
+  en: topicsEn
 };
 
 export function getRiggingTopic(locale: RiggingLocale, slug: string) {

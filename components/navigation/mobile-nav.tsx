@@ -6,7 +6,6 @@ import {useTranslations} from "next-intl";
 import {Link, usePathname} from "@/i18n/navigation";
 import {navigationLinks} from "@/lib/navigation-links";
 import {Button} from "@/components/ui/button";
-import {LanguageSwitcher} from "./language-switcher";
 import {ThemeToggle} from "./theme-toggle";
 
 export function MobileNav() {
@@ -19,7 +18,7 @@ export function MobileNav() {
       <Button
         size="icon"
         variant="outline"
-        className="border-white/30 bg-neutral-950 text-white hover:bg-neutral-900"
+        className="h-8 w-8 border-white/30 bg-neutral-950 text-white hover:bg-neutral-900 [&_svg]:h-3.5 [&_svg]:w-3.5"
         aria-label={open ? t("closeMenu") : t("openMenu")}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
@@ -28,16 +27,16 @@ export function MobileNav() {
       </Button>
 
       {open && (
-        <div className="absolute inset-x-0 top-20 z-50 bg-neutral-950 px-4 py-4 shadow-sm">
+        <div className="absolute inset-x-0 top-14 z-50 bg-neutral-950 px-3 py-3 shadow-sm sm:top-16 sm:px-4 sm:py-3.5">
           <nav aria-label={t("mobileNavigation")}>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {navigationLinks.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`block rounded-md px-3 py-2 text-sm ${
+                      className={`block rounded-md px-2 py-1.5 text-xs ${
                         isActive ? "bg-primary text-primary-foreground" : "text-white/85 hover:bg-neutral-900 hover:text-white"
                       }`}
                       onClick={() => setOpen(false)}
@@ -49,8 +48,7 @@ export function MobileNav() {
               })}
             </ul>
           </nav>
-          <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-white/20 pt-4">
-            <LanguageSwitcher />
+          <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-white/20 pt-3">
             <ThemeToggle />
           </div>
         </div>

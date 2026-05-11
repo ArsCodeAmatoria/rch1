@@ -1,5 +1,5 @@
 import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
-type Locale = "en" | "fr";
+type Locale = "en";
 
 
 /** Module 15 — Lift planning & critical lifts (pre-lift, engineered plans, lift director, documentation). */

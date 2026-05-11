@@ -32,7 +32,6 @@ export function buildOpenGraph({
   url,
   image,
   imageAlt,
-  locale,
   type = "website",
   article
 }: {
@@ -42,7 +41,6 @@ export function buildOpenGraph({
   image?: string;
   /** Improves accessibility and some crawler/LLM image context for OG previews. */
   imageAlt?: string;
-  locale: "en_CA" | "fr_CA";
   type?: "website" | "article";
   article?: {
     publishedTime?: string;
@@ -59,13 +57,8 @@ export function buildOpenGraph({
     title,
     description,
     url,
-    images: [
-      imageAlt
-        ? {url: ogImageUrl, alt: imageAlt}
-        : {url: ogImageUrl}
-    ],
-    locale,
-    alternateLocale: locale === "en_CA" ? "fr_CA" : "en_CA",
+    images: [imageAlt ? {url: ogImageUrl, alt: imageAlt} : {url: ogImageUrl}],
+    locale: "en_CA",
     ...(type === "article"
       ? {
           publishedTime: article?.publishedTime,
@@ -104,17 +97,11 @@ export function buildTwitterCard({
   };
 }
 
-function toLocaleTag(locale: string) {
-  return locale === "fr" ? "fr_CA" : "en_CA";
-}
-
 export function buildMetadata({
-  locale,
   title,
   description,
   canonicalPath,
   enPath,
-  frPath,
   image,
   imageAlt,
   keywords,
@@ -123,12 +110,10 @@ export function buildMetadata({
   type = "website",
   article
 }: {
-  locale: "en" | "fr";
   title: string;
   description: string;
   canonicalPath: string;
   enPath: string;
-  frPath: string;
   image?: string;
   imageAlt?: string;
   keywords?: string[];
@@ -143,9 +128,9 @@ export function buildMetadata({
     tags?: string[];
   };
 }): Metadata {
-  const localeTag = toLocaleTag(locale);
   const canonical = `${SITE_URL}${canonicalPath}`;
   const imageToUse = image ?? defaultOgBySection[section] ?? defaultOgBySection.default;
+  const href = `${SITE_URL}${enPath}`;
 
   return {
     title,
@@ -154,9 +139,8 @@ export function buildMetadata({
     alternates: {
       canonical,
       languages: {
-        "en-CA": `${SITE_URL}${enPath}`,
-        "fr-CA": `${SITE_URL}${frPath}`,
-        "x-default": `${SITE_URL}/en`
+        "en-CA": href,
+        "x-default": href
       }
     },
     robots: {
@@ -176,7 +160,6 @@ export function buildMetadata({
       url: canonical,
       image: imageToUse,
       imageAlt,
-      locale: localeTag,
       type,
       article
     }),
@@ -190,7 +173,7 @@ export function buildMetadata({
 }
 
 export function buildPageMetadata(args: {
-  locale: string;
+  locale?: string;
   path: string;
   title: string;
   description: string;
@@ -201,10 +184,8 @@ export function buildPageMetadata(args: {
   type?: "website" | "article";
   article?: Parameters<typeof buildMetadata>[0]["article"];
 }) {
-  const locale = (args.locale === "fr" ? "fr" : "en") as "en" | "fr";
-  const canonicalPath = `/${locale}${args.path === "/" ? "" : args.path}`;
-  const enPath = `/en${args.path === "/" ? "" : args.path}`;
-  const frPath = `/fr${args.path === "/" ? "" : args.path}`;
+  const canonicalPath = `/en${args.path === "/" ? "" : args.path}`;
+  const enPath = canonicalPath;
   const section = args.path.startsWith("/blog")
     ? "blog"
     : args.path.startsWith("/standards")
@@ -216,12 +197,10 @@ export function buildPageMetadata(args: {
           : "default";
 
   return buildMetadata({
-    locale,
     title: args.title,
     description: args.description,
     canonicalPath,
     enPath,
-    frPath,
     keywords: args.keywords,
     image: args.image,
     imageAlt: args.imageAlt,

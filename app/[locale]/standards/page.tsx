@@ -22,7 +22,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function StandardsPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const topics = standardsKnowledge[locale];
   const pageUrl = `${SITE_URL}/${locale}/standards`;
 

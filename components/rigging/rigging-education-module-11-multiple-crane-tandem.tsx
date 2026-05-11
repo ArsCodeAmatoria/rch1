@@ -1,5 +1,5 @@
 import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
-type Locale = "en" | "fr";
+type Locale = "en";
 
 
 /** Module 11 — Multiple crane & tandem lifts (load sharing, coordination, engineered plans). */

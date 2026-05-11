@@ -46,20 +46,17 @@ const toc = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  const isFr = locale === "fr";
   return buildPageMetadata({
     locale,
     path: "/rigging/education/module-13",
-    title: isFr ? "Module 13 — Physique des grues pour les monteurs" : titleEn,
-    description: isFr
-        ? "Module pédagogique : forces, charges dynamiques, moment de charge, pression au sol. (Texte principal en anglais.)"
-        : descriptionEn,
+    title: titleEn,
+    description: descriptionEn,
     keywords: ["crane physics rigging", "sling tension angle", "load moment crane", "dynamic loading rigging", "ground bearing pressure crane"]
     });
 }
 
 export default async function RiggingEducationModule13Page() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const pageUrl = `${SITE_URL}/${locale}/rigging/education/module-13`;
   const educationUrl = `${SITE_URL}/${locale}/rigging/education`;
   const riggingHubUrl = `${SITE_URL}/${locale}/rigging`;
@@ -105,11 +102,11 @@ export default async function RiggingEducationModule13Page() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[2rem] sm:leading-tight">
           Module 13 — Crane physics for riggers
         </h1>
-        {locale === "fr" ? (
-          <p className="text-sm text-muted-foreground">
-            Le corps de cette page est en anglais; une traduction complète pourra être ajoutée ultérieurement.
-          </p>
-        ) : null}
+        <p className="not-prose pt-1">
+          <Link href={"/rigging/education/slides/module-13" as never} className="text-sm font-medium text-primary hover:underline">
+            Slide lesson (presenter mode)
+          </Link>
+        </p>
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

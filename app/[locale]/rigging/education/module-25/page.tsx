@@ -63,14 +63,11 @@ const toc = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  const isFr = locale === "fr";
   return buildPageMetadata({
     locale,
     path: "/rigging/education/module-25",
-    title: isFr ? "Module 25 — Études de cas et analyse des défaillances en élingage" : titleEn,
-    description: isFr
-        ? "Module pédagogique : causes immédiates et profondes, études de cas (angle de élingue, choc, manille, ligne, vent, sol, grues multiples). (Texte principal en anglais.)"
-        : descriptionEn,
+    title: titleEn,
+    description: descriptionEn,
     keywords: [
         "rigging incident root cause",
         "sling angle failure case study",
@@ -82,7 +79,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function RiggingEducationModule25Page() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const pageUrl = `${SITE_URL}/${locale}/rigging/education/module-25`;
   const educationUrl = `${SITE_URL}/${locale}/rigging/education`;
   const riggingHubUrl = `${SITE_URL}/${locale}/rigging`;
@@ -128,11 +125,11 @@ export default async function RiggingEducationModule25Page() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[2rem] sm:leading-tight">
           Module 25 — Rigging incident case studies &amp; failure analysis
         </h1>
-        {locale === "fr" ? (
-          <p className="text-sm text-muted-foreground">
-            Le corps de cette page est en anglais; une traduction complète pourra être ajoutée ultérieurement.
-          </p>
-        ) : null}
+        <p className="not-prose pt-1">
+          <Link href={"/rigging/education/slides/module-25" as never} className="text-sm font-medium text-primary hover:underline">
+            Slide lesson (presenter mode)
+          </Link>
+        </p>
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

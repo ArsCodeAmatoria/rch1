@@ -42,14 +42,11 @@ const toc = [
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  const isFr = locale === "fr";
   return buildPageMetadata({
     locale,
     path: "/rigging/education/module-2",
-    title: isFr ? "Module 2 — Connaissance de l’équipement d’élingage" : titleEn,
-    description: isFr
-        ? "Module pédagogique : matériel d’élingage, élingues, dispositifs sous crochet, CMU et compatibilité. (Texte principal en anglais.)"
-        : descriptionEn,
+    title: titleEn,
+    description: descriptionEn,
     keywords: [
         "rigging equipment",
         "WLL SWL",
@@ -63,7 +60,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function RiggingEducationModule2Page() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const pageUrl = `${SITE_URL}/${locale}/rigging/education/module-2`;
   const educationUrl = `${SITE_URL}/${locale}/rigging/education`;
   const riggingHubUrl = `${SITE_URL}/${locale}/rigging`;
@@ -109,11 +106,11 @@ export default async function RiggingEducationModule2Page() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[2rem] sm:leading-tight">
           Module 2 — Rigging equipment knowledge
         </h1>
-        {locale === "fr" ? (
-          <p className="text-sm text-muted-foreground">
-            Le corps de cette page est en anglais; une traduction complète pourra être ajoutée ultérieurement.
-          </p>
-        ) : null}
+        <p className="not-prose pt-1">
+          <Link href={"/rigging/education/slides/module-2" as never} className="text-sm font-medium text-primary hover:underline">
+            Slide lesson (presenter mode)
+          </Link>
+        </p>
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

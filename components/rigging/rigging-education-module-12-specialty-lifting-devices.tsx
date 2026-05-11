@@ -1,5 +1,5 @@
 import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
-type Locale = "en" | "fr";
+type Locale = "en";
 
 
 /** Module 12 — Specialty lifting devices & attachments (BTH, spreaders, magnets, vacuum, buckets). */

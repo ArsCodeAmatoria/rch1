@@ -43,7 +43,7 @@ const toc: SectionDef[] = [
 
 export default async function SafetyTopicPage({params}: {params: Promise<{topic: string}>}) {
   const {topic: slug} = await params;
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const topic = getSafetyTopic(locale, slug);
 
   if (!topic) return notFound();

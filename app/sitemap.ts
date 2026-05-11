@@ -70,16 +70,16 @@ const staticPages = [
 
 function toEntry(path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] = "weekly") {
   const en = `/en${path}`;
-  const fr = `/fr${path}`;
+  const href = `${SITE_URL}${en}`;
   return {
-    url: `${SITE_URL}${en}`,
+    url: href,
     lastModified: new Date(),
     changeFrequency,
     priority,
     alternates: {
       languages: {
-        "en-CA": `${SITE_URL}${en}`,
-        "fr-CA": `${SITE_URL}${fr}`
+        "en-CA": href,
+        "x-default": href
       }
     }
   };
@@ -108,24 +108,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push(toEntry(`/standards/${topic.slug}`, 0.78));
   });
 
-  const enBlog = getAllBlogArticles("en");
-  const frBlog = getAllBlogArticles("fr");
-
-  enBlog
+  getAllBlogArticles("en")
     .filter((article) => !article.noindex && !article.draft)
     .forEach((article) => {
-      const frEquivalent = frBlog.find((item) => item.translationKey === article.translationKey);
       const enPath = `/en/blog/${article.slug}`;
-      const frPath = `/fr/blog/${frEquivalent?.slug ?? article.slug}`;
+      const href = `${SITE_URL}${enPath}`;
       entries.push({
-        url: `${SITE_URL}${enPath}`,
+        url: href,
         lastModified: new Date(article.updatedDate ?? article.publishedDate),
         changeFrequency: "weekly",
         priority: 0.74,
         alternates: {
           languages: {
-            "en-CA": `${SITE_URL}${enPath}`,
-            "fr-CA": `${SITE_URL}${frPath}`
+            "en-CA": href,
+            "x-default": href
           }
         }
       });

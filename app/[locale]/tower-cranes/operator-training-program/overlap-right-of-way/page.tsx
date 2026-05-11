@@ -32,7 +32,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function OverlapRightOfWayPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = await getLocale();
   const pageUrl = `${SITE_URL}/${locale}/tower-cranes/operator-training-program/overlap-right-of-way`;
   const title = "Crane Overlap, Right of Way & Communication Control";
   const description =
@@ -62,7 +62,6 @@ export default async function OverlapRightOfWayPage() {
         <Badge>Section 8</Badge>
         <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{title}</h1>
         <p className="text-muted-foreground">{description}</p>
-        {locale === "fr" && <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>}
       </header>
 
       <TrainingArticleLayout>

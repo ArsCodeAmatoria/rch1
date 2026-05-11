@@ -3,7 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 
-export type BlogLocale = "en" | "fr";
+export type BlogLocale = "en";
 
 export const BLOG_CATEGORIES = [
   "Tower Cranes",

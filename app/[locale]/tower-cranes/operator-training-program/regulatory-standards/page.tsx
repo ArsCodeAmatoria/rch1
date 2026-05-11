@@ -25,7 +25,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function RegulatoryStandardsTrainingPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = await getLocale();
   const pageUrl = `${SITE_URL}/${locale}/tower-cranes/operator-training-program/regulatory-standards`;
   const title = "Regulatory and Standards Framework";
   const description = "BC statutory regime, OHSR crane and rigging requirements, CSA tower crane code, and ASME cross-reference.";
@@ -70,9 +70,6 @@ export default async function RegulatoryStandardsTrainingPage() {
         <Badge>Section 1</Badge>
         <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{title}</h1>
         <p className="text-muted-foreground">{description}</p>
-        {locale === "fr" && (
-          <p className="text-sm text-muted-foreground">La traduction française est en préparation (contenu en anglais).</p>
-        )}
       </header>
 
       <TrainingArticleLayout>

@@ -1,5 +1,5 @@
 import {riggingEducationArticleClass, riggingEducationFooterRowClass, riggingEducationNavStripClass} from "@/components/rigging/rigging-education-prose";
-type Locale = "en" | "fr";
+type Locale = "en";
 
 
 const tableWrap = "not-prose my-6 overflow-x-auto rounded-lg border border-border bg-card text-sm";

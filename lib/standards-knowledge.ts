@@ -1,4 +1,4 @@
-export type StandardsLocale = "en" | "fr";
+export type StandardsLocale = "en";
 
 export type StandardsTopic = {
   slug: string;
@@ -214,12 +214,7 @@ const topicsEn: StandardsTopic[] = [
 ];
 
 export const standardsKnowledge: Record<StandardsLocale, StandardsTopic[]> = {
-  en: topicsEn,
-  fr: topicsEn.map((topic) => ({
-    ...topic,
-    title: `${topic.title} (FR)`,
-    summary: `Version francaise en preparation. ${topic.summary}`
-  }))
+  en: topicsEn
 };
 
 export function getStandardsTopic(locale: StandardsLocale, slug: string) {

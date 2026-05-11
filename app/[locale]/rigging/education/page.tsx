@@ -14,14 +14,11 @@ const descriptionEn =
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
-  const isFr = locale === "fr";
   return buildPageMetadata({
     locale,
     path: "/rigging/education",
-    title: isFr ? "Élingage pour grues et élingage avancé — formation" : titleEn,
-    description: isFr
-        ? "Vue d’ensemble pédagogique : portée, objectifs, contexte sectoriel, références normatives et domaines d’étude pour l’élingage de grues. (Contenu principal en anglais.)"
-        : descriptionEn,
+    title: titleEn,
+    description: descriptionEn,
     keywords: [
         "crane rigging",
         "advanced rigging",
@@ -35,7 +32,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function RiggingEducationPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const pageUrl = `${SITE_URL}/${locale}/rigging/education`;
   const riggingHubUrl = `${SITE_URL}/${locale}/rigging`;
   const breadcrumb = [
@@ -75,11 +72,6 @@ export default async function RiggingEducationPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Rigging: Crane rigging &amp; advanced rigging
         </h1>
-        {locale === "fr" ? (
-          <p className="text-sm text-muted-foreground">
-            Le texte principal de cette page est en anglais; une traduction complète pourra être ajoutée ultérieurement.
-          </p>
-        ) : null}
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

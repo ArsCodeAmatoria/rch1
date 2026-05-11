@@ -34,7 +34,7 @@ const toc = [
 
 export default async function StandardsTopicPage({params}: {params: Promise<{topic: string}>}) {
   const {topic: slug} = await params;
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const topic = getStandardsTopic(locale, slug);
   if (!topic) return notFound();
 

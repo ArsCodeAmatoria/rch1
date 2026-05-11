@@ -1,4 +1,4 @@
-export type Locale = "en" | "fr";
+export type Locale = "en";
 
 export type Topic = {
   slug: string;
@@ -16,14 +16,6 @@ export const sections = {
     {href: "/hoisting", label: "Hoisting"},
     {href: "/standards", label: "Standards"},
     {href: "/knowledge", label: "Knowledge"}
-  ],
-  fr: [
-    {href: "/safety-program", label: "Programme de securite"},
-    {href: "/tower-cranes", label: "Grues a tour"},
-    {href: "/rigging", label: "Elingage"},
-    {href: "/hoisting", label: "Levage"},
-    {href: "/standards", label: "Normes"},
-    {href: "/knowledge", label: "Connaissances"}
   ]
 } as const;
 
@@ -35,14 +27,6 @@ export const safetyProgramTopics: Record<Locale, Topic[]> = {
     {slug: "site-documentation", title: "Site Documentation", summary: "Control of permits, lift plans, inspections, and handover records.", procedure: ["Maintain revision-controlled documents on site.", "Verify permits and signatures before critical work.", "Archive daily records for compliance audit."], references: ["Project QA manual", "Prime contractor requirements"]},
     {slug: "crane-procedures", title: "Crane Procedures", summary: "Operational checks, communication protocol, and load path control.", procedure: ["Complete pre-operational inspection.", "Confirm signaler and radio channel assignment.", "Control exclusion zones and suspended load path."], references: ["ASME B30 series", "Manufacturer operating manual"]},
     {slug: "rigging-procedures", title: "Rigging Procedures", summary: "Slinging, hardware verification, and engineered lift setup.", procedure: ["Validate rigging capacity and D/d ratios.", "Inspect slings, shackles, hooks, and master links.", "Use trial lift and controlled movement plan."], references: ["ASME B30.9", "CSA rigging guidance"]}
-  ],
-  fr: [
-    {slug: "flha", title: "Evaluation des risques au terrain (FLHA)", summary: "Identification structuree des dangers avant chaque tache.", procedure: ["Examiner la portee et la sequence des travaux.", "Identifier dangers, controles et criteres d'arret.", "Confirmer communication et signatures de l'equipe."], references: ["WorkSafeBC OHSR Partie 4", "Programme securite employeur"]},
-    {slug: "swp", title: "Procedures de travail securitaire (SWP)", summary: "Controles proceduraux par tache et points d'arret obligatoires.", procedure: ["Utiliser la revision SWP approuvee.", "Verifier competences et EPI requis.", "Documenter variations et approbations."], references: ["CSA Z1000", "Depot SWP interne"]},
-    {slug: "emergency-response", title: "Reponse d'urgence", summary: "Matrice d'intervention pour incidents grue, elingage et medicaux.", procedure: ["Confirmer contacts et canaux d'urgence.", "Definir zones d'exclusion et de sauvetage.", "Realiser exercices et actions correctives."], references: ["Plan d'urgence du chantier", "Guide d'incident Technical Safety BC"]},
-    {slug: "site-documentation", title: "Documentation du site", summary: "Controle des permis, plans de levage, inspections et transferts.", procedure: ["Maintenir documents controles sur le site.", "Verifier permis et signatures avant travaux critiques.", "Archiver les dossiers quotidiens pour audit."], references: ["Manuel AQ projet", "Exigences entrepreneur principal"]},
-    {slug: "crane-procedures", title: "Procedures de grue", summary: "Verifications operationnelles et controle du trajet de charge.", procedure: ["Completer inspection pre-operationnelle.", "Confirmer signaleur et canal radio.", "Controler zones d'exclusion et charge suspendue."], references: ["Serie ASME B30", "Manuel fabricant"]},
-    {slug: "rigging-procedures", title: "Procedures d'elingage", summary: "Validation des elingues et configuration de levage technique.", procedure: ["Valider capacites et rapports D/d.", "Inspecter elingues, manilles et crochets.", "Effectuer levage d'essai et deplacement controle."], references: ["ASME B30.9", "Guide CSA"]}
   ]
 };
 
@@ -57,11 +41,8 @@ export const towerTopics: Record<Locale, Topic[]> = {
     {slug: "communication-signals", title: "Communication Signals", summary: "Standard hand/radio signals and communication hierarchy.", procedure: ["Use one designated signal person unless transferred.", "Repeat critical commands and verify confirmation.", "Stop operations on ambiguous communication."], references: ["CSA signal conventions", "Site lifting protocol"]},
     {slug: "load-handling", title: "Load Handling", summary: "Load stability, center of gravity control, and path management.", procedure: ["Confirm rigging method and load weight.", "Perform trial lift to verify balance and brakes.", "Move loads over clear, controlled paths only."], references: ["ASME B30 load handling", "Lift plan"]},
     {slug: "exclusion-zones", title: "Exclusion Zones", summary: "Restricted zones around suspended loads and critical operations.", procedure: ["Define barriers and access points before lifting.", "Assign spotters for pinch-point boundaries.", "Enforce zero-entry under suspended loads."], references: ["Site traffic control plan", "Prime contractor safety rules"]}
-  ],
-  fr: []
+  ]
 };
-
-towerTopics.fr = towerTopics.en.map((item) => ({...item, title: `${item.title} (FR)`, summary: `Version francaise: ${item.summary}`}));
 
 export const riggingTopics: Record<Locale, Topic[]> = {
   en: ["basic-rigging","advanced-rigging","sling-selection","tag-lines","lift-planning","critical-lifts","multi-crane-lifts","load-control"].map((slug) => ({
@@ -70,13 +51,6 @@ export const riggingTopics: Record<Locale, Topic[]> = {
     summary: "Engineered rigging control focused on predictable load behavior.",
     procedure: ["Confirm load weight, COG, and route constraints.", "Select and inspect all rigging hardware.", "Execute under documented lift plan and communication controls."],
     references: ["ASME B30.9", "WorkSafeBC lifting guidance"]
-  })),
-  fr: ["basic-rigging","advanced-rigging","sling-selection","tag-lines","lift-planning","critical-lifts","multi-crane-lifts","load-control"].map((slug) => ({
-    slug,
-    title: `${slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())} (FR)`,
-    summary: "Controle d'elingage technique pour un comportement de charge previsible.",
-    procedure: ["Confirmer poids, CG et contraintes de trajet.", "Selectionner et inspecter tous les accessoires.", "Executer selon plan de levage documente."],
-    references: ["ASME B30.9", "Guide WorkSafeBC"]
   }))
 };
 
@@ -95,8 +69,5 @@ export const standardsTopics: Record<Locale, Topic[]> = {
     summary: "Reference framework for legal and technical compliance decision-making.",
     procedure: ["Identify applicable jurisdiction and code edition.", "Cross-check project method against current standard.", "Record interpretation notes and engineer/manufacturer approvals."],
     references: ["Project compliance matrix", "Authority having jurisdiction"]
-  })),
-  fr: []
+  }))
 };
-
-standardsTopics.fr = standardsTopics.en.map((item) => ({...item, title: `${item.title} (FR)`, summary: `Version francaise: ${item.summary}`}));

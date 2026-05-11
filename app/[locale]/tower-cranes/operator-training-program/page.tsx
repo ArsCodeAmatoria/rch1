@@ -32,7 +32,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function OperatorTrainingProgramPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = await getLocale();
   const pageUrl = `${SITE_URL}/${locale}/tower-cranes/operator-training-program`;
   const title = "Tower Crane Operator Training Program";
   const description =
@@ -71,11 +71,6 @@ export default async function OperatorTrainingProgramPage() {
 
       <header className="space-y-2">
         <Badge className="w-fit">Knowledge program</Badge>
-        {locale === "fr" && (
-          <p className="text-sm text-muted-foreground">
-            La version française de ce programme est en préparation; le contenu affiché est actuellement en anglais.
-          </p>
-        )}
       </header>
 
       <TrainingArticleLayout>

@@ -8,38 +8,27 @@ import {Badge} from "@/components/ui/badge";
 import {Separator} from "@/components/ui/separator";
 import {mdxComponents} from "@/components/blog/mdx-components";
 import {buildMetadata, SITE_URL} from "@/lib/seo";
-import {
-  getAdjacentArticles,
-  getAllBlogArticles,
-  getBlogArticle,
-  getLocalizedArticleSlug,
-  getRelatedArticles
-} from "@/lib/blog";
+import {getAdjacentArticles, getAllBlogArticles, getBlogArticle, getRelatedArticles} from "@/lib/blog";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildArticleSchema, buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
 
 export async function generateStaticParams() {
-  const en = getAllBlogArticles("en").map((article) => ({locale: "en", slug: article.slug}));
-  const fr = getAllBlogArticles("fr").map((article) => ({locale: "fr", slug: article.slug}));
-  return [...en, ...fr];
+  return getAllBlogArticles("en").map((article) => ({locale: "en", slug: article.slug}));
 }
 
 export async function generateMetadata({params}: {params: Promise<{locale: string; slug: string}>}): Promise<Metadata> {
-  const {locale, slug} = await params;
-  const article = getBlogArticle(locale as "en" | "fr", slug);
+  const {slug} = await params;
+  const article = getBlogArticle("en", slug);
   if (!article) return {};
 
-  const canonicalPath = article.canonical ?? `/${locale}/blog/${slug}`;
-  const enSlug = getLocalizedArticleSlug("en", article.translationKey) ?? (locale === "en" ? slug : slug);
-  const frSlug = getLocalizedArticleSlug("fr", article.translationKey) ?? (locale === "fr" ? slug : slug);
+  const canonicalPath = article.canonical ?? `/en/blog/${slug}`;
+  const enPath = `/en/blog/${slug}`;
 
   return buildMetadata({
-    locale: locale as "en" | "fr",
     title: article.title,
     description: article.description,
     canonicalPath,
-    enPath: `/en/blog/${enSlug}`,
-    frPath: `/fr/blog/${frSlug}`,
+    enPath,
     image: article.featuredImage,
     keywords: [article.category, ...article.tags],
     noindex: Boolean(article.noindex),
@@ -56,9 +45,9 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function BlogArticlePage({params}: {params: Promise<{slug: string}>}) {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = await getLocale();
   const {slug} = await params;
-  const article = getBlogArticle(locale, slug);
+  const article = getBlogArticle("en", slug);
   if (!article) return notFound();
 
   const {content} = await compileMDX({
@@ -72,8 +61,8 @@ export default async function BlogArticlePage({params}: {params: Promise<{slug: 
     components: mdxComponents
   });
 
-  const related = getRelatedArticles(locale, article, 3);
-  const adjacent = getAdjacentArticles(locale, slug);
+  const related = getRelatedArticles("en", article, 3);
+  const adjacent = getAdjacentArticles("en", slug);
 
   const articleUrl = `${SITE_URL}/${locale}/blog/${slug}`;
   const breadcrumb = buildBreadcrumbSchema([

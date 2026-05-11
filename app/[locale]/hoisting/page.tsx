@@ -23,7 +23,7 @@ export default function HoistingPage() {
 }
 
 async function HoistingPageContent() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const pageUrl = `${SITE_URL}/${locale}/hoisting`;
   return (
     <section className="mx-auto max-w-4xl space-y-6 px-4 py-10 sm:px-6 lg:px-8">

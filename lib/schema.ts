@@ -46,7 +46,7 @@ export function buildWebSiteSchema({locale}: {locale: string}) {
     name: SITE_NAME,
     url: SITE_URL,
     description: "Technical crane and construction safety knowledge system.",
-    inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+    inLanguage: "en-CA",
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/${locale}/blog?query={search_term_string}`,
@@ -59,14 +59,14 @@ export function buildWebPageSchema({
   name,
   description,
   url,
-  locale,
   breadcrumb,
   dateModified
 }: {
   name: string;
   description: string;
   url: string;
-  locale: string;
+  /** Accepted for call-site consistency; JSON-LD is English-only. */
+  locale?: string;
   breadcrumb?: BreadcrumbItem[];
   dateModified?: string;
 }) {
@@ -76,7 +76,7 @@ export function buildWebPageSchema({
     name,
     description,
     url,
-    inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+    inLanguage: "en-CA",
     dateModified,
     isPartOf: {
       "@type": "WebSite",
@@ -91,13 +91,13 @@ export function buildCollectionPageSchema({
   name,
   description,
   url,
-  locale,
   breadcrumb
 }: {
   name: string;
   description: string;
   url: string;
-  locale: string;
+  /** Accepted for call-site consistency; JSON-LD is English-only. */
+  locale?: string;
   breadcrumb: BreadcrumbItem[];
 }) {
   return {
@@ -106,7 +106,7 @@ export function buildCollectionPageSchema({
     name,
     description,
     url,
-    inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+    inLanguage: "en-CA",
     isPartOf: {"@type": "WebSite", name: SITE_NAME, url: SITE_URL},
     breadcrumb: buildBreadcrumbSchema(breadcrumb)
   };
@@ -122,7 +122,6 @@ export function buildArticleSchema({
   dateModified,
   articleSection,
   keywords,
-  locale,
   url
 }: {
   headline: string;
@@ -134,7 +133,8 @@ export function buildArticleSchema({
   dateModified: string;
   articleSection: string;
   keywords: string[];
-  locale: string;
+  /** Accepted for call-site consistency; JSON-LD is English-only. */
+  locale?: string;
   url: string;
 }) {
   return {
@@ -153,7 +153,7 @@ export function buildArticleSchema({
     dateModified,
     articleSection,
     keywords,
-    inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+    inLanguage: "en-CA",
     mainEntityOfPage: {"@type": "WebPage", "@id": url}
   };
 }
@@ -162,7 +162,6 @@ export function buildTechArticleSchema({
   headline,
   description,
   url,
-  locale,
   proficiencyLevel = "Professional",
   dependencies = ["WorkSafeBC", "CSA", "ASME B30", "Technical Safety BC"],
   keywords = [],
@@ -173,7 +172,8 @@ export function buildTechArticleSchema({
   headline: string;
   description: string;
   url: string;
-  locale: string;
+  /** Accepted for call-site consistency; JSON-LD is English-only. */
+  locale?: string;
   proficiencyLevel?: string;
   dependencies?: string[];
   keywords?: string[];
@@ -197,7 +197,7 @@ export function buildTechArticleSchema({
           }
         }
       : {}),
-    inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+    inLanguage: "en-CA",
     proficiencyLevel,
     dependencies,
     keywords,

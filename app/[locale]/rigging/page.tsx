@@ -59,7 +59,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 }
 
 export default async function RiggingPage() {
-  const locale = (await getLocale()) as "en" | "fr";
+  const locale = (await getLocale()) as "en";
   const topics = riggingKnowledge[locale];
   const pageUrl = `${SITE_URL}/${locale}/rigging`;
 

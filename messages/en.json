@@ -27,10 +27,6 @@
     "professionalScope": "Professional Scope",
     "technicalHubs": "Technical Hubs"
   },
-  "language": {
-    "switchToFrench": "Switch language to French",
-    "switchToEnglish": "Switch language to English"
-  },
   "theme": {
     "toggleTheme": "Toggle theme",
     "switchToLight": "Switch to light mode",

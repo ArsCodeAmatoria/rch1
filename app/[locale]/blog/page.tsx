@@ -10,16 +10,13 @@ import {BlogSearch} from "@/components/blog/blog-search";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildBreadcrumbSchema, buildCollectionPageSchema, buildWebPageSchema} from "@/lib/schema";
 
-export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
-  const {locale} = await params;
+export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
-    locale: locale as "en" | "fr",
     title: "Crane and Rigging Technical Articles",
     description:
       "RCH1 technical safety publication for crane operations, rigging and hoisting procedures, standards updates, inspections, and construction safety documentation.",
-    canonicalPath: `/${locale}/blog`,
+    canonicalPath: "/en/blog",
     enPath: "/en/blog",
-    frPath: "/fr/blog",
     image: "/og/rch1-blog-og.jpg",
     keywords: ["crane safety", "tower crane operations", "rigging and hoisting", "construction safety documentation"],
     section: "blog"
@@ -29,8 +26,8 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 const icons = [BookText, FileSearch, ShieldCheck, Scale, Wrench, Newspaper];
 
 export default async function BlogPage() {
-  const locale = (await getLocale()) as "en" | "fr";
-  const articles = getAllBlogArticles(locale).filter((item) => !item.noindex);
+  const locale = await getLocale();
+  const articles = getAllBlogArticles("en").filter((item) => !item.noindex);
   const featured = articles.find((item) => item.featured) ?? articles[0];
   const latest = articles.slice(0, 6);
 

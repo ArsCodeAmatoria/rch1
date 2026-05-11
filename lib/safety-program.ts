@@ -1,4 +1,4 @@
-export type SafetyLocale = "en" | "fr";
+export type SafetyLocale = "en";
 
 export type SafetyTopic = {
   slug: string;
@@ -271,15 +271,7 @@ const bySlug: Record<string, Partial<SafetyTopic>> = {
 };
 
 export const safetyProgramTopics: Record<SafetyLocale, SafetyTopic[]> = {
-  en: slugs.map((slug) => ({...genericTopic(slug), ...bySlug[slug]} as SafetyTopic)),
-  fr: slugs.map((slug) => {
-    const topic = ({...genericTopic(slug), ...bySlug[slug]} as SafetyTopic);
-    return {
-      ...topic,
-      title: `${topic.title} (FR)`,
-      summary: `Version francaise en preparation. ${topic.summary}`
-    };
-  })
+  en: slugs.map((slug) => ({...genericTopic(slug), ...bySlug[slug]} as SafetyTopic))
 };
 
 export function getSafetyTopic(locale: SafetyLocale, slug: string) {
