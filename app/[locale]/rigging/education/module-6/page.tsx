@@ -7,6 +7,7 @@ import {Badge} from "@/components/ui/badge";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {RiggingSlideLessonButton} from "@/components/rigging/education/rigging-slide-lesson-button";
 
 const titleEn = "Module 6 — Rigging Math & Load Calculations | Rigging Education";
 const descriptionEn =
@@ -110,11 +111,7 @@ export default async function RiggingEducationModule6Page() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[2rem] sm:leading-tight">
           Module 6 — Rigging math &amp; load calculations
         </h1>
-        <p className="not-prose pt-1">
-          <Link href={"/rigging/education/slides/module-6" as never} className="text-sm font-medium text-primary hover:underline">
-            Slide lesson (presenter mode)
-          </Link>
-        </p>
+        <RiggingSlideLessonButton moduleSlug="module-6" />
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

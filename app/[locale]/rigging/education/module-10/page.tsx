@@ -7,6 +7,7 @@ import {Badge} from "@/components/ui/badge";
 import {buildPageMetadata, SITE_URL} from "@/lib/seo";
 import {JsonLd} from "@/components/seo/JsonLd";
 import {buildBreadcrumbSchema, buildTechArticleSchema, buildWebPageSchema} from "@/lib/schema";
+import {RiggingSlideLessonButton} from "@/components/rigging/education/rigging-slide-lesson-button";
 
 const titleEn = "Module 10 — Chainfalls, Lever Hoists & Tensioning Devices | Rigging Education";
 const descriptionEn =
@@ -104,11 +105,7 @@ export default async function RiggingEducationModule10Page() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-[2rem] sm:leading-tight">
           Module 10 — Chainfalls, lever hoists &amp; tensioning devices
         </h1>
-        <p className="not-prose pt-1">
-          <Link href={"/rigging/education/slides/module-10" as never} className="text-sm font-medium text-primary hover:underline">
-            Slide lesson (presenter mode)
-          </Link>
-        </p>
+        <RiggingSlideLessonButton moduleSlug="module-10" />
       </header>
 
       <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-12">

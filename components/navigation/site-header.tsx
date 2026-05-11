@@ -31,13 +31,13 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <nav aria-label={t("primaryNavigation")} className="hidden flex-1 px-2 xl:block xl:px-3">
-          <ul className="flex items-center justify-center gap-1 font-bold uppercase tracking-[0.04em] xl:gap-1.5">
+        <nav aria-label={t("primaryNavigation")} className="hidden flex-1 px-2 xl:block xl:px-4">
+          <ul className="flex items-center justify-center gap-2 font-bold uppercase tracking-[0.04em] xl:gap-3">
             {primaryLinks.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`inline-flex min-h-8 max-w-[100px] items-center justify-center rounded-sm px-1.5 py-0.5 text-center text-[9px] leading-tight whitespace-normal transition-colors xl:max-w-[108px] xl:text-[10px] ${
+                  className={`inline-flex min-h-8 max-w-[100px] items-center justify-center rounded-sm px-2 py-0.5 text-center text-[9px] leading-tight whitespace-normal transition-colors xl:max-w-[108px] xl:text-[10px] ${
                     pathname === item.href
                       ? "text-white underline decoration-primary underline-offset-4"
                       : "text-white/90 hover:text-white"
@@ -58,7 +58,7 @@ export function SiteHeader() {
             <li className="group relative">
               <button
                 type="button"
-                className={`inline-flex min-h-8 w-[92px] max-w-[100px] items-center justify-center gap-0.5 rounded-sm px-1.5 py-0.5 text-center text-[9px] uppercase leading-tight transition-colors xl:w-[108px] xl:text-[10px] ${
+                className={`inline-flex min-h-8 w-[92px] max-w-[100px] items-center justify-center gap-0.5 rounded-sm px-2 py-0.5 text-center text-[9px] uppercase leading-tight transition-colors xl:w-[108px] xl:text-[10px] ${
                   dropdownActive ? "text-white underline decoration-primary underline-offset-4" : "text-white/90 hover:text-white"
                 }`}
                 aria-haspopup="menu"
